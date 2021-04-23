@@ -1,7 +1,7 @@
 ![serverless-cloud](https://user-images.githubusercontent.com/2053544/108106391-e1f1ff00-705b-11eb-92b2-f63dc6ace812.png)
 
 ## Welcome to Serverless Cloud
-Serverless Cloud is a hosted platform that makes building, deploying, and managing serverless applications easier and more accessible to everyone. Powered by the world's most trusted CSPs, Serverless Cloud lets you build scalable, highly-secure, pay-per-use applications, without needing a deep knowledge of cloud services. Serverless Cloud provides an exceptional developer experience that lets you to focus on writing code, instead of worrying about the infrastructure that's going to run it.
+Serverless Cloud is a hosted platform that makes building, deploying, and managing serverless applications easier and more accessible to everyone. Powered by the world's most trusted CSPs, Serverless Cloud lets you build scalable, highly-secure, pay-per-use applications, without needing a deep knowledge of cloud services. Serverless Cloud provides an exceptional developer experience that lets you focus on writing code, instead of worrying about the infrastructure that's going to run it.
 
 ### How it works
 Serverless Cloud uses a familiar *Express.js-like* API to allow developers to quickly build REST APIs, create scheduled tasks, and more. Using our lightweight command line tool, we monitor your local directory as you code, and then instanteously publish those changes to your own, fully-isolated sandbox, giving you a high-fidelity cloud environment to test updates in a rapid feedback loop. Plus, you have your own copy of Serverless Data to work with, letting you test your data-driven applications without affecting other team members or production instances.
