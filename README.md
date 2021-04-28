@@ -39,7 +39,7 @@ Visit the url, see live logs, make changes, and watch them quickly deploy to you
 sc copy --target prod
 ```
 
-This will be a completely seperate instance. You may continue developing with `sc dev` without affecting `prod`, but anytime you wanna copy the entire `prod` instance (including data) into your own personal dev instance, just run:
+This will be a completely separate instance. You may continue developing with `sc dev` without affecting `prod`, but anytime you wanna copy the entire `prod` instance (including data) into your own personal dev instance, just run:
 
 ```
 sc copy --source prod
