@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Serverless Cloud</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html,body { margin: 0; padding: 0 }
+    body {
+      background-color:#000;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+    }
+    header { text-align:center; width: 90%; max-width: 700px; margin: 0 auto; padding: 2em 0em; }
+    main { border-top: solid 1px #fff; width: 90%; max-width: 700px; margin: 0 auto; padding: 1.5em 0em; line-height: 1.4em; }
+    img { max-width: 800px; }
+    h1, h3 { font-weight: 400;}
+    h1 { margin: 2em 0em 1em; padding-bottom: 0;}
+    h2 { margin-top: 0; padding-bottom: 1em; font-size: 1.2em; font-weight: 600;}
+    .red { color: #fe5750; }
+    strong { font-weight: 600; }
+    .nobreak { white-space: nowrap; }
+    code { font-size: 1.5em; }
+    a,a:visited,a:active { color: #fff; }
+    form { padding: 1em 0em;}
+    table { width: 100%; border: dashed 1px #fe5750; border-collapse: collapse; }
+    th { padding: 0.5em; border: dashed 1px #fe5750; text-align: left; }
+    td { padding: 0.5em; border: dashed 1px #fe5750; }
+    input { font-size: 1em; border-radius: 0.2em; border:none; padding: 0.2em; }
+    button { font-size: 1em; border-radius: 0.2em; border:none; padding: 0.2em 0.4em; background-color: #fe5750; color:#fff; font-weight: 400; }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-tomorrow.min.css" integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg==" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js" integrity="sha512-YBk7HhgDZvBxmtOfUdvX0z8IH2d10Hp3aEygaMNhtF8fSOvBZ16D/1bXZTJV6ndk/L/DlXxYStP8jrF77v2MIg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-zc7WDnCM3aom2EziyDIRAtQg1mVXLdILE09Bo+aE1xk0AM2c2cVLfSW9NrxE5tKTX44WBY0Z2HClZ05ur9vB6A==" crossorigin="anonymous"></script>
+  <script lang="javascript">
+    var reverse = false
+
+    function loading() {
+      document.getElementById('results').innerHTML = '<tr><td colspan="3">Loading...</td></tr>'  
+    }
+
+    function getData(sort) {
+      if (sort) {
+        reverse = !reverse
+      }
+      fetch('/data/users:?reverse='+reverse)
+        .then(function (response) {
+          return response.json();
+        }).then(function (data) {
+          if (data.items.length === 0) {
+            document.getElementById('results').innerHTML = '<tr><td colspan="3">There are no items in this collection. Add a user with the form above.</td></tr>'  
+          } else {
+            document.getElementById('results').innerHTML = ''
+            data.items.forEach(user => {
+              document.getElementById('results').innerHTML += '<tr><td>'+user.username+'</td><td>'+user.fullName+'</td><td><button onclick="deleteData(\''+user.username+'\')">DELETE</button></td></tr>'
+            })
+          }
+	      })
+        .catch(function (err) {
+          console.log("Something went wrong!", err);
+        });
+    }
+
+    function postData(form) {
+      var username = document.getElementById('username')
+      var fullname = document.getElementById('fullname'
+      )
+      if (username.value.trim().length === 0) {
+        username.style.borderColor = '#fe5750';
+      } else {
+        username.style.borderColor = '';
+        loading();
+
+        fetch("/data/users:"+username.value.trim(),{
+            method: "POST",
+            body: JSON.stringify({ 
+              username: username.value.trim(),
+              fullName: fullname.value.trim()
+            }),
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            }
+          })
+          .then(function(res){ return res.json(); })
+          .then(function(data){ getData(); })
+      }
+    }
+    
+    function deleteData(username) {
+      loading();
+      fetch("/data/users:"+username,{
+          method: "DELETE"
+        })
+        .then(function(res){ return res.json(); })
+        .then(function(data){ getData(); })
+    }
+  </script>
+</head>
+<body onload="getData();">
+  <header>
+    <p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjA0cHgiIGhlaWdodD0iMzFweCIgdmlld0JveD0iMCAwIDIwNCAzMSIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDx0aXRsZT5sb2dvLXNlcnZlcmxlc3MtZGFyazwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJoZXJvLWNvbXBvbmVudHMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MS4wMDAwMDAsIC00MS4wMDAwMDApIiBmaWxsLXJ1bGU9Im5vbnplcm8iPgogICAgICAgICAgICA8ZyBpZD0iR3JvdXAtOSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsIC0xODMuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8ZyBpZD0ibG9nby1zZXJ2ZXJsZXNzLWRhcmsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDgxLjAwMDAwMCwgMjIwLjAwMDAwMCkiPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik02Ny4yOCwyNy41MzI4IEM2Ny44NTYsMjYuOTg1NiA2OC41MTg0LDI1LjkyIDY4LjQzMiwyNC4yNzg0IEM2OC4yNTkyLDIwLjczNiA2NC44MDMyLDIwLjMzMjggNjIuNDk5MiwyMC4wNDQ4IEM1OS42MTkyLDE5LjcyOCA1OS4xNTg0LDE5LjQxMTIgNTkuMTI5NiwxOC41NDcyIEM1OS4xMjk2LDE3LjQ1MjggNjAuNjI3MiwxNi45MDU2IDYxLjk4MDgsMTYuOTYzMiBDNjQuNTQ0LDE3LjA0OTYgNjYuODQ4LDE3LjkxMzYgNjYuODQ4LDE3LjkxMzYgTDY3Ljc2OTYsMTUuMDYyNCBDNjcuNjU0NCwxNS4wMzM2IDY1LjA2MjQsMTQuMjI3MiA2Mi4wNjcyLDE0LjE0MDggQzU4Ljk1NjgsMTQuMDU0NCA1Ni4xMDU2LDE1LjQ5NDQgNTYuMTkyLDE4LjYwNDggQzU2LjI0OTYsMjIuMzQ4OCA1OS44MjA4LDIyLjc1MiA2Mi4xNTM2LDIzLjAxMTIgQzY0LjgwMzIsMjMuMzI4IDY1LjUyMzIsMjMuNjE2IDY1LjU4MDgsMjQuNDIyNCBDNjUuNjA5NiwyNS4wMjcyIDY1LjU4MDgsMjYuNjQgNjEuODM2OCwyNi4zNTIgQzU5LjM2LDI2LjE1MDQgNTcuMTQyNCwyNS4wMjcyIDU3LjExMzYsMjQuOTk4NCBMNTUuODc1MiwyNy41OTA0IEM1Ni4wMTkyLDI3LjY0OCA1OC43MjY0LDI4Ljk3MjggNjEuODk0NCwyOS4wNTkyIEM2My41MDcyLDI5LjExNjggNjUuODExMiwyOS4wMzA0IDY3LjI4LDI3LjUzMjggWiBNNzguMDQ0LDI5LjAzMDQgQzgwLjg2NjQsMjkuMDMwNCA4My42NiwyNy44Nzg0IDgzLjY2LDI3Ljg3ODQgTDgyLjkxMTIsMjUuMzE1MiBDODIuOTExMiwyNS4zMTUyIDgwLjQzNDQsMjYuMjk0NCA3OC4xNTkyLDI2LjI5NDQgQzc1LjI1MDQsMjYuMjk0NCA3My43ODE2LDI0LjQ1MTIgNzMuNzgxNiwyMi42OTQ0IEw4NC40Mzc2LDIyLjY5NDQgTDg0LjQzODI3NzEsMjAuOTg5MTQ1OCBDODQuNDQ0NjUsMjAuNDYyMzUgODQuMzg2LDE0LjE0MDggNzcuOSwxNC4xNDA4IEM3MS44ODgzMzIzLDE0LjE0MDggNzAuNzM0ODU5OSwxOS4zMzQwNDMzIDcwLjcwMDc5MTQsMjEuNDQ1NzA0NSBMNzAuNywyMS41NDI0IEM3MC43LDIzLjQ3MiA3MS40NDg4LDI5LjAzMDQgNzguMDQ0LDI5LjAzMDQgWiBNODEuNTI4OCwyMC4xMzEyIEw3My44MTA0LDIwLjEzMTIgQzczLjgxMDQsMjAuMTMxMiA3NC4xNTYsMTYuOTkyIDc3LjksMTYuOTkyIEM4MS43MzA0LDE2Ljk5MiA4MS41Mjg4LDIwLjEzMTIgODEuNTI4OCwyMC4xMzEyIFogTTkxLjAyNTYsMjguOCBMOTEuMDI1NiwxOS43ODU2IEM5MS4wMjU2LDE4Ljc3NzYgOTIuMzIxNiwxNy40MjQgOTMuNjE3NiwxNy40MjQgTDk4LjYyODgsMTcuNDI0IEw5OC42Mjg4LDE0LjQgTDk0LjA0OTYsMTQuNCBDOTEuNDU3NiwxNC40IDkwLjc5NTIsMTYuNzYxNiA5MC43OTUyLDE3LjE5MzYgTDkwLjYyMjQsMTQuNCBMODcuOCwxNC40IEw4Ny44LDE0LjQgTDg3LjgsMjguOCBMOTEuMDI1NiwyOC44IEw5MS4wMjU2LDI4LjggWiBNMTA5Ljk2ODgsMjguOCBMMTE0LjU0OCwxNC40IEwxMTEuNDY2NCwxNC40IEwxMDcuNjY0OCwyNi4wMDY0IEwxMDQuMjY2NCwxNC40IEwxMDEuMDEyLDE0LjQgTDEwNS4zODk2LDI4LjggTDEwOS45Njg4LDI4LjggWiBNMTIzLjU4NCwyOS4wMzA0IEMxMjYuNDA2NCwyOS4wMzA0IDEyOS4yLDI3Ljg3ODQgMTI5LjIsMjcuODc4NCBMMTI4LjQ1MTIsMjUuMzE1MiBDMTI4LjQ1MTIsMjUuMzE1MiAxMjUuOTc0NCwyNi4yOTQ0IDEyMy42OTkyLDI2LjI5NDQgQzEyMC43OTA0LDI2LjI5NDQgMTE5LjMyMTYsMjQuNDUxMiAxMTkuMzIxNiwyMi42OTQ0IEwxMjkuOTc3NiwyMi42OTQ0IEwxMjkuOTc4Mjc3LDIwLjk4OTE0NTggQzEyOS45ODQ2NSwyMC40NjIzNSAxMjkuOTI2LDE0LjE0MDggMTIzLjQ0LDE0LjE0MDggQzExNy40MjgzMzIsMTQuMTQwOCAxMTYuMjc0ODYsMTkuMzM0MDQzMyAxMTYuMjQwNzkxLDIxLjQ0NTcwNDUgTDExNi4yNCwyMS41NDI0IEMxMTYuMjQsMjMuNDcyIDExNi45ODg4LDI5LjAzMDQgMTIzLjU4NCwyOS4wMzA0IFogTTEyNy4wNjg4LDIwLjEzMTIgTDExOS4zNTA0LDIwLjEzMTIgQzExOS4zNTA0LDIwLjEzMTIgMTE5LjY5NiwxNi45OTIgMTIzLjQ0LDE2Ljk5MiBDMTI3LjI3MDQsMTYuOTkyIDEyNy4wNjg4LDIwLjEzMTIgMTI3LjA2ODgsMjAuMTMxMiBaIE0xMzYuNTY1NiwyOC44IEwxMzYuNTY1NiwxOS43ODU2IEMxMzYuNTY1NiwxOC43Nzc2IDEzNy44NjE2LDE3LjQyNCAxMzkuMTU3NiwxNy40MjQgTDE0NC4xNjg4LDE3LjQyNCBMMTQ0LjE2ODgsMTQuNCBMMTM5LjU4OTYsMTQuNCBDMTM2Ljk5NzYsMTQuNCAxMzYuMzM1MiwxNi43NjE2IDEzNi4zMzUyLDE3LjE5MzYgTDEzNi4xNjI0LDE0LjQgTDEzMy4zNCwxNC40IEwxMzMuMzQsMTQuNCBMMTMzLjM0LDI4LjggTDEzNi41NjU2LDI4LjggTDEzNi41NjU2LDI4LjggWiBNMTU3LjgxMjgsMjguOCBMMTU3LjgxMjgsMjUuNzc2IEwxNTEuODgsMjUuNzc2IEwxNTEuODgsOC42NCBMMTQ0LjE5MDQsOC42NCBMMTQ0LjE5MDQsMTEuMjg5NiBMMTQ4Ljc5ODQsMTEuMjg5NiBMMTQ4Ljc5ODQsMjguOCBMMTU3LjgxMjgsMjguOCBaIE0xNjcuMTA4LDI5LjAzMDQgQzE2OS45MzA0LDI5LjAzMDQgMTcyLjcyNCwyNy44Nzg0IDE3Mi43MjQsMjcuODc4NCBMMTcxLjk3NTIsMjUuMzE1MiBDMTcxLjk3NTIsMjUuMzE1MiAxNjkuNDk4NCwyNi4yOTQ0IDE2Ny4yMjMyLDI2LjI5NDQgQzE2NC4zMTQ0LDI2LjI5NDQgMTYyLjg0NTYsMjQuNDUxMiAxNjIuODQ1NiwyMi42OTQ0IEwxNzMuNTAxNiwyMi42OTQ0IEwxNzMuNTAyMjc3LDIwLjk4OTE0NTggQzE3My41MDg2NSwyMC40NjIzNSAxNzMuNDUsMTQuMTQwOCAxNjYuOTY0LDE0LjE0MDggQzE2MC45NTIzMzIsMTQuMTQwOCAxNTkuNzk4ODYsMTkuMzM0MDQzMyAxNTkuNzY0NzkxLDIxLjQ0NTcwNDUgTDE1OS43NjQsMjEuNTQyNCBDMTU5Ljc2NCwyMy40NzIgMTYwLjUxMjgsMjkuMDMwNCAxNjcuMTA4LDI5LjAzMDQgWiBNMTcwLjU5MjgsMjAuMTMxMiBMMTYyLjg3NDQsMjAuMTMxMiBDMTYyLjg3NDQsMjAuMTMxMiAxNjMuMjIsMTYuOTkyIDE2Ni45NjQsMTYuOTkyIEMxNzAuNzk0NCwxNi45OTIgMTcwLjU5MjgsMjAuMTMxMiAxNzAuNTkyOCwyMC4xMzEyIFogTTE4Ny4wODgsMjcuNTMyOCBDMTg3LjY2NCwyNi45ODU2IDE4OC4zMjY0LDI1LjkyIDE4OC4yNCwyNC4yNzg0IEMxODguMDY3MiwyMC43MzYgMTg0LjYxMTIsMjAuMzMyOCAxODIuMzA3MiwyMC4wNDQ4IEMxNzkuNDI3MiwxOS43MjggMTc4Ljk2NjQsMTkuNDExMiAxNzguOTM3NiwxOC41NDcyIEMxNzguOTM3NiwxNy40NTI4IDE4MC40MzUyLDE2LjkwNTYgMTgxLjc4ODgsMTYuOTYzMiBDMTg0LjM1MiwxNy4wNDk2IDE4Ni42NTYsMTcuOTEzNiAxODYuNjU2LDE3LjkxMzYgTDE4Ny41Nzc2LDE1LjA2MjQgQzE4Ny40NjI0LDE1LjAzMzYgMTg0Ljg3MDQsMTQuMjI3MiAxODEuODc1MiwxNC4xNDA4IEMxNzguNzY0OCwxNC4wNTQ0IDE3NS45MTM2LDE1LjQ5NDQgMTc2LDE4LjYwNDggQzE3Ni4wNTc2LDIyLjM0ODggMTc5LjYyODgsMjIuNzUyIDE4MS45NjE2LDIzLjAxMTIgQzE4NC42MTEyLDIzLjMyOCAxODUuMzMxMiwyMy42MTYgMTg1LjM4ODgsMjQuNDIyNCBDMTg1LjQxNzYsMjUuMDI3MiAxODUuMzg4OCwyNi42NCAxODEuNjQ0OCwyNi4zNTIgQzE3OS4xNjgsMjYuMTUwNCAxNzYuOTUwNCwyNS4wMjcyIDE3Ni45MjE2LDI0Ljk5ODQgTDE3NS42ODMyLDI3LjU5MDQgQzE3NS44MjcyLDI3LjY0OCAxNzguNTM0NCwyOC45NzI4IDE4MS43MDI0LDI5LjA1OTIgQzE4My4zMTUyLDI5LjExNjggMTg1LjYxOTIsMjkuMDMwNCAxODcuMDg4LDI3LjUzMjggWiBNMjAxLjg3NjgsMjcuNTMyOCBDMjAyLjQ1MjgsMjYuOTg1NiAyMDMuMTE1MiwyNS45MiAyMDMuMDI4OCwyNC4yNzg0IEMyMDIuODU2LDIwLjczNiAxOTkuNCwyMC4zMzI4IDE5Ny4wOTYsMjAuMDQ0OCBDMTk0LjIxNiwxOS43MjggMTkzLjc1NTIsMTkuNDExMiAxOTMuNzI2NCwxOC41NDcyIEMxOTMuNzI2NCwxNy40NTI4IDE5NS4yMjQsMTYuOTA1NiAxOTYuNTc3NiwxNi45NjMyIEMxOTkuMTQwOCwxNy4wNDk2IDIwMS40NDQ4LDE3LjkxMzYgMjAxLjQ0NDgsMTcuOTEzNiBMMjAyLjM2NjQsMTUuMDYyNCBDMjAyLjI1MTIsMTUuMDMzNiAxOTkuNjU5MiwxNC4yMjcyIDE5Ni42NjQsMTQuMTQwOCBDMTkzLjU1MzYsMTQuMDU0NCAxOTAuNzAyNCwxNS40OTQ0IDE5MC43ODg4LDE4LjYwNDggQzE5MC44NDY0LDIyLjM0ODggMTk0LjQxNzYsMjIuNzUyIDE5Ni43NTA0LDIzLjAxMTIgQzE5OS40LDIzLjMyOCAyMDAuMTIsMjMuNjE2IDIwMC4xNzc2LDI0LjQyMjQgQzIwMC4yMDY0LDI1LjAyNzIgMjAwLjE3NzYsMjYuNjQgMTk2LjQzMzYsMjYuMzUyIEMxOTMuOTU2OCwyNi4xNTA0IDE5MS43MzkyLDI1LjAyNzIgMTkxLjcxMDQsMjQuOTk4NCBMMTkwLjQ3MiwyNy41OTA0IEMxOTAuNjE2LDI3LjY0OCAxOTMuMzIzMiwyOC45NzI4IDE5Ni40OTEyLDI5LjA1OTIgQzE5OC4xMDQsMjkuMTE2OCAyMDAuNDA4LDI5LjAzMDQgMjAxLjg3NjgsMjcuNTMyOCBaIiBpZD0ic2VydmVybGVzcyIgZmlsbD0iI0ZGRkZGRiI+PC9wYXRoPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMi4yMTk3MTgzLDExLjIgTDE0LjQsNC44IEwwLDQuOCBMMCwxMS4yIEwxMi4yMTk3MTgzLDExLjIgWiBNMzcuNiwxMS4yIEwzNy42LDQuOCBMMjEuMjcyNTI3NSw0LjggTDE5LjIsMTEuMiBMMzcuNiwxMS4yIFogTTguNDgxNTUzNCwyMi40IEwxMC40LDE2IEwwLDE2IEwwLDIyLjQgTDguNDgxNTUzNCwyMi40IFogTTM3LjYsMjIuNCBMMzcuNiwxNiBMMTcuMTQzMzc5LDE2IEwxNS4yLDIyLjQgTDM3LjYsMjIuNCBaIE00LjUsMzQuNCBMNi40LDI4IEwwLDI4IEwwLDM0LjQgTDQuNSwzNC40IFogTTM3LjYsMzQuNCBMMzcuNiwyOCBMMTMuMjkzNjE3LDI4IEwxMS4yLDM0LjQgTDM3LjYsMzQuNCBaIiBpZD0iw58iIGZpbGw9IiNGRDU3NTAiPjwvcGF0aD4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg=="></p>
+    <h1>Welcome to <strong class="nobreak">Serverless Cloud</strong></h1>
+    <h2 class="red">alpha version</h2>
+    <h3>The way serverless was meant to be</h3>
+  </header>
+  <main>
+    <p>The <a href="https://github.com/serverless/cloud" target="_parent" rel="noopener"><a href="https://github.com/serverless/cloud" target="_parent" rel="noopener"><strong>Serverless Cloud</strong></a> is a new way to build, collaborate on, and deploy serverless applications. No infrastracture to configure or manage, <strong>just write code</strong>!</p>
+    <h1><strong>Step 1:</strong> Build your application</h1>
+    <p>Uses our familiar <em>Express.js-like</em> framework for building your apps. No YAML or configs, just code.</p>
+    <pre><code class="language-js">// Create a `GET` API route
+app.get('/hello', (req,res) => {
+  // Return the query parameters
+  res.send(req.query)
+})
+
+// Create a `POST` API route
+app.post('/message', (req,res) => {
+  // Log the request
+  console.log(req)
+  // Return the auto-parsed body
+  res.send(req.body)
+})</code></pre>
+    <p>The <strong>Serverless Cloud</strong> lets you do more than just build REST APIs, you can also run events on a schedule like this:</strong></p>
+    <pre><code class="language-js">app.schedule('rate(60 mins)', () => {
+  // This code block will run every 60 minutes!
+})</code></pre>
+
+    <h1><strong>Step 2:</strong> Add Serverless Data to your app</h1>
+    <p>Apps without data aren't a lot of fun, so <strong>Serverless Cloud</strong> gives you access to our powerful Key/Value store directly from your app.</p>
+    <pre><code class="language-js">// Add some data to a key named 'foo'
+await data.set('foo', { bar: true })
+
+// Get the value of 'foo'
+let value = await data.get('foo')
+
+// Delete the 'foo' key and data
+await data.remove('foo')</code></pre>
+    <p>But wait, there's more! Serverless Data supports <strong>collections</strong> that let you organize groups of keys so that your can query them in different ways.</p>
+    <p>Use the form below to add a "user". We are setting the key as <code>users:<em>{username}</em></code>, which means you can then use <code class="language-js">data.get('users:')</code> to retrieve all users in that collection.</p>
+    <form id="userForm" onsubmit="postData();return false">
+      <input type="text" id="username" placeholder="Username" />
+      <input type="text" id="fullname" placeholder="Full name" />
+      <button>ADD USER</button>
+    </form>
+    <table>
+      <thead><th>Username</th><th>Full Name</th><th>&nbsp;</th></thead>
+      <tbody id="results"></tbody>
+    </table>
+    <p>And because these items are in a collection, you can do cool things like <button onclick="getData(true);">SORT BY USERNAME</button></p>
+    <p><strong class="red">PRO TIP:</strong> Your local working directory contains a file name <code>data.json</code>. If you want to quickly seed data in your application, just update that file and run <code>sc seed</code> in your terminal!</p>
+    <h1><strong>Step 3:</strong> Deploy your application 🚀</h1>
+    <p>The <strong>Serverless Cloud</strong> provides every developer with a high-fidelity <em>instance</em> of your application (including data), allowing you to iterate and test without affecting other instances (like production).</p>
+    <p>When you're ready to deploy your application into another instance, just use the CLI <code>COPY</code> command and specify the instance name:</p>
+    <pre><code class="language-bash">$ sc copy --target demo</code></pre>
+    <p>And now your app is LIVE in the <code>demo</code> instance!</p>
+    <h1>Next steps...</h1>
+    <p>There's a lot more to <strong>Serverless Cloud</strong> and <strong>Serverless Data</strong>, so please take a look at the documentation for more information: <a href="https://github.com/serverless/cloud" target="_parent" rel="noopener">https://github.com/serverless/cloud</a>.</p>
+    <h2 class="red">Go build serverless!</h2>
+  </main>
+</body>
+</html>

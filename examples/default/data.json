@@ -1,0 +1,14 @@
+[
+  {
+    "key": "users:user1",
+    "value": { "username": "user1", "fullName": "User #1" }
+  },
+  {
+    "key": "users:user2",
+    "value": { "username": "user2", "fullName": "User #2" }
+  },
+  {
+    "key": "users:user3",
+    "value": { "username": "user3", "fullName": "User #3" }
+  }
+]

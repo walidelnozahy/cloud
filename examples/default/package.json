@@ -1,0 +1,6 @@
+{
+  "name": "default",
+  "version": "1.0.0",
+  "description": "Default Serverless Cloud service",
+  "main": "index.js"
+}
