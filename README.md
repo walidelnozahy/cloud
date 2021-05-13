@@ -12,9 +12,6 @@ The cloud is immensely powerful, but also complex and filled with lots of moving
 
 **PLEASE NOTE: The Serverless Cloud is currently in PRIVATE BETA. If you'd like to sign up for the early access list, please visit [https://serverless.com/cloud](https://serverless.com/cloud).**
 
-
-![serverless-cloud](https://user-images.githubusercontent.com/2053544/108106391-e1f1ff00-705b-11eb-92b2-f63dc6ace812.png)
-
 ## Quick Start
 
 Install...
