@@ -249,6 +249,10 @@ Many parts of this are still experimental, so please keep that in mind when test
 
 The following CLI commands are available to develop, manage, and deploy instances. These are subject to change.
 
+#### `cloud help`
+
+Displays a simple help screen that shows all the available commands and their options.
+
 #### `cloud init [--overwrite]`
 
 Copies a basic application example into your current directory. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag.
