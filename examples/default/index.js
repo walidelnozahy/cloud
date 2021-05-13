@@ -3,14 +3,13 @@
 /*
   The @serverless/cloud package is included by default in the cloud runtime.
   So you don't have to include it in package.json.
+  
+  Use 'api' to build REST APIs, 'data' to access Serverless Data, and 'schedule'
+  to create scheduled tasks.
+
+  If you want to serve up static assets, just put them in the '/static' folder
 */
 const { api, data, schedule } = require("@serverless/cloud"); // eslint-disable-line
-
-/*
-  The @serverless/data package gives easy access to Serverless Data.
-  It is also included by default in the cloud runtime, so you don't
-  have to include it in package.json either.
-*/
 
 /*
   This route creates/updates an item in Serverless Data using the supplied
@@ -106,7 +105,7 @@ api.use((err, req, res, next) => {
 /*
   Sometimes you might want to run code on a schedule. 
 */
-schedule.rate("1 hour", () => {
+schedule.every("1 hour", () => {
   // This code block will run every hour!
-  console.log("Run schedule!");
+  console.log("Hourly scheduled task triggered!");
 });
