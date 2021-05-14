@@ -17,7 +17,7 @@ The cloud is immensely powerful, but also complex and filled with lots of moving
 Install...
 
 ```
-npm i -g @serverless/cloud-cli@latest
+npm i -g @serverless/cloud@latest
 ```
 
 Create a new directory...
