@@ -145,15 +145,17 @@ Access to Serverless Data is automatically included in your runtime environment.
 
 ### Setting Items
 
-Setting data with Serverless Data can be accomplished using the `set` method. You provide a **key** as the first argument and a **value** (either a string, boolean, number, array, or object) as the second parameter. By default, the `set` command will return the updated item.
+Setting data with Serverless Data can be accomplished using the `set` method. You provide a **key** as the first argument and a **value** (either a string, boolean, number, array, or object) as the second parameter. Keys are case sensitive and can be `string`s up to 256 bytes each and can contain any valid utf8 character including spaces. By default, the `set` command will return the updated item.
 
 ```javascript
 await data.set('foo', 'bar');
 await data.set('fooNum', 123456);
-await data.set('fooBool', true);
-await data.set('fooArray', ['val1', 'val2', 'val3']);
-await data.set('fooObj', { key1: 'some val', key2: 'some other val' });
+await data.set('foo-Bool', true);
+await data.set('foo_Array', ['val1', 'val2', 'val3']);
+await data.set('foo Obj', { key1: 'some val', key2: 'some other val' });
 ```
+
+**Note:** Leading and trailing spaces are automatically removed from key names, so both `'keyName'` and `' keyName '` would be equivalent.
 
 An options object can be passed as third argument. The following options are supported:
 
@@ -170,19 +172,28 @@ await data.set('foo', 'bar', { meta: true, ttl: 3600, label1: 'baz', label2: 'ba
 
 ### Using collection namespaces
 
-Keys can be modified using a collection namespace. This allows you to group multiple items together and access them as a collection (in whole or in part) instead of needing to get each item separately.
+Keys can be prefixed with a collection namespace. This allows you to group multiple items together and access them as a collection (in whole or in part) instead of needing to `get` each item separately.
 
-Collection namespaces can prefix keys and must use a colon (`:`) separator between the namespace and the key. Namespaces and keys can be `string`s up to 256 bytes each and can contain any utf8 character except the `|` character in keys when using a collection namespace. 
+Collection namespaces must use a colon (`:`) separator between the namespace and the key name. Collection names are case sensitive, can be `string`s up to 256 bytes, and can contain any valid utf8 character including spaces. 
+
+When using collection namespaces, key names have the following exceptions:
+ -  `|` and `*` characters CANNOT be used anywhere in the key name
+ -  Key names CANNOT start with `>` or `<` characters
 
 ```javascript
 ✅ await data.set('my-namespace:bat', 'some value');
 ✅ await data.set('my-namespace:baz', { foo: 'bar' });
 ✅ await data.set('My Collection Name:Some Key Name', 'some other value');
 ✅ await data.set(`collection~!@#$%^&*()_+:key-=[]{}:key";'<>?,./`, 'another value');
+✅ await data.set(`>simple|key*`, 'simple keys have no character restrictions');
 ❌ await data.set('some-collection:key with a | in it', 'foobar');
+❌ await data.set('some-collection:key with a * in it', 'foobar');
+❌ await data.set('some-collection:>some-key', `oops, can't start with a > or <`);
 ```
 
 The namespace becomes part of the items key, so you must use the full key name (including the namespace) to retrieve that item.
+
+**Note:** Leading and trailing spaces are automatically removed from collection namespaces and key names, so both `'foo:bar'` and `' foo : bar '` would be equivalent.
 
 ### Getting Items
 
