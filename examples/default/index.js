@@ -64,7 +64,7 @@ api.delete("/data/:key", async (req, res, next) => {
 
   // Run the .remove() method to delete an item by key
   const result = await data.remove(key);
-  console.log('Deleted:',result);
+  console.log(`Deleted: ${result}`);
 
   // Return the value
   res.send({ deleted: result });
