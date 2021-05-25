@@ -16,69 +16,58 @@ const { api, data, schedule } = require("@serverless/cloud"); // eslint-disable-
   "key" and uses the post body to set the value. 
 */
 api.post("/data/:key", async (req, res, next) => {
-  try {
-    const key = req.params.key;
+  const key = req.params.key;
 
-    if (!key) {
-      throw new Error('Missing "key" or "value" params.');
-    }
-
-    console.log(`Setting "${key}"`);
-
-    // Just run the .set method to set an item to Serverless Data
-    await data.set(key, req.body);
-
-    res.send({ message: `Successfully set key "${key}"` });
-  } catch (e) {
-    next(e);
+  if (!key) {
+    throw new Error('Missing "key" or "value" params.');
   }
+
+  console.log(`Setting "${key}"`);
+
+  // Just run the .set method to set an item to Serverless Data
+  await data.set(key, req.body);
+
+  res.send({ message: `Successfully set key "${key}"` });
 });
 
 /*
   This route fetches data from Serverless Data using the provided "key".
 */
 api.get("/data/:key", async (req, res, next) => {
-  try {
-    const key = req.params.key;
-    const reverse = req.query.reverse === "true" || false;
+  const key = req.params.key;
+  const reverse = req.query.reverse === "true" || false;
 
-    if (!key) {
-      throw new Error('Missing "key" param.');
-    }
-
-    console.log(`Getting "${key}"`);
-
-    // Just run the .get method to get an item by its key
-    const value = await data.get(key, { reverse });
-
-    // Return the value if it exists
-    res.send(value || {});
-  } catch (e) {
-    next(e);
+  if (!key) {
+    throw new Error('Missing "key" param.');
   }
+
+  console.log(`Getting "${key}"`);
+
+  // Just run the .get method to get an item by its key
+  const value = await data.get(key, { reverse });
+
+  // Return the value if it exists
+  res.send(value || {});
 });
 
 /*
   This route deletes data from Serverless Data using the provided "key".
 */
 api.delete("/data/:key", async (req, res, next) => {
-  try {
-    const key = req.params.key;
+  const key = req.params.key;
 
-    if (!key) {
-      throw new Error('Missing "key" param.');
-    }
-
-    console.log(`Deleting "${key}"`);
-
-    // Run the .remove() method to delete an item by key
-    const result = await data.remove(key);
-
-    // Return the value
-    res.send({ deleted: result });
-  } catch (e) {
-    next(e);
+  if (!key) {
+    throw new Error('Missing "key" param.');
   }
+
+  console.log(`Deleting "${key}"`);
+
+  // Run the .remove() method to delete an item by key
+  const result = await data.remove(key);
+  console.log('Deleted:',result);
+
+  // Return the value
+  res.send({ deleted: result });
 });
 
 /*

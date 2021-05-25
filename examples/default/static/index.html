@@ -46,7 +46,7 @@
       if (sort) {
         reverse = !reverse
       }
-      fetch('/data/users:?reverse='+reverse)
+      fetch('/data/users:*?reverse='+reverse)
         .then(function (response) {
           return response.json();
         }).then(function (data) {
