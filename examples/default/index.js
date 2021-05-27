@@ -11,64 +11,70 @@
 */
 const { api, data, schedule } = require("@serverless/cloud"); // eslint-disable-line
 
-/*
-  This route creates/updates an item in Serverless Data using the supplied
-  "key" and uses the post body to set the value. 
+
+/* 
+ * Create a route to GET our TODO items
 */
-api.post("/data/:key", async (req, res, next) => {
-  const key = req.params.key;
+api.get('/todos', async (req, res) => {
 
-  if (!key) {
-    throw new Error('Missing "key" or "value" params.');
-  }
+  // Call our getTodos function with the status
+  let result = await getTodos(req.query.status, req.query.meta ? true : {});
 
-  console.log(`Setting "${key}"`);
+  // Return the results
+  res.send({
+    items: result.items
+  })
+})
 
-  // Just run the .set method to set an item to Serverless Data
-  await data.set(key, req.body);
-
-  res.send({ message: `Successfully set key "${key}"` });
-});
-
-/*
-  This route fetches data from Serverless Data using the provided "key".
+/* 
+ * Create a route to POST updates to a TODO item
 */
-api.get("/data/:key", async (req, res, next) => {
-  const key = req.params.key;
-  const reverse = req.query.reverse === "true" || false;
+api.post('/todos/:id', async (req, res) => {
+  
+  console.log(new Date().toISOString());
 
-  if (!key) {
-    throw new Error('Missing "key" param.');
-  }
+  let body = req.body
 
-  console.log(`Getting "${key}"`);
+  if (body.duedate) { body.duedate = new Date(body.duedate).toISOString()}
 
-  // Just run the .get method to get an item by its key
-  const value = await data.get(key, { reverse });
+  await data.set(
+    `todo:${req.params.id}`,
+    body,
+    Object.assign({},
+      req.body.status ? 
+        { 
+          label1: body.status === 'complete' ? 
+            `complete:${new Date().toISOString()}` 
+            : `incomplete:${body.duedate ? body.duedate : '9999' }` }
+        : null
+    )
+  )
+  
+  // Query all the TODOs again
+  let result = await getTodos(req.query.status);
 
-  // Return the value if it exists
-  res.send(value || {});
-});
+  // Return the updated list of TODOs
+  res.send({
+    items: result.items
+  })
+})
 
-/*
-  This route deletes data from Serverless Data using the provided "key".
+/* 
+ * Create a route to DELETE a TODO item
 */
-api.delete("/data/:key", async (req, res, next) => {
-  const key = req.params.key;
+api.delete('/todos/:id', async (req, res) => {
+  
+  await data.remove(`todo:${req.params.id}`)
+  
+  // Query all the TODOs again
+  let result = await getTodos(req.query.status);
 
-  if (!key) {
-    throw new Error('Missing "key" param.');
-  }
+  // Return the updated list of TODOs
+  res.send({
+    items: result.items
+  })
+})
 
-  console.log(`Deleting "${key}"`);
-
-  // Run the .remove() method to delete an item by key
-  const result = await data.remove(key);
-  console.log(`Deleted: ${result}`);
-
-  // Return the value
-  res.send({ deleted: result });
-});
 
 /*
   This is some custom error handler middleware
@@ -92,9 +98,36 @@ api.use((err, req, res, next) => {
 });
 
 /*
-  Sometimes you might want to run code on a schedule. 
+  Sometimes you might want to run code on a schedule, like if you want to 
+  send alerts when items are overdue.
 */
-schedule.every("1 hour", () => {
-  // This code block will run every hour!
-  console.log("Hourly scheduled task triggered!");
+schedule.every("60 minutes", async () => {
+  console.log(`Checking for overdue TODOs...`);
+
+  // Look for items that are overdue
+  let overdueItems = await data.getByLabel('label1',`incomplete:<${new Date().toISOString()}`)
+
+  if (overdueItems.items.length === 0) {
+    console.log(`Nothing overdue!`);
+  }
+
+  // Loop through the overdue items
+  for (let item of overdueItems.items) {
+    // Here we could send an alert
+    console.log(`ALERT: '${item.name}' is overdue!!!`);
+  }
 });
+
+
+/*
+  This is our getTodos function that we can reuse in different API paths 
+*/
+const getTodos = async (status, meta) => {
+  if (status === 'all') {
+    return await data.get('todo:*', meta)
+  } else if (status === 'complete') {
+    return await data.getByLabel('label1','complete:*', meta)
+  } else {
+    return await data.getByLabel('label1','incomplete:*', meta)
+  }
+}
