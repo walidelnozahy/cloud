@@ -41,8 +41,7 @@ last_edit_time_format: "%b %e %Y" # uses ruby's time format: https://ruby-doc.or
 logo: "https://user-images.githubusercontent.com/2053544/120119053-958e8300-c163-11eb-8b90-1d2c7c553d2d.png"
 
 # Build settings
-# theme: just-the-docs
-remote_theme: pmarsceill/just-the-docs
+theme: just-the-docs
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
