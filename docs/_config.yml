@@ -45,3 +45,6 @@ theme: just-the-docs
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+sass:
+  sass_dir: _sass
