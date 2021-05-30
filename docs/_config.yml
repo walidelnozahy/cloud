@@ -44,3 +44,4 @@ logo: "https://user-images.githubusercontent.com/2053544/120119053-958e8300-c163
 theme: just-the-docs
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
