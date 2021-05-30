@@ -21,7 +21,7 @@
 title: Serverless Cloud
 description: >- # this means to ignore newlines until "baseurl:"
   Serverless Cloud makes building, deploying, and managing serverless applications easier and more accessible to everyone.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/cloud" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: goserverless
 github_username:  serverless
