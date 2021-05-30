@@ -1,0 +1,204 @@
+---
+layout: table_wrappers
+---
+
+<!DOCTYPE html>
+
+<html lang="{{ site.lang | default: 'en-US' }}">
+<!-- {% include head.html %} -->
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="svg-link" viewBox="0 0 24 24">
+      <title>Link</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+      </svg>
+    </symbol>
+    <symbol id="svg-search" viewBox="0 0 24 24">
+      <title>Search</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+      <title>Menu</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+        <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+      <title>Expand</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </symbol>
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+      <title>Document</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+      </svg>
+    </symbol>
+  </svg>
+
+  <div class="side-bar">
+    <div class="site-header">
+      <a href="{{ '/' | absolute_url }}" class="site-title lh-tight">
+        <!-- {% include title.html %} -->
+      </a>
+      <a href="#" id="menu-button" class="site-button">
+        <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+      </a>
+    </div>
+    <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      {% if site.just_the_docs.collections %}
+        {% assign collections_size = site.just_the_docs.collections | size %}
+        {% for collection_entry in site.just_the_docs.collections %}
+          {% assign collection_key = collection_entry[0] %}
+          {% assign collection_value = collection_entry[1] %}
+          {% assign collection = site[collection_key] %}
+          {% if collection_value.nav_exclude != true %}
+            {% if collections_size > 1 %}
+              <div class="nav-category">{{ collection_value.name }}</div>
+            {% endif %}
+            <!-- {% include nav.html pages=collection %} -->
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        <!-- {% include nav.html pages=site.html_pages %} -->
+      {% endif %}
+    </nav>
+    <footer class="site-footer">
+      <a href="https://www.serverless.com/" target="_blank" style="background-image: none;"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjA0cHgiIGhlaWdodD0iMzFweCIgdmlld0JveD0iMCAwIDIwNCAzMSIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgPHRpdGxlPmxvZ28tc2VydmVybGVzcy1saWdodDwvdGl0bGU+CiAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8ZyBpZD0ibG9nby1zZXJ2ZXJsZXNzLWxpZ2h0IiBmaWxsLXJ1bGU9Im5vbnplcm8iPgogICAgICA8cGF0aCBkPSJNNjcuMjgsMjMuNTMyOCBDNjcuODU2LDIyLjk4NTYgNjguNTE4NCwyMS45MiA2OC40MzIsMjAuMjc4NCBDNjguMjU5MiwxNi43MzYgNjQuODAzMiwxNi4zMzI4IDYyLjQ5OTIsMTYuMDQ0OCBDNTkuNjE5MiwxNS43MjggNTkuMTU4NCwxNS40MTEyIDU5LjEyOTYsMTQuNTQ3MiBDNTkuMTI5NiwxMy40NTI4IDYwLjYyNzIsMTIuOTA1NiA2MS45ODA4LDEyLjk2MzIgQzY0LjU0NCwxMy4wNDk2IDY2Ljg0OCwxMy45MTM2IDY2Ljg0OCwxMy45MTM2IEw2Ny43Njk2LDExLjA2MjQgQzY3LjY1NDQsMTEuMDMzNiA2NS4wNjI0LDEwLjIyNzIgNjIuMDY3MiwxMC4xNDA4IEM1OC45NTY4LDEwLjA1NDQgNTYuMTA1NiwxMS40OTQ0IDU2LjE5MiwxNC42MDQ4IEM1Ni4yNDk2LDE4LjM0ODggNTkuODIwOCwxOC43NTIgNjIuMTUzNiwxOS4wMTEyIEM2NC44MDMyLDE5LjMyOCA2NS41MjMyLDE5LjYxNiA2NS41ODA4LDIwLjQyMjQgQzY1LjYwOTYsMjEuMDI3MiA2NS41ODA4LDIyLjY0IDYxLjgzNjgsMjIuMzUyIEM1OS4zNiwyMi4xNTA0IDU3LjE0MjQsMjEuMDI3MiA1Ny4xMTM2LDIwLjk5ODQgTDU1Ljg3NTIsMjMuNTkwNCBDNTYuMDE5MiwyMy42NDggNTguNzI2NCwyNC45NzI4IDYxLjg5NDQsMjUuMDU5MiBDNjMuNTA3MiwyNS4xMTY4IDY1LjgxMTIsMjUuMDMwNCA2Ny4yOCwyMy41MzI4IFogTTc4LjA0NCwyNS4wMzA0IEM4MC44NjY0LDI1LjAzMDQgODMuNjYsMjMuODc4NCA4My42NiwyMy44Nzg0IEw4Mi45MTEyLDIxLjMxNTIgQzgyLjkxMTIsMjEuMzE1MiA4MC40MzQ0LDIyLjI5NDQgNzguMTU5MiwyMi4yOTQ0IEM3NS4yNTA0LDIyLjI5NDQgNzMuNzgxNiwyMC40NTEyIDczLjc4MTYsMTguNjk0NCBMODQuNDM3NiwxOC42OTQ0IEw4NC40MzgyNzcxLDE2Ljk4OTE0NTggQzg0LjQ0NDY1LDE2LjQ2MjM1IDg0LjM4NiwxMC4xNDA4IDc3LjksMTAuMTQwOCBDNzEuODg4MzMyMywxMC4xNDA4IDcwLjczNDg1OTksMTUuMzM0MDQzMyA3MC43MDA3OTE0LDE3LjQ0NTcwNDUgTDcwLjcsMTcuNTQyNCBDNzAuNywxOS40NzIgNzEuNDQ4OCwyNS4wMzA0IDc4LjA0NCwyNS4wMzA0IFogTTgxLjUyODgsMTYuMTMxMiBMNzMuODEwNCwxNi4xMzEyIEM3My44MTA0LDE2LjEzMTIgNzQuMTU2LDEyLjk5MiA3Ny45LDEyLjk5MiBDODEuNzMwNCwxMi45OTIgODEuNTI4OCwxNi4xMzEyIDgxLjUyODgsMTYuMTMxMiBaIE05MS4wMjU2LDI0LjggTDkxLjAyNTYsMTUuNzg1NiBDOTEuMDI1NiwxNC43Nzc2IDkyLjMyMTYsMTMuNDI0IDkzLjYxNzYsMTMuNDI0IEw5OC42Mjg4LDEzLjQyNCBMOTguNjI4OCwxMC40IEw5NC4wNDk2LDEwLjQgQzkxLjQ1NzYsMTAuNCA5MC43OTUyLDEyLjc2MTYgOTAuNzk1MiwxMy4xOTM2IEw5MC42MjI0LDEwLjQgTDg3LjgsMTAuNCBMODcuOCwxMC40IEw4Ny44LDI0LjggTDkxLjAyNTYsMjQuOCBMOTEuMDI1NiwyNC44IFogTTEwOS45Njg4LDI0LjggTDExNC41NDgsMTAuNCBMMTExLjQ2NjQsMTAuNCBMMTA3LjY2NDgsMjIuMDA2NCBMMTA0LjI2NjQsMTAuNCBMMTAxLjAxMiwxMC40IEwxMDUuMzg5NiwyNC44IEwxMDkuOTY4OCwyNC44IFogTTEyMy41ODQsMjUuMDMwNCBDMTI2LjQwNjQsMjUuMDMwNCAxMjkuMiwyMy44Nzg0IDEyOS4yLDIzLjg3ODQgTDEyOC40NTEyLDIxLjMxNTIgQzEyOC40NTEyLDIxLjMxNTIgMTI1Ljk3NDQsMjIuMjk0NCAxMjMuNjk5MiwyMi4yOTQ0IEMxMjAuNzkwNCwyMi4yOTQ0IDExOS4zMjE2LDIwLjQ1MTIgMTE5LjMyMTYsMTguNjk0NCBMMTI5Ljk3NzYsMTguNjk0NCBMMTI5Ljk3ODI3NywxNi45ODkxNDU4IEMxMjkuOTg0NjUsMTYuNDYyMzUgMTI5LjkyNiwxMC4xNDA4IDEyMy40NCwxMC4xNDA4IEMxMTcuNDI4MzMyLDEwLjE0MDggMTE2LjI3NDg2LDE1LjMzNDA0MzMgMTE2LjI0MDc5MSwxNy40NDU3MDQ1IEwxMTYuMjQsMTcuNTQyNCBDMTE2LjI0LDE5LjQ3MiAxMTYuOTg4OCwyNS4wMzA0IDEyMy41ODQsMjUuMDMwNCBaIE0xMjcuMDY4OCwxNi4xMzEyIEwxMTkuMzUwNCwxNi4xMzEyIEMxMTkuMzUwNCwxNi4xMzEyIDExOS42OTYsMTIuOTkyIDEyMy40NCwxMi45OTIgQzEyNy4yNzA0LDEyLjk5MiAxMjcuMDY4OCwxNi4xMzEyIDEyNy4wNjg4LDE2LjEzMTIgWiBNMTM2LjU2NTYsMjQuOCBMMTM2LjU2NTYsMTUuNzg1NiBDMTM2LjU2NTYsMTQuNzc3NiAxMzcuODYxNiwxMy40MjQgMTM5LjE1NzYsMTMuNDI0IEwxNDQuMTY4OCwxMy40MjQgTDE0NC4xNjg4LDEwLjQgTDEzOS41ODk2LDEwLjQgQzEzNi45OTc2LDEwLjQgMTM2LjMzNTIsMTIuNzYxNiAxMzYuMzM1MiwxMy4xOTM2IEwxMzYuMTYyNCwxMC40IEwxMzMuMzQsMTAuNCBMMTMzLjM0LDEwLjQgTDEzMy4zNCwyNC44IEwxMzYuNTY1NiwyNC44IEwxMzYuNTY1NiwyNC44IFogTTE1Ny44MTI4LDI0LjggTDE1Ny44MTI4LDIxLjc3NiBMMTUxLjg4LDIxLjc3NiBMMTUxLjg4LDQuNjQgTDE0NC4xOTA0LDQuNjQgTDE0NC4xOTA0LDcuMjg5NiBMMTQ4Ljc5ODQsNy4yODk2IEwxNDguNzk4NCwyNC44IEwxNTcuODEyOCwyNC44IFogTTE2Ny4xMDgsMjUuMDMwNCBDMTY5LjkzMDQsMjUuMDMwNCAxNzIuNzI0LDIzLjg3ODQgMTcyLjcyNCwyMy44Nzg0IEwxNzEuOTc1MiwyMS4zMTUyIEMxNzEuOTc1MiwyMS4zMTUyIDE2OS40OTg0LDIyLjI5NDQgMTY3LjIyMzIsMjIuMjk0NCBDMTY0LjMxNDQsMjIuMjk0NCAxNjIuODQ1NiwyMC40NTEyIDE2Mi44NDU2LDE4LjY5NDQgTDE3My41MDE2LDE4LjY5NDQgTDE3My41MDIyNzcsMTYuOTg5MTQ1OCBDMTczLjUwODY1LDE2LjQ2MjM1IDE3My40NSwxMC4xNDA4IDE2Ni45NjQsMTAuMTQwOCBDMTYwLjk1MjMzMiwxMC4xNDA4IDE1OS43OTg4NiwxNS4zMzQwNDMzIDE1OS43NjQ3OTEsMTcuNDQ1NzA0NSBMMTU5Ljc2NCwxNy41NDI0IEMxNTkuNzY0LDE5LjQ3MiAxNjAuNTEyOCwyNS4wMzA0IDE2Ny4xMDgsMjUuMDMwNCBaIE0xNzAuNTkyOCwxNi4xMzEyIEwxNjIuODc0NCwxNi4xMzEyIEMxNjIuODc0NCwxNi4xMzEyIDE2My4yMiwxMi45OTIgMTY2Ljk2NCwxMi45OTIgQzE3MC43OTQ0LDEyLjk5MiAxNzAuNTkyOCwxNi4xMzEyIDE3MC41OTI4LDE2LjEzMTIgWiBNMTg3LjA4OCwyMy41MzI4IEMxODcuNjY0LDIyLjk4NTYgMTg4LjMyNjQsMjEuOTIgMTg4LjI0LDIwLjI3ODQgQzE4OC4wNjcyLDE2LjczNiAxODQuNjExMiwxNi4zMzI4IDE4Mi4zMDcyLDE2LjA0NDggQzE3OS40MjcyLDE1LjcyOCAxNzguOTY2NCwxNS40MTEyIDE3OC45Mzc2LDE0LjU0NzIgQzE3OC45Mzc2LDEzLjQ1MjggMTgwLjQzNTIsMTIuOTA1NiAxODEuNzg4OCwxMi45NjMyIEMxODQuMzUyLDEzLjA0OTYgMTg2LjY1NiwxMy45MTM2IDE4Ni42NTYsMTMuOTEzNiBMMTg3LjU3NzYsMTEuMDYyNCBDMTg3LjQ2MjQsMTEuMDMzNiAxODQuODcwNCwxMC4yMjcyIDE4MS44NzUyLDEwLjE0MDggQzE3OC43NjQ4LDEwLjA1NDQgMTc1LjkxMzYsMTEuNDk0NCAxNzYsMTQuNjA0OCBDMTc2LjA1NzYsMTguMzQ4OCAxNzkuNjI4OCwxOC43NTIgMTgxLjk2MTYsMTkuMDExMiBDMTg0LjYxMTIsMTkuMzI4IDE4NS4zMzEyLDE5LjYxNiAxODUuMzg4OCwyMC40MjI0IEMxODUuNDE3NiwyMS4wMjcyIDE4NS4zODg4LDIyLjY0IDE4MS42NDQ4LDIyLjM1MiBDMTc5LjE2OCwyMi4xNTA0IDE3Ni45NTA0LDIxLjAyNzIgMTc2LjkyMTYsMjAuOTk4NCBMMTc1LjY4MzIsMjMuNTkwNCBDMTc1LjgyNzIsMjMuNjQ4IDE3OC41MzQ0LDI0Ljk3MjggMTgxLjcwMjQsMjUuMDU5MiBDMTgzLjMxNTIsMjUuMTE2OCAxODUuNjE5MiwyNS4wMzA0IDE4Ny4wODgsMjMuNTMyOCBaIE0yMDEuODc2OCwyMy41MzI4IEMyMDIuNDUyOCwyMi45ODU2IDIwMy4xMTUyLDIxLjkyIDIwMy4wMjg4LDIwLjI3ODQgQzIwMi44NTYsMTYuNzM2IDE5OS40LDE2LjMzMjggMTk3LjA5NiwxNi4wNDQ4IEMxOTQuMjE2LDE1LjcyOCAxOTMuNzU1MiwxNS40MTEyIDE5My43MjY0LDE0LjU0NzIgQzE5My43MjY0LDEzLjQ1MjggMTk1LjIyNCwxMi45MDU2IDE5Ni41Nzc2LDEyLjk2MzIgQzE5OS4xNDA4LDEzLjA0OTYgMjAxLjQ0NDgsMTMuOTEzNiAyMDEuNDQ0OCwxMy45MTM2IEwyMDIuMzY2NCwxMS4wNjI0IEMyMDIuMjUxMiwxMS4wMzM2IDE5OS42NTkyLDEwLjIyNzIgMTk2LjY2NCwxMC4xNDA4IEMxOTMuNTUzNiwxMC4wNTQ0IDE5MC43MDI0LDExLjQ5NDQgMTkwLjc4ODgsMTQuNjA0OCBDMTkwLjg0NjQsMTguMzQ4OCAxOTQuNDE3NiwxOC43NTIgMTk2Ljc1MDQsMTkuMDExMiBDMTk5LjQsMTkuMzI4IDIwMC4xMiwxOS42MTYgMjAwLjE3NzYsMjAuNDIyNCBDMjAwLjIwNjQsMjEuMDI3MiAyMDAuMTc3NiwyMi42NCAxOTYuNDMzNiwyMi4zNTIgQzE5My45NTY4LDIyLjE1MDQgMTkxLjczOTIsMjEuMDI3MiAxOTEuNzEwNCwyMC45OTg0IEwxOTAuNDcyLDIzLjU5MDQgQzE5MC42MTYsMjMuNjQ4IDE5My4zMjMyLDI0Ljk3MjggMTk2LjQ5MTIsMjUuMDU5MiBDMTk4LjEwNCwyNS4xMTY4IDIwMC40MDgsMjUuMDMwNCAyMDEuODc2OCwyMy41MzI4IFoiIGlkPSJzZXJ2ZXJsZXNzIiBmaWxsPSIjMDAwMDAwIj48L3BhdGg+CiAgICAgIDxwYXRoIGQ9Ik0xMi4yMTk3MTgzLDcuMiBMMTQuNCwwLjggTDAsMC44IEwwLDcuMiBMMTIuMjE5NzE4Myw3LjIgWiBNMzcuNiw3LjIgTDM3LjYsMC44IEwyMS4yNzI1Mjc1LDAuOCBMMTkuMiw3LjIgTDM3LjYsNy4yIFogTTguNDgxNTUzNCwxOC40IEwxMC40LDEyIEwwLDEyIEwwLDE4LjQgTDguNDgxNTUzNCwxOC40IFogTTM3LjYsMTguNCBMMzcuNiwxMiBMMTcuMTQzMzc5LDEyIEwxNS4yLDE4LjQgTDM3LjYsMTguNCBaIE00LjUsMzAuNCBMNi40LDI0IEwwLDI0IEwwLDMwLjQgTDQuNSwzMC40IFogTTM3LjYsMzAuNCBMMzcuNiwyNCBMMTMuMjkzNjE3LDI0IEwxMS4yLDMwLjQgTDM3LjYsMzAuNCBaIiBpZD0iw58iIGZpbGw9IiNGRDU3NTAiPjwvcGF0aD4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" width="123" height="26" class="my-5 my-md-0 mr-5"></a>
+    </footer>
+  </div>
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+      {% if site.search_enabled != false %}
+        <div class="search">
+          <div class="search-input-wrap">
+            <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search {{ site.title }}" aria-label="Search {{ site.title }}" autocomplete="off">
+            <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+          </div>
+          <div id="search-results" class="search-results"></div>
+        </div>
+      {% endif %}
+      <!-- {% include header_custom.html %} -->
+      {% if site.aux_links %}
+        <nav aria-label="Auxiliary" class="aux-nav">
+          <ul class="aux-nav-list">
+            {% for link in site.aux_links %}
+              <li class="aux-nav-list-item">
+                <a href="{{ link.last }}" class="site-button"
+                  {% if site.aux_links_new_tab %}
+                  target="_blank" rel="noopener noreferrer"
+                  {% endif %}
+                >
+                  {{ link.first }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      {% endif %}
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      {% unless page.url == "/" %}
+        {% if page.parent %}
+          {%- for node in pages_list -%}
+            {%- if node.parent == nil -%}
+              {%- if page.parent == node.title or page.grand_parent == node.title -%}
+                {%- assign first_level_url = node.url | absolute_url -%}
+              {%- endif -%}
+              {%- if node.has_children -%}
+                {%- assign children_list = pages_list | where: "parent", node.title -%}
+                {%- for child in children_list -%}
+                  {%- if page.url == child.url or page.parent == child.title -%}
+                    {%- assign second_level_url = child.url | absolute_url -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list">
+              {% if page.grand_parent %}
+                <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.grand_parent }}</a></li>
+                <li class="breadcrumb-nav-list-item"><a href="{{ second_level_url }}">{{ page.parent }}</a></li>
+              {% else %}
+                <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.parent }}</a></li>
+              {% endif %}
+              <li class="breadcrumb-nav-list-item"><span>{{ page.title }}</span></li>
+            </ol>
+          </nav>
+        {% endif %}
+      {% endunless %}
+      <div id="main-content" class="main-content" role="main">
+        {% if site.heading_anchors != false %}
+          <!-- {% include vendor/anchor_headings.html html=content beforeHeading="true" anchorBody="<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><use xlink:href=\"#svg-link\"></use></svg>" anchorClass="anchor-heading" anchorAttrs="aria-labelledby=\"%html_id%\"" %} -->
+        {% else %}
+          {{ content }}
+        {% endif %}
+
+        {% if page.has_children == true and page.has_toc != false %}
+          <hr>
+          <h2 class="text-delta">Table of contents</h2>
+          <ul>
+            {%- assign children_list = pages_list | where: "parent", page.title | where: "grand_parent", page.parent -%}
+            {% for child in children_list %}
+              <li>
+                <a href="{{ child.url | absolute_url }}">{{ child.title }}</a>{% if child.summary %} - {{ child.summary }}{% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% capture footer_custom %}
+          <!-- {%- include footer_custom.html -%} -->
+        {% endcapture %}
+        {% if footer_custom != "" or site.last_edit_timestamp or site.gh_edit_link %}
+          <hr>
+          <footer>
+            {% if site.back_to_top %}
+              <p><a href="#top" id="back-to-top">{{ site.back_to_top_text }}</a></p>
+            {% endif %}
+
+            {{ footer_custom }}
+
+            {% if site.last_edit_timestamp or site.gh_edit_link %}
+              <div class="d-flex mt-2">
+                {% if site.last_edit_timestamp and site.last_edit_time_format and page.last_modified_date %}
+                  <p class="text-small text-grey-dk-000 mb-0 mr-2">
+                    Last modified: <span class="d-inline-block">{{ page.last_modified_date | date: site.last_edit_time_format }}</span>
+                  </p>
+                {% endif %}
+                {% if
+                  site.gh_edit_link and
+                  site.gh_edit_link_text and
+                  site.gh_edit_repository and
+                  site.gh_edit_branch and
+                  site.gh_edit_view_mode
+                %}
+                  <p class="text-small text-grey-dk-000 mb-0">
+                    <a href="{{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}{% if site.gh_edit_source %}/{{ site.gh_edit_source }}{% endif %}/{{ page.path }}" id="edit-this-page">{{ site.gh_edit_link_text }}</a>
+                  </p>
+                {% endif %}
+              </div>
+            {% endif %}
+          </footer>
+        {% endif %}
+
+      </div>
+    </div>
+
+    {% if site.search_enabled != false %}
+      {% if site.search.button %}
+        <a href="#" id="search-button" class="search-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-search"></use></svg>
+        </a>
+      {% endif %}
+
+      <div class="search-overlay"></div>
+    {% endif %}
+  </div>
+</body>
+</html>
