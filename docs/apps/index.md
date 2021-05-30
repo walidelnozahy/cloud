@@ -23,6 +23,6 @@ You can then use the `api`, `data`, and `schedule` helpers to build your applica
 
 ### Learn more about:
 
-[APIs]({% link apps/api.md %}){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 .mr-2 }
-[Serverless Data]({% link apps/data.md %}){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 .mr-2 }
-[Scheduled Tasks]({% link apps/schedule.md %}){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 }
+[APIs](/cloud/apps/api.html){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 .mr-2 }
+[Serverless Data](/cloud/apps/data.html){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 .mr-2 }
+[Scheduled Tasks](/cloud/apps/schedule.html){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 }

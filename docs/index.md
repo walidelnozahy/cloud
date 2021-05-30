@@ -14,7 +14,7 @@ Serverless Cloud lets you build scalable, highly-secure, pay-per-use application
 {: .black-box }
 
 [Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-2 .mb-md-0 .mr-2 }
-[How it works]({% link learn.md %}){: .btn .btn-primary .fs-5 .mb-2 .mb-md-0 .mr-2 }
+[How it works](/cloud/learn.html){: .btn .btn-primary .fs-5 .mb-2 .mb-md-0 .mr-2 }
 [Get early access](https://www.serverless.com/cloud){: .btn .btn-primary .fs-5 .mb-2 .mb-md-0 }
 
 
