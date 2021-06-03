@@ -1,7 +1,7 @@
 ---
 layout: default
 title: CLI Reference
-nav_order: 7
+nav_order: 5
 last_modified_date: 2021-05-30
 ---
 
