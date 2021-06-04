@@ -2,7 +2,7 @@
 
 ### Serverless Cloud lets you build scalable, highly-secure, pay-per-use applications, without needing a deep knowledge of cloud services. Focus on writing code, instead of worrying about infrastructure.
 
-![serverless cloud beta](https://user-images.githubusercontent.com/2053544/120826399-66439180-c528-11eb-912f-786134a9607f.png)
+![serverless cloud beta](https://user-images.githubusercontent.com/2053544/120826993-fc77b780-c528-11eb-94a3-17379d67b6d1.png)
 
 For more information please review the [full documentation](https://serverless.github.io/cloud/).
 
