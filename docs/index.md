@@ -10,7 +10,7 @@ Serverless Cloud lets you build scalable, highly-secure, pay-per-use application
 {: .fs-6 .fw-300 }
 
 
-![serverless cloud beta](https://user-images.githubusercontent.com/2053544/120826399-66439180-c528-11eb-912f-786134a9607f.png)
+![serverless cloud beta](https://user-images.githubusercontent.com/2053544/120826323-4dd37700-c528-11eb-810d-1b9f7ef24f5d.png)
 {: .black-box }
 
 [Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-2 .mb-md-0 .mr-2 }
