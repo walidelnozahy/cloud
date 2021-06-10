@@ -8,6 +8,9 @@ nav_order: 4
 
 Serverless Cloud provides flexible workflows to make publishing and sharing your applications as easy as possible. Whether you're a single developer, or a team working on multiple projects, Serverless Cloud provides the tools you need for rapid iteration and feedback.
 
+## Services
+Serverless Cloud allows you to build **SERVICES** within your team's *ORGANIZATION*. At the moment, there is just **ONE** default *SERVICE* per *ORGANIZATION*. We will be enabling multiple services in an upcoming release.  
+
 ## Using Instances
 Serverless Cloud provides every developer, stage, and preview build of a **SERVICE**, *isolated environments* called **INSTANCES**. Each *instance* is completely separate from all the other *instances* in a *service*, and even store their own copy of the data. The environments within *instances* are identical, so you can ensure that your application will behave exactly the same across all of them.
 
