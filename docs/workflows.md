@@ -14,7 +14,7 @@ Serverless Cloud provides every developer, stage, and preview build of a **SERVI
 While *instance* enviroments are identical, Serverless Cloud lets you classify instances to complement your workflow.
 
 ### Developer Instances
-Every developer on your team gets a **Developer Instance** of a *service*. This is your own "personal development workspace" that automatically syncs and deploys changes from your local IDE as you code. To enable this interactive development mode, type `cloud start` into the CLI within your project directory. You'll immediately have access to your own cloud environment, complete with your own data store and streaming logs to help you iterate quickly.
+Every developer on your team gets a **Developer Instance** for every **SERVICE** they work on. Each *Developer Instances* is your own "personal development workspace" that automatically syncs and deploys changes from your local IDE as you code. To enable this interactive development mode, type `cloud start` into the CLI within your project directory. You'll immediately have access to your own cloud environment, complete with your own data store and streaming logs to help you iterate quickly.
 
 ### Stages (Permanent Instances)
 When you're ready to show your work to the world, you can *deploy* your code to a **stage**. These are permanent instances like `prod`, `staging` and `dev`. If you want to publish your code to one of these instances, type `cloud deploy my-stage-name` into the CLI and your **CODE** will be published to `my-stage-name`.
