@@ -5,8 +5,18 @@ nav_order: 4
 ---
 
 # Workflows to interate at the speed of Serverless
+{: .no_toc }
 
 Serverless Cloud provides flexible workflows to make publishing and sharing your applications as easy as possible. Whether you're a single developer, or a team working on multiple projects, Serverless Cloud provides the tools you need for rapid iteration and feedback.
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ## Services
 Serverless Cloud allows you to build **SERVICES** within your team's *ORGANIZATION*. At the moment, there is just **ONE** default *SERVICE* per *ORGANIZATION*. We will be enabling multiple services in an upcoming release.  
