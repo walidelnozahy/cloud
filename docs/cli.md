@@ -78,3 +78,7 @@ Displays the running version of the CLI.
 ## `cloud delete NAME`
 
 Deletes instance `NAME` in the current service.
+
+## `cloud info`
+
+Displays information about your service and your personal development instance including defined API routes and scheduled tasks.

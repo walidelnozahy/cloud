@@ -6,10 +6,12 @@ parent: Building Applications
 last_modified_date: 2021-05-30
 ---
 
-# Using Serverless Data
+# Serverless Data
 {: .no_toc }
 
-Access to Serverless Data is automatically included in your runtime environment. It provides a simple interace for persisting and retrieving state. By default, Serverless Data is available through the `data` variable as defined by the `require` statement at the top of the `index.js` file. Serverless Data makes API calls in order to set and retrieve data, so any route/function that calls a Serverless Data method must use `async/await`.
+Serverless Data is a super fast, automatically scalable datastore that's built in to Serverless Cloud. It's capable of storing simple K/V items, or massive collections of complex objects that can be queried on multiple dimensions, sorted, and paginated. With single-digit millisecond response times, it provides enough power to cover your most common needs and use cases.
+
+With Serverless Data, **your data is just there** as part of your application's runtime. No connection strings, credentials, capacity planning, or database maintenance. You can use the Serverless Cloud `data` helper to `get`, `set`, and `remove` data whenever you need access to state. Plus, Serverless Data is isolated to each **INSTANCE**, giving every developer, stage, and preview build of a **SERVICE** a completely independent copy of your application's data. 
 
 <details open markdown="block">
   <summary>
@@ -19,6 +21,19 @@ Access to Serverless Data is automatically included in your runtime environment.
 1. TOC
 {:toc}
 </details>
+
+## Using Serverless Data
+
+Access to Serverless Data is automatically included in your runtime environment. It provides a simple interace for persisting and retrieving state. By default, Serverless Data is available through the `data` variable as defined by the `require` statement at the top of the `index.js` file. Serverless Data makes API calls in order to set and retrieve data, so any route/function that calls a Serverless Data method must use `async/await`.
+
+```javascript
+// Require the data helper
+const { data } = require("@serverless/cloud");
+
+// Set and get data
+await data.set('foo','bar');
+let results = await data.get('foo');
+```
 
 ## Setting Items
 
@@ -185,4 +200,14 @@ If you'd like to retrieve multiple items that aren't part of the same collection
 
 ```javascript
 let results = await data.get(['key1', 'someOtherKey', 'namespacedKey:keyX']);
+```
+
+## Removing items
+
+You can remove items from Serverless Data by providing and item's key or an `array` of keys to the `remove()` method. Keys must be the complete `key` as wildcards and other conditionals are not supported in the `remove` operation. You can specify up to 25 keys in each request.
+
+```javascript
+let results = await data.remove('foo');
+let results = await data.remove('foo:bar');
+let results = await data.remove(['key1', 'someOtherKey', 'namespacedKey:keyX']);
 ```
