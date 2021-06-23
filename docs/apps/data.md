@@ -128,6 +128,22 @@ let results = await data.get('my-namespace:bat', true);
 let results = await data.get('my-namespace:*', true);
 ```
 
+### Response formats
+
+Serverless Data either returns a single item or an array of multiple items. Any `data.get()` request that specifies an exact key match (e.g. `data.get('foo')` or `data.get('foo:bar')`) will return a single item. Any request that could return more than one item will return an object with an `items` array:
+
+```javascript
+{
+  items: [
+    'item1',
+    { some: 'value' },
+    1234
+  ]
+}
+```
+
+Any non-exact match request will return items in the array format. This includes the use of any [conditionals](#using-conditionals-to-query-items-in-a-collection), getting items [using a label](#getting-items-by-their-labels), or getting [multiple items by their keys](#getting-items-by-their-labels). 
+
 ## Using conditionals to query items in a collection
 
 Collections give you super powers, allowing you to limit the items returned based on conditional operators.
