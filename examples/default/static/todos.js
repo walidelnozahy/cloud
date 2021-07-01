@@ -63,7 +63,7 @@ class Todos extends React.Component {
       (result) => {
         this.setState({
           isLoaded: true,
-          items: result.items
+          items: result.items.map(item => item.value ? item.value : item)
         });
       },
       (error) => {
@@ -88,7 +88,7 @@ class Todos extends React.Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result.items
+            items: result.items.map(item => item.value ? item.value : item)
           });
         },
         (error) => {
@@ -113,7 +113,7 @@ class Todos extends React.Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result.items
+            items: result.items.map(item => item.value ? item.value : item)
           });
         },
         (error) => {
