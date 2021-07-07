@@ -211,7 +211,7 @@ let newOrder = await data.set(
 )
 
 // Get all orders for user-1234
-let user_orders = await data.get('label1','user-1234:ORDER_*');
+let user_orders = await data.getByLabel('label1','user-1234:ORDER_*');
 
 // Get ORDER 9321
 let order = await data.getByLabel('label1','ORDER-9321');
