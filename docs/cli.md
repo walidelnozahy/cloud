@@ -31,6 +31,10 @@ Copies a basic application example into your current directory. If your current 
 
 Enables interactive development mode and syncs and deploys local changes to your **personal instance**. This will watch your current directory and immediately sync and publish any changes you save. You can enable automatic data reseeding by passing the optional `--seed` flag. When automatic seeding is enabled, changes saved to your `data.json` file will update your **personal instance**'s data.
 
+## `cloud test`
+
+Starts interactive development mode and runs your tests in your **personal instance**. Enter `test` to re-run your tests in interactive development mode.
+
 ## `cloud deploy [STAGE]`
 
 Deploys your **personal development instance** *code* to the provided `STAGE`. If no `STAGE` is provided, it will deploy to a `default` stage. 

@@ -114,7 +114,7 @@ schedule.every("60 minutes", async () => {
   // Loop through the overdue items
   for (let item of overdueItems.items) {
     // Here we could send an alert
-    console.log(`ALERT: '${item.name}' is overdue!!!`);
+    console.log(`ALERT: '${item.value.name}' is overdue!!!`);
   }
 });
 
@@ -123,11 +123,16 @@ schedule.every("60 minutes", async () => {
   This is our getTodos function that we can reuse in different API paths 
 */
 const getTodos = async (status, meta) => {
+  let result;
   if (status === 'all') {
-    return await data.get('todo:*', meta)
+    result = await data.get('todo:*', meta)
   } else if (status === 'complete') {
-    return await data.getByLabel('label1','complete:*', meta)
+    result =  await data.getByLabel('label1','complete:*', meta)
   } else {
-    return await data.getByLabel('label1','incomplete:*', meta)
+    result = await data.getByLabel('label1','incomplete:*', meta)
+  }
+
+  return {
+    items: result.items.map(item => item.value)
   }
 }
