@@ -4,20 +4,20 @@ title: Home
 nav_order: 1
 ---
 
+<!-- prettier-ignore-start -->
 # The way serverless was meant to be.
 {: .fs-9 }
+<!-- prettier-ignore-end -->
+
 Serverless Cloud lets you build scalable, highly-secure, pay-per-use applications, without needing a deep knowledge of cloud services. Focus on writing code, instead of worrying about infrastructure.
 {: .fs-6 .fw-300 }
 
-
-![serverless cloud beta](https://user-images.githubusercontent.com/2053544/120826323-4dd37700-c528-11eb-810d-1b9f7ef24f5d.png)
+![Serverless Cloud Beta](https://user-images.githubusercontent.com/2053544/125860147-6a1b7414-b59a-4369-b78f-36c3ffadb791.png)
 {: .black-box }
 
 [Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-2 .mb-md-0 .mr-2 }
 [How it works](/cloud/learn.html){: .btn .btn-primary .fs-5 .mb-2 .mb-md-0 .mr-2 }
 [Get early access](https://www.serverless.com/cloud){: .btn .btn-primary .fs-5 .mb-2 .mb-md-0 }
-
-
 
 **PLEASE NOTE:** The Serverless Cloud is currently in **PRIVATE BETA**. If you'd like to sign up for the early access list, please visit [https://serverless.com/cloud](https://serverless.com/cloud).
 {: .fs-5 .fw-400 }
@@ -48,7 +48,7 @@ Start developing...
 cloud start
 ```
 
-Visit the url, see live logs, make changes, and watch them quickly deploy to your own **personal development instance**. 
+Visit the url, see live logs, make changes, and watch them quickly deploy to your own **personal development instance**.
 
 When ready, you can publish to `prod`:
 

@@ -2,10 +2,11 @@
 layout: default
 title: CLI Reference
 nav_order: 5
-last_modified_date: 2021-05-30
+last_modified_date: 2021-06-15
 ---
 
 # CLI Reference
+
 {: .no_toc }
 
 The following CLI commands are available to develop, manage, and deploy instances. These are subject to change.
@@ -37,31 +38,27 @@ Starts interactive development mode and runs your tests in your **personal insta
 
 ## `cloud deploy [STAGE]`
 
-Deploys your **personal development instance** *code* to the provided `STAGE`. If no `STAGE` is provided, it will deploy to a `default` stage. 
+Deploys your **personal development instance** _code_ to the provided `STAGE`. If no `STAGE` is provided, it will deploy to a `default` stage.
 
-A `STAGE` is a *long-lived instance* or environment that hosts your service. Common names for `STAGE`s are `prod`, `staging`, `qa`, and `dev`.
+A `STAGE` is a _long-lived instance_ or environment that hosts your service. Common names for `STAGE`s are `prod`, `staging`, `qa`, and `dev`.
 
 ## `cloud share [NAME]`
 
-Deploys your **personal development instance** *code AND data* to a preview instance named `NAME`. If no `NAME` is provided, a unique name will be generated for you. 
+Deploys your **personal development instance** _code AND data_ to a preview instance named `NAME`. If no `NAME` is provided, a unique name will be generated for you.
 
-A **preview instance** is an *ephermeral instance* that you can use to easily share your work with your team. Preview instances allow you to create a stable snapshots of your current **personal instance** so that you can get feedback while continuing to make changes to your own version.
+A **preview instance** is an _ephermeral instance_ that you can use to easily share your work with your team. Preview instances allow you to create a stable snapshots of your current **personal instance** so that you can get feedback while continuing to make changes to your own version.
 
 ## `cloud clone [NAME] [--overwrite]`
 
-Copies *code AND data** from `NAME` to your **personal development instance**. `NAME` can specify either a stage (like `prod` or `dev`), or a preview instance. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag.
+Copies \*code AND data** from `NAME` to your **personal development instance\*\*. `NAME` can specify either a stage (like `prod` or `dev`), or a preview instance. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag.
 
-## `cloud seed [--file filename] [--overwrite] `
+## `cloud import [FILENAME] [--overwrite] `
 
-Seeds data from the `filename` in your local directory to your **personal development instance**. If no `filename` is provided, it will default to `data.json`. By default, the data will be merged with existing data. If you specify the `--overwrite` flag, all data will be cleared and reseeded. 
+Seeds data from the `FILENAME` in your local directory to your **personal development instance**. If no `FILENAME` is provided, it will default to `data.json`. By default, the data will be merged with existing data. If you specify the `--overwrite` flag, all data will be cleared and reseeded.
 
-## `cloud import [NAME] [--to DESTINATION] [--overwrite] `
+## `cloud export [FILENAME] [--overwrite] `
 
-Imports data from `NAME` to your **personal development instance**. If `--to DESTINATION` is provided, the data will be imported into that `DESTINATION` instance. By default, the data will be merged with existing data. If you specify the `--overwrite` flag, all data will be cleared and the new data will be imported. 
-
-## `cloud export [NAME] [--file filename] [--overwrite] `
-
-Exports data from `NAME` to a JSON file named `filename` in your current working directoy. If no `filename` is provided, it will default to `data.json`. If the `filename` already exists, you can specify the `--overwrite` flag to overwrite the existing file. 
+Exports data from your **personal development instance** to a JSON file named `FILENAME` in your current working directoy. If no `FILENAME` is provided, it will default to `data.json`. If the `FILENAME` already exists, you can specify the `--overwrite` flag to overwrite the existing file.
 
 ## `cloud list`
 
@@ -82,7 +79,3 @@ Displays the running version of the CLI.
 ## `cloud delete NAME`
 
 Deletes instance `NAME` in the current service.
-
-## `cloud info`
-
-Displays information about your service and your personal development instance including defined API routes and scheduled tasks.
