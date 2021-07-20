@@ -51,12 +51,13 @@
 
       &:hover,
       &.active {
-        background-image: linear-gradient(
-          -90deg,
-          rgba($feedback-color, 1) 0%,
-          rgba($feedback-color, 0.8) 80%,
-          rgba($feedback-color, 0) 100%
-        );
+        background: none;
+        // background-image: linear-gradient(
+        //   -90deg,
+        //   rgba($feedback-color, 1) 0%,
+        //   rgba($feedback-color, 0.8) 80%,
+        //   rgba($feedback-color, 0) 100%
+        // );
       }
     }
 

@@ -1,19 +1,57 @@
-$body-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+@font-face {
+  font-family: "Fontfabric muller";
+  src: url("../../assets/fonts/Fontfabric-Muller-Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+$body-font-family: "Fontfabric muller", serif, sans-serif;
+// $body-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+//   Roboto, "Helvetica Neue", Arial, sans-serif;
 $link-color: #8c8c8c;
 // $body-background-color: $red-000
-$sidebar-color: #f6f6f6;
+// $sidebar-color: #f6f6f6;
+$sidebar-color: #fff;
 $feedback-color: $sidebar-color;
 $body-heading-color: #000;
 
-.site-header { background-color: #000 !important; }
-.site-title:hover { background-image: none !important; }
-.site-button:hover { background-image: none !important; background-color: #fff; }
+$nav-child-link-color: #7c7c7c;
+$nav-list-item-height-sm: 2.5rem;
+$nav-list-item-height: 2.5rem;
+
+$code-background-color: #d9d9d9;
+
+.site-header {
+  background-color: #000 !important;
+}
+.site-title:hover {
+  background-image: none !important;
+}
+.site-button:hover {
+  background-image: none !important;
+  background-color: #fff;
+}
 
 $btn-primary-color: #fd5750;
 $base-button-color: $sidebar-color;
 
+.nav-list-link {
+  border-left: 7px solid #000;
+}
+
 .nav-list-link.active {
-  border-left: 1px solid #fd5750;
+  border-left: 7px solid #fd5750;
+  color: #fd5750;
+}
+
+.nav-list .nav-list-item > .nav-list {
+  padding-left: 0rem !important;
+}
+
+.nav-list .nav-list-item > .nav-list .nav-list-link {
+  padding-left: 2.7rem !important;
 }
 
 .black-box {

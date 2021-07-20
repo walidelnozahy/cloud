@@ -38,7 +38,7 @@ last_edit_timestamp: true # show or hide edit time - page must have `last_modifi
 last_edit_time_format: "%b %e %Y" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
 # at %I:%M %p
 
-logo: "https://user-images.githubusercontent.com/2053544/125860147-6a1b7414-b59a-4369-b78f-36c3ffadb791.png"
+logo: "assets/images/serverless-logo-dark.svg"
 
 # Build settings
 theme: just-the-docs
