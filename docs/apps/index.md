@@ -16,7 +16,11 @@ Serverless Cloud uses a familar *Express.js-like* API for building cloud applica
 In order for your applications to run properly on Serverless Cloud, you need to require some helpers from the `@serverless/cloud` npm package. At the top of your `index.js` file, include the following:
 
 ```javascript
+// CommonJS
 const { api, data, schedule } = require("@serverless/cloud");
+
+// ES Modules
+import { api, data, schedule } from "@serverless/cloud";
 ```
 
 You can then use the `api`, `data`, and `schedule` helpers to build your application.

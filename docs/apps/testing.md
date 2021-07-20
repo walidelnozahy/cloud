@@ -47,7 +47,7 @@ api.get("/todos", async (req, res) => {
 });
 ```
 
-Test test for this handler will do a few things. First, it will set up some test data to retrieve. Then it will simulate the GET request using the built-in `invoke()` method and check the response. Finally it will clean up the test data.
+The test for this handler will do a few things. First, it will set up some test data to retrieve. Then it will simulate the GET request using the built-in `invoke()` method and check the response. Finally it will clean up the test data.
 
 Create a file called `api.test.js` in the `tests` folder. Use `beforeAll` and `afterAll` blocks to set up the test data and delete it after the test has finished:
 
@@ -174,7 +174,7 @@ Jest provides a detailed report including the reason the test failed and the cod
 
 ## Test helpers
 
-Serverless Cloud's runtime provides some helpers that make it easy to invoke your event handlers in tests.
+Serverless Cloud's runtime provides helpers that make it easy to invoke your event handlers in tests, and to seed data.
 
 ### API helpers
 
@@ -191,7 +191,7 @@ Parameters:
 - url (string): URL to request
 - requestBody (object): the body of the request
 
-Return value: object with properties:
+Return value: `Promise<object>` with object properties:
 
 - body: the response body
 - status: the HTTP response status code
@@ -210,9 +210,35 @@ Parameters:
 
 - expression (string): the schedule expression of the handler you wish to invoke
 
-Return value: none
+Return value: `Promise`
 
 > Note: if there is more than one handler for a given expression, only the first will be invoked. This will be addressed in a future release. For now we recommend only using a single handler for a given schedule.
+
+### Data seed helper
+
+The seed helper makes it easy to add data for testing:
+
+```
+data.seed(itemsOrPath, overwrite);
+```
+
+Parameters:
+
+- itemsOrPath (array or string): an array of items, or path to a JSON data file
+- overwrite (boolean, defaults to false): set to true to remove any existing data before loading the new items
+
+Return value: `Promise`
+
+When using a data file the path must be relative to the root of your project, not relative to the test file itself. For example if your test file is in `tests/mytest.test.js` and the data file is in `tests/data.json`, you would use:
+
+```javascript
+// in tests/mytest.test.js
+beforeAll(async () => {
+  await data.seed("tests/data.json");
+});
+```
+
+> Tip: You can use the [`cloud export`](../cli.md#cloud-export-filename---overwrite-) command to create a data file to use in your tests.
 
 ## Unit tests vs integration tests
 

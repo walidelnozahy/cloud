@@ -28,8 +28,11 @@ With Serverless Data, **your data is just there** as part of your application's 
 Access to Serverless Data is automatically included in your runtime environment. It provides a simple interace for persisting and retrieving state. By default, Serverless Data is available through the `data` variable as defined by the `require` statement at the top of the `index.js` file. Serverless Data makes API calls in order to set and retrieve data, so any route/function that calls a Serverless Data method must use `async/await`.
 
 ```javascript
-// Require the data helper
+// Require the data helper - CommonJS
 const { data } = require("@serverless/cloud");
+
+// ES Modules
+import { data } from "@serverless/cloud";
 
 // Set and get data
 await data.set("foo", "bar");
