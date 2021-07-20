@@ -25,7 +25,11 @@ API routes in Serverless Cloud beta currently use Express.js syntax and methods.
 To create an API with Serverless Cloud, you define routes in your code using the `api` helper imported from the `@serverless/cloud` module.
 
 ```javascript
+// CommonJS
 const { api } = require("@serverless/cloud");
+
+// ES Modules
+import { api } from "@serverless/cloud";
 ```
 
 You can then use a supported method to define an API route.
