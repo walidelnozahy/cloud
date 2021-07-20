@@ -26,3 +26,4 @@ You can then use the `api`, `data`, and `schedule` helpers to build your applica
 [APIs](/cloud/apps/api.html){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 .mr-2 }
 [Serverless Data](/cloud/apps/data.html){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 .mr-2 }
 [Scheduled Tasks](/cloud/apps/schedule.html){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 }
+[Params](/cloud/apps/params.html){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 .mr-2 }
