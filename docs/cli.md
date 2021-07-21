@@ -11,6 +11,8 @@ last_modified_date: 2021-06-15
 
 The following CLI commands are available to develop, manage, and deploy instances. These are subject to change.
 
+**Current CLI Version:** `v0.0.17`
+
 <details open markdown="block">
   <summary>
     Table of contents
@@ -20,6 +22,10 @@ The following CLI commands are available to develop, manage, and deploy instance
 {:toc}
 </details>
 
+## `cloud [--seed]`
+
+Enables interactive development mode and syncs and deploys local changes to your **personal instance**. This will watch your current directory and immediately sync and publish any changes you save. You can enable automatic data reseeding by passing the optional `--seed` flag. When automatic seeding is enabled, changes saved to your `data.json` file will update your **personal instance**'s data.
+
 ## `cloud help`
 
 Displays a simple help screen that shows all the available commands and their options.
@@ -27,10 +33,6 @@ Displays a simple help screen that shows all the available commands and their op
 ## `cloud init [--overwrite]`
 
 Copies a basic application example into your current directory. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag.
-
-## `cloud start [--seed]`
-
-Enables interactive development mode and syncs and deploys local changes to your **personal instance**. This will watch your current directory and immediately sync and publish any changes you save. You can enable automatic data reseeding by passing the optional `--seed` flag. When automatic seeding is enabled, changes saved to your `data.json` file will update your **personal instance**'s data.
 
 ## `cloud test`
 
@@ -50,7 +52,7 @@ A **preview instance** is an _ephermeral instance_ that you can use to easily sh
 
 ## `cloud clone [NAME] [--overwrite]`
 
-Copies \*code AND data** from `NAME` to your **personal development instance\*\*. `NAME` can specify either a stage (like `prod` or `dev`), or a preview instance. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag.
+Copies **code** AND **data** from `NAME` to your **personal development instance**. `NAME` can specify either a stage (like `prod` or `dev`), or a preview instance. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag.
 
 ## `cloud import [FILENAME] [--overwrite] `
 
@@ -63,6 +65,10 @@ Exports data from your **personal development instance** to a JSON file named `F
 ## `cloud list`
 
 Displays a list of **stages** and **preview instances** for the current service.
+
+## `cloud info`
+
+Displays information about your current service as well as a list of **API routes** and **schedules** defined in your **personal development instance**.
 
 ## `cloud login`
 
