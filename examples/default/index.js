@@ -9,7 +9,7 @@
 
   If you want to serve up static assets, just put them in the '/static' folder
 */
-const { api, data, schedule } = require("@serverless/cloud"); // eslint-disable-line
+const { api, data, schedule, params } = require("@serverless/cloud"); // eslint-disable-line
 
 
 /* 
@@ -19,6 +19,8 @@ api.get('/todos', async (req, res) => {
 
   // Call our getTodos function with the status
   let result = await getTodos(req.query.status, req.query.meta ? true : {});
+  
+  console.log(params.CLOUD_URL);
 
   // Return the results
   res.send({
