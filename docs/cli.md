@@ -52,7 +52,7 @@ A **preview instance** is an _ephermeral instance_ that you can use to easily sh
 
 ## `cloud clone [SERVICE_NAME/INSTANCE_NAME] [--overwrite]`
 
-Copies **code** AND **data** from `INSTANCE_NAME` of service, `SERVICE_NAME` to your **personal development instance**. `INSTANCE_NAME` can specify either a stage (like `prod` or `dev`), or a preview instance. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag.
+Copies **code** AND **data** from `INSTANCE_NAME` of service `SERVICE_NAME` to your **personal development instance**. `INSTANCE_NAME` can specify either a stage (like `prod` or `dev`), or a preview instance. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag.
 
 ## `cloud import [FILENAME] [--overwrite] `
 
