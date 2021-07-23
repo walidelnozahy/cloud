@@ -50,9 +50,9 @@ Deploys your **personal development instance** _code AND data_ to a preview inst
 
 A **preview instance** is an _ephermeral instance_ that you can use to easily share your work with your team. Preview instances allow you to create a stable snapshots of your current **personal instance** so that you can get feedback while continuing to make changes to your own version.
 
-## `cloud clone [NAME] [--overwrite]`
+## `cloud clone [SERVICE_NAME/INSTANCE_NAME] [--overwrite]`
 
-Copies **code** AND **data** from `NAME` to your **personal development instance**. `NAME` can specify either a stage (like `prod` or `dev`), or a preview instance. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag.
+Copies **code** AND **data** from `INSTANCE_NAME` of service, `SERVICE_NAME` to your **personal development instance**. `INSTANCE_NAME` can specify either a stage (like `prod` or `dev`), or a preview instance. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag.
 
 ## `cloud import [FILENAME] [--overwrite] `
 
