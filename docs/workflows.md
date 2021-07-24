@@ -82,7 +82,7 @@ Workflows are meant to be flexible, giving each unique team (or single developer
 
 # Continue to work on your developer instance and make changes as feedback comes in.
 # Share the changes with your team (to the same preview instance)
-> cloud share feature-1 --overwrite
+> share feature-1 --overwrite
 
 # Once the team is happy with the changes, publish to "dev"
 # for additional integration tests and feedback
