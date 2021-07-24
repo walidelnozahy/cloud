@@ -36,16 +36,10 @@ Create a new directory...
 mkdir my-cloud && cd my-cloud
 ```
 
-Initialize a sample project
+Initialize a sample project and start developing
 
 ```
-cloud init
-```
-
-Start developing...
-
-```
-cloud start
+cloud 
 ```
 
 Visit the url, see live logs, make changes, and watch them quickly deploy to your own **personal development instance**.
@@ -59,7 +53,7 @@ cloud deploy prod
 This will publish to a completely seperate instance. You may continue developing using `cloud start` without affecting `prod`, but anytime you want to copy the entire `prod` instance (including data) into your own personal development instance, just run:
 
 ```
-cloud clone prod
+cloud clone [service_name]/prod
 ```
 
 And starting developing on the code and data copied from `prod`:
@@ -68,6 +62,7 @@ And starting developing on the code and data copied from `prod`:
 cloud start
 ```
 
+Visit Serverless Cloud Dashboard to see your services and instances, to define secrets and apply it to your instances and to check the logs and metrics of your instances via [cloud.serverless.com](https://cloud.serverless.com)
 ## Feedback
 
 Many parts of this are still experimental, so please keep that in mind when testing. Please log any issues and additional feedback can be sent to [cloud@serverless.com](mailto:cloud@serverless.com).
