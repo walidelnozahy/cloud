@@ -17,10 +17,10 @@ In order for your applications to run properly on Serverless Cloud, you need to 
 
 ```javascript
 // CommonJS
-const { api, data, schedule } = require("@serverless/cloud");
+const { api, data, schedule, params } = require("@serverless/cloud");
 
 // ES Modules
-import { api, data, schedule } from "@serverless/cloud";
+import { api, data, schedule, params } from "@serverless/cloud";
 ```
 
 You can then use the `api`, `data`, and `schedule` helpers to build your application.
