@@ -23,7 +23,7 @@ const { api, data, schedule, params } = require("@serverless/cloud");
 import { api, data, schedule, params } from "@serverless/cloud";
 ```
 
-You can then use the `api`, `data`, and `schedule` helpers to build your application.
+You can then use the `api`, `data`, `schedule`, and `params` helpers to build your application.
 
 ### Learn more about:
 
