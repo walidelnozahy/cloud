@@ -39,7 +39,10 @@ api.post('/todos/:id', async (req, res) => {
 
   await data.set(
     `todo:${req.params.id}`,
-    body,
+    {
+      ...body,
+      createdAt: Date.now()
+    },
     Object.assign({},
       req.body.status ? 
         { 
