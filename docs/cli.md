@@ -35,17 +35,18 @@ Displays a simple help screen that shows all the available commands and their op
 
 Starts interactive development mode and runs your tests on Cloud. Enter `test` to re-run your tests in interactive development mode when you are in Cloud Shell.
 
+## `cloud share [NAME]`
+
+Deploys your **personal development instance** _code AND data_ to a preview instance named `NAME`. If no `NAME` is provided, a unique name will be generated for you.
+
+A **preview instance** is an _ephermeral instance_ that you can use to easily share your work with your team. Preview instances allow you to create a stable snapshots of your current **personal instance** so that you can get feedback while continuing to make changes to your own version.
+
 ## `cloud deploy [STAGE]`
 
 Deploys your **personal development instance** _code_ to the provided `STAGE`. If no `STAGE` is provided, it will deploy to a `default` stage.
 
 A `STAGE` is a _long-lived instance_ or environment that hosts your service. Common names for `STAGE`s are `prod`, `staging`, `qa`, and `dev`.
 
-## `cloud share [NAME]`
-
-Deploys your **personal development instance** _code AND data_ to a preview instance named `NAME`. If no `NAME` is provided, a unique name will be generated for you.
-
-A **preview instance** is an _ephermeral instance_ that you can use to easily share your work with your team. Preview instances allow you to create a stable snapshots of your current **personal instance** so that you can get feedback while continuing to make changes to your own version.
 
 ## `cloud clone [SERVICE_NAME/INSTANCE_NAME] [--overwrite]`
 
@@ -66,10 +67,6 @@ Exports data from your **personal development instance** to a JSON file named `F
 ## `cloud list`
 
 Displays a list of **stages** and **preview instances** for the current service.
-
-## `cloud info`
-
-Displays information about your current service as well as a list of **API routes** and **schedules** defined in your **personal development instance**.
 
 ## `cloud login`
 
