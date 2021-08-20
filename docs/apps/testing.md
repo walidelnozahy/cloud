@@ -13,7 +13,7 @@ Serverless Cloud has built-in support for automated unit and integration testing
 
 Simply create your test files and run the `cloud test` command from the command line, or enter `test` in the Cloud shell.
 
-Your tests are run in your personal instance, using the [Jest testing framework](https://jestjs.io/){:target="\_blank"}.
+Your tests are run on Cloud, using the [Jest testing framework](https://jestjs.io/){:target="\_blank"}.
 
 <details open markdown="block">
   <summary>
