@@ -18,7 +18,7 @@ last_modified_date: 2021-05-30
 {:toc}
 </details>
 
-API routes in Serverless Cloud beta currently use Express.js syntax and methods. For more information regarding Express.js, visit [http://expressjs.com/en/4x/api.html](http://expressjs.com/en/4x/api.html).
+API routes in Serverless Cloud currently use Express.js syntax and methods. For more information regarding Express.js, visit [http://expressjs.com/en/4x/api.html](http://expressjs.com/en/4x/api.html).
 
 ## Creating an API
 
