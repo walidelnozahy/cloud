@@ -31,3 +31,4 @@ You can then use the `api`, `data`, `schedule`, and `params` helpers to build yo
 [Serverless Data](/cloud/apps/data.html){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 .mr-2 }
 [Scheduled Tasks](/cloud/apps/schedule.html){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 }
 [Params](/cloud/apps/params.html){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 .mr-2 }
+[Using Typescript](/cloud/apps/typescript.html){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 .mr-2 }
