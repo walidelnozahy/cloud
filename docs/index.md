@@ -19,7 +19,7 @@ Serverless Cloud lets you build scalable, highly-secure, pay-per-use application
 [How it works](/cloud/learn.html){: .btn .btn-primary .fs-5 .mb-2 .mb-md-0 .mr-2 }
 [Get early access](https://www.serverless.com/cloud){: .btn .btn-primary .fs-5 .mb-2 .mb-md-0 }
 
-**PLEASE NOTE:** The Serverless Cloud is currently in **PRIVATE BETA**. If you'd like to sign up for the early access list, please visit [https://serverless.com/cloud](https://serverless.com/cloud).
+**PLEASE NOTE:** We're accepting users selectively for Serverless Cloud at this stage. If you'd like to sign up for the early access list, please visit [https://serverless.com/cloud](https://serverless.com/cloud).
 {: .fs-5 .fw-400 }
 
 ## Getting Started
@@ -62,4 +62,4 @@ And continue developing on the code and data copied from `prod`:
 Visit Serverless Cloud Dashboard to see your services and instances, to define secrets and apply it to your instances and to check the logs and metrics of your instances via [cloud.serverless.com](https://cloud.serverless.com)
 ## Feedback
 
-Many parts of this are still experimental, so please keep that in mind when testing. Please log any issues and additional feedback can be sent to [cloud@serverless.com](mailto:cloud@serverless.com).
+Please log any issues and additional feedback can be sent to [cloud@serverless.com](mailto:cloud@serverless.com).
