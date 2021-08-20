@@ -22,21 +22,18 @@ The following CLI commands are available to develop, manage, and deploy instance
 {:toc}
 </details>
 
-## `cloud [--seed]`
+## `cloud [--seed] [--org] [--service]`
 
-Enables interactive development mode and syncs and deploys local changes to your **personal instance**. This will watch your current directory and immediately sync and publish any changes you save. You can enable automatic data reseeding by passing the optional `--seed` flag. When automatic seeding is enabled, changes saved to your `data.json` file will update your **personal instance**'s data.
+Enables interactive development mode and syncs and deploys local changes to your **personal instance**. This will watch your current directory and immediately sync and publish any changes you save. You can enable automatic data reseeding by passing the optional `--seed` flag. When automatic seeding is enabled, changes saved to your `data.json` file will update your **personal instance**'s data. You can update the organization and/or service of the app attached to your personal instance by passing the optional --org and --service flags respevctively. 
 
 ## `cloud help`
 
 Displays a simple help screen that shows all the available commands and their options.
 
-## `cloud init [--overwrite]`
-
-Copies a basic application example into your current directory. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag.
 
 ## `cloud test`
 
-Starts interactive development mode and runs your tests in your **personal instance**. Enter `test` to re-run your tests in interactive development mode.
+Starts interactive development mode and runs your tests on Cloud. Enter `test` to re-run your tests in interactive development mode when you are in Cloud Shell.
 
 ## `cloud deploy [STAGE]`
 
@@ -53,6 +50,10 @@ A **preview instance** is an _ephermeral instance_ that you can use to easily sh
 ## `cloud clone [SERVICE_NAME/INSTANCE_NAME] [--overwrite]`
 
 Copies **code** AND **data** from `INSTANCE_NAME` of service `SERVICE_NAME` to your **personal development instance**. `INSTANCE_NAME` can specify either a stage (like `prod` or `dev`), or a preview instance. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag.
+
+## `cloud promote [from] [to]`
+
+Promotes a stage to another stage by copying only the code [from] stage [to] stage.
 
 ## `cloud import [FILENAME] [--overwrite] `
 
@@ -82,6 +83,6 @@ Logs the user out of the current session
 
 Displays the running version of the CLI.
 
-## `cloud delete NAME`
+## `cloud activate [code]`
 
-Deletes instance `NAME` in the current service.
+Activates Serverless Cloud with an exclusive access code. 
