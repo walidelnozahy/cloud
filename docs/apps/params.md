@@ -9,18 +9,7 @@ last_modified_date: 2021-05-30
 
 # Parameters
 
-{: .no_toc }
-
 Serverless Cloud supports parameters, which can store secrets that your application needs to function.
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 ## Setting parameters
 

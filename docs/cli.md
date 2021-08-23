@@ -8,20 +8,9 @@ last_modified_date: 2021-08-20
 
 # CLI Reference
 
-{: .no_toc }
-
 The following CLI commands are available to develop, manage, and deploy instances. These are subject to change.
 
 **Current CLI Version:** `v0.0.22`
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 ## `cloud [--seed] [--org] [--service]`
 

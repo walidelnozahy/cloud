@@ -9,17 +9,6 @@ last_modified_date: 2021-05-30
 
 # Creating API Routes
 
-{: .no_toc }
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
-
 API routes in Serverless Cloud use Express.js syntax and methods. For more information regarding Express.js, visit [http://expressjs.com/en/4x/api.html](http://expressjs.com/en/4x/api.html).
 
 ## Creating an API

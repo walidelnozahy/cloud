@@ -9,18 +9,7 @@ last_modified_date: 2021-05-30
 
 # Scheduling Tasks
 
-{: .no_toc }
-
 Serverless Cloud also supports scheduled tasks, which you can create using the `schedule` helper. You can either use the `.every()` method for having tasks repeat on a regular time interval.Or you can use the `.cron()` method to have more fine-grained control.
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 ## Scheduling tasks with `.every()`
 
