@@ -1,12 +1,14 @@
 ---
 layout: default
 title: Parameters
-nav_order: 3
+menuText: Parameters
+menuOrder: 3
 parent: Building Applications
 last_modified_date: 2021-05-30
 ---
 
 # Parameters
+
 {: .no_toc }
 
 Serverless Cloud supports parameters, which can store secrets that your application needs to function.
@@ -27,10 +29,10 @@ Parameters are configured via the dashboard. Parameters are first specified per 
 ## Reading parameters
 
 ```js
-const { api, params } = require('@serverless/cloud')
+const { api, params } = require("@serverless/cloud");
 
 // your params are available at params.KEY
-api.get('/', (req, res) => {
-  console.log(params.KEY)
-})
+api.get("/", (req, res) => {
+  console.log(params.KEY);
+});
 ```

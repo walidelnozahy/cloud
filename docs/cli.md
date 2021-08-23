@@ -1,7 +1,8 @@
 ---
 layout: default
 title: CLI Reference
-nav_order: 5
+menuText: CLI Reference
+menuOrder: 5
 last_modified_date: 2021-08-20
 ---
 
@@ -24,12 +25,11 @@ The following CLI commands are available to develop, manage, and deploy instance
 
 ## `cloud [--seed] [--org] [--service]`
 
-Enables interactive development mode and syncs and deploys local changes to your **personal instance**. This will watch your current directory and immediately sync and publish any changes you save. You can enable automatic data reseeding by passing the optional `--seed` flag. When automatic seeding is enabled, changes saved to your `data.json` file will update your **personal instance**'s data. You can update the organization and/or service of the app attached to your personal instance by passing the optional --org and --service flags respevctively. 
+Enables interactive development mode and syncs and deploys local changes to your **personal instance**. This will watch your current directory and immediately sync and publish any changes you save. You can enable automatic data reseeding by passing the optional `--seed` flag. When automatic seeding is enabled, changes saved to your `data.json` file will update your **personal instance**'s data. You can update the organization and/or service of the app attached to your personal instance by passing the optional --org and --service flags respevctively.
 
 ## `cloud help`
 
 Displays a simple help screen that shows all the available commands and their options.
-
 
 ## `cloud test`
 
@@ -46,7 +46,6 @@ A **preview instance** is an _ephermeral instance_ that you can use to easily sh
 Deploys your **personal development instance** _code_ to the provided `STAGE`. If no `STAGE` is provided, it will deploy to a `default` stage.
 
 A `STAGE` is a _long-lived instance_ or environment that hosts your service. Common names for `STAGE`s are `prod`, `staging`, `qa`, and `dev`.
-
 
 ## `cloud clone [SERVICE_NAME/INSTANCE_NAME] [--overwrite]`
 
@@ -82,4 +81,4 @@ Displays the running version of the CLI.
 
 ## `cloud activate [code]`
 
-Activates Serverless Cloud with an exclusive access code. 
+Activates Serverless Cloud with an exclusive access code.

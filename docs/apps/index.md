@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Building Applications
-nav_order: 4
+menuText: Building Applications
+menuOrder: 4
 has_children: true
 has_toc: false
 last_modified_date: 2021-05-30
@@ -9,7 +10,7 @@ last_modified_date: 2021-05-30
 
 # Building Applications on Serverless Cloud
 
-Serverless Cloud uses a familar *Express.js-like* API for building cloud applications. Using the `@serverless/cloud` npm package gives you a simple interface to build `api`s, access `data`, pass `params` and `schedule` tasks. 
+Serverless Cloud uses a familar _Express.js-like_ API for building cloud applications. Using the `@serverless/cloud` npm package gives you a simple interface to build `api`s, access `data`, pass `params` and `schedule` tasks.
 
 ## Importing the `@serverless/cloud` package
 

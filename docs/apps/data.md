@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Serverless Data
-nav_order: 2
+menuText: Serverless Data
+menuOrder: 2
 parent: Building Applications
 last_modified_date: 2021-05-30
 ---
@@ -67,7 +68,7 @@ await data.set("foo", "bar", {
   meta: true,
   ttl: 3600,
   label1: "baz",
-  label2: "baz:bat",
+  label2: "baz:bat"
 });
 ```
 
@@ -147,7 +148,7 @@ Serverless Data either returns a single item or an array of multiple items. Any 
   items: [
     { key: "foo:bar", value: "item1" },
     { key: "foo:bat", value: { some: "value" } },
-    { key: "foo:baz", value: 1234 },
+    { key: "foo:baz", value: 1234 }
   ];
 }
 ```

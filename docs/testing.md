@@ -1,32 +1,22 @@
 ---
 layout: default
 title: Automated Testing
-nav_order: 4
+menuText: Automated Testing
+menuOrder: 4
 last_modified_date: 2021-07-08
 ---
 
 # Automated Testing
 
-{: .no_toc }
-
 Serverless Cloud has built-in support for automated unit and integration testing.
 
 Simply create your test files and run the `cloud test` command from the command line, or enter `test` in the Cloud shell.
 
-Your tests are run on Cloud, using the [Jest testing framework](https://jestjs.io/){:target="\_blank"}.
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
+Your tests are run on Cloud, using the [Jest testing framework](https://jestjs.io/).
 
 ## Writing tests
 
-Serverless Cloud uses [Jest](https://jestjs.io/){:target="\_blank"} under the hood and you have access to all its features like matchers, mock functions, and setup/teardown.
+Serverless Cloud uses [Jest](https://jestjs.io/) under the hood and you have access to all its features like matchers, mock functions, and setup/teardown.
 
 As an example let's create a test for the to-do sample application. This is the code we'd like to test:
 
@@ -42,7 +32,7 @@ api.get("/todos", async (req, res) => {
 
   // Return the results
   res.send({
-    items: result.items,
+    items: result.items
   });
 });
 ```
@@ -57,7 +47,7 @@ Create a file called `api.test.js` in the `tests` folder. Use `beforeAll` and `a
 beforeAll(async () => {
   await data.set("todo:123456", {
     id: "123456",
-    name: "Something to do",
+    name: "Something to do"
   });
 });
 
@@ -78,16 +68,16 @@ test("should get all todos", async () => {
     items: [
       {
         id: "123456",
-        name: "Something to do",
-      },
-    ],
+        name: "Something to do"
+      }
+    ]
   });
 });
 ```
 
 And that's it! You can use the same techniques to add more test cases, such as changing the `status=all` query string parameter, and testing other methods like `POST` and `DELETE`.
 
-Check out Jest's [Getting Started Guide](https://jestjs.io/docs/getting-started){:target="\_blank"} to learn more about writing tests with the Jest framework.
+Check out Jest's [Getting Started Guide](https://jestjs.io/docs/getting-started) to learn more about writing tests with the Jest framework.
 
 [Our to-do example application](https://github.com/serverless/cloud/tree/main/examples/default) also includes tests that you can use as a starting point.
 

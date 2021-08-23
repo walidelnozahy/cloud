@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Using Typescript
-nav_order: 5
+menuText: Using Typescript
+menuOrder: 5
 parent: Building Applications
 last_modified_date: 2021-07-20
 ---
