@@ -6,7 +6,7 @@
 
 For more information please review the [full documentation](https://serverless.github.io/cloud/).
 
-**PLEASE NOTE:** The Serverless Cloud is currently in **PRIVATE BETA**. If you'd like to sign up for the early access list, please visit [https://serverless.com/cloud](https://serverless.com/cloud).
+**PLEASE NOTE:** The Serverless Cloud is currently in **PRIVATE BETA**. If you'd like to register for the early access list, you can do so [here](https://xv4b63nuizx.typeform.com/cloudbeta#email=xxxxx).
 
 ## Feedback
 

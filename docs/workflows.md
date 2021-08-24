@@ -91,4 +91,4 @@ Workflows are meant to be flexible, giving each unique team (or single developer
 
 ### Want to get started building apps on Serverless Cloud?
 
-[Sign up for early access](https://www.serverless.com/cloud)
+[Sign up for early access](https://xv4b63nuizx.typeform.com/cloudbeta#email=xxxxx)
