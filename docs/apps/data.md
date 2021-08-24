@@ -150,7 +150,7 @@ Collections give you super powers, allowing you to limit the items returned base
 
 ### Partial matches
 
-You've already seen the `*` wildcard used to retrieve _all_ items from a collection, but you can also use the wildcard to retrieve items with partially matching keys as well. **Note:** Wildcards are only supported at the end of a key expression.
+You've already seen the `*` wildcard used to retrieve *all* items from a collection, but you can also use the wildcard to retrieve items with partially matching keys as well. **Note:** Wildcards are only supported at the end of a key expression.
 
 ```javascript
 // Retrieve all keys from the `user123` collection
@@ -193,7 +193,7 @@ You can get items by their labels using the `get` method and the `{ label: 'labe
 
 Labels support collections as well as simple keys. Since they behave the same way, you can also use collection querying methods like `*` and `>=` on labels as well.
 
-Labels are incredibly powerful, allowing you to pivot and access your data in multiple "views". For example, if you store orders in a "user" collection (e.g. `user-1234`), then you can store their order date and number as the key (e.g. `user-1234:ORDER_2021-05-18_9321`). This would let you list all (or some) of their orders and sort them by date. But if you wanted to access this same information by the unique order number (`9321`), a simple key-value store wouldn't let you. With Serverless Data, you can set `label1` to something like `ORDER-9321`. Now you can either get the orders _BY USER_ or _BY ORDER ID_:
+Labels are incredibly powerful, allowing you to pivot and access your data in multiple "views". For example, if you store orders in a "user" collection (e.g. `user-1234`), then you can store their order date and number as the key (e.g. `user-1234:ORDER_2021-05-18_9321`). This would let you list all (or some) of their orders and sort them by date. But if you wanted to access this same information by the unique order number (`9321`), a simple key-value store wouldn't let you. With Serverless Data, you can set `label1` to something like `ORDER-9321`. Now you can either get the orders *BY USER* or *BY ORDER ID*:
 
 ```javascript
 // Set the order

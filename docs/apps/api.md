@@ -92,4 +92,4 @@ The most used `res` methods are as follows:
 
 ## Middleware
 
-Serverless Cloud supports both _Application_ and _Route-level_ middleware. For more information on middleware, please visit the [Express.js docs](http://expressjs.com/en/guide/using-middleware.html).
+Serverless Cloud supports both *Application* and *Route-level* middleware. For more information on middleware, please visit the [Express.js docs](http://expressjs.com/en/guide/using-middleware.html).
