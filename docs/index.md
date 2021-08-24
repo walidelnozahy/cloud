@@ -15,7 +15,7 @@ Serverless Cloud lets you build scalable, highly-secure, pay-per-use application
 <a href="/cloud/docs/learn" >How it works</a>
 <a href="https://xv4b63nuizx.typeform.com/cloudbeta#email=xxxxx" target="_blank" >Get early access</a>
 
-**PLEASE NOTE:** The Serverless Cloud is currently in **PRIVATE BETA**. If you'd like to register for the early access list, you can do so [here](https://xv4b63nuizx.typeform.com/cloudbeta#email=xxxxx).
+**PLEASE NOTE:** The Serverless Cloud is currently in **PRIVATE BETA**. If you'd like to register for the early access list, please [sign up to get early access](https://xv4b63nuizx.typeform.com/cloudbeta#email=xxxxx).
 
 ## Getting Started
 
