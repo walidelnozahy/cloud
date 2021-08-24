@@ -1,9 +1,7 @@
 ---
-layout: default
 title: Automated Testing
 menuText: Automated Testing
 menuOrder: 4
-last_modified_date: 2021-07-08
 ---
 
 # Automated Testing

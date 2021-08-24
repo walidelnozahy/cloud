@@ -1,5 +1,5 @@
 ---
-layout: default
+
 title: How it Works
 menuText: How it Works
 menuOrder: 2

@@ -1,11 +1,11 @@
 ---
-layout: default
+
 title: Building Applications
 menuText: Building Applications
 menuOrder: 4
 has_children: true
 has_toc: false
-last_modified_date: 2021-05-30
+
 ---
 
 # Building Applications on Serverless Cloud

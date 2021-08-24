@@ -1,10 +1,8 @@
 ---
-layout: default
 title: APIs
 menuText: APIs
 menuOrder: 1
 parent: Building Applications
-last_modified_date: 2021-05-30
 ---
 
 # Creating API Routes

@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Development Workflows
 menuText: Development Workflows
 menuOrder: 3

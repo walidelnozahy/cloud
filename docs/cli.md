@@ -1,9 +1,7 @@
 ---
-layout: default
 title: CLI Reference
 menuText: CLI Reference
 menuOrder: 5
-last_modified_date: 2021-08-20
 ---
 
 # CLI Reference

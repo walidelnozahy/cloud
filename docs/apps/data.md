@@ -1,10 +1,8 @@
 ---
-layout: default
 title: Serverless Data
 menuText: Serverless Data
 menuOrder: 2
 parent: Building Applications
-last_modified_date: 2021-05-30
 ---
 
 # Serverless Data

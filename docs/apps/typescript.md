@@ -1,10 +1,8 @@
 ---
-layout: default
 title: Using Typescript
 menuText: Using Typescript
 menuOrder: 5
 parent: Building Applications
-last_modified_date: 2021-07-20
 ---
 
 # Using Typescript

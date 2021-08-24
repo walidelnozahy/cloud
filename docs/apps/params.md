@@ -1,10 +1,8 @@
 ---
-layout: default
 title: Parameters
 menuText: Parameters
 menuOrder: 3
 parent: Building Applications
-last_modified_date: 2021-05-30
 ---
 
 # Parameters
