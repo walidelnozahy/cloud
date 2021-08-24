@@ -11,12 +11,10 @@
 */
 const { api, data, schedule, params } = require("@serverless/cloud"); // eslint-disable-line
 
-
 /* 
  * Create a route to GET our TODO items
 */
 api.get('/todos', async (req, res) => {
-
   // Call our getTodos function with the status
   let result = await getTodos(req.query.status, req.query.meta ? true : {});
   
