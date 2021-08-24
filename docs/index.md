@@ -11,15 +11,9 @@ Serverless Cloud lets you build scalable, highly-secure, pay-per-use application
 
 ![logo-serverless-cloud](https://user-images.githubusercontent.com/22547594/130583081-6321c63a-1ade-4a82-9563-b67813eb393c.jpg)
 
-<!-- [Get started now](#getting-started) -->
-
-<a href="#getting-started" class="deploy-cta">Get started now</a>
-<a href="/cloud/docs/learn" class="deploy-cta">How it works</a>
-<a href="https://xv4b63nuizx.typeform.com/cloudbeta#email=xxxxx" target="_blank" class="deploy-cta">Get early access</a>
-
-<!-- [How it works](/cloud/learn.html) -->
-
-<!-- [Get early access](https://www.serverless.com/cloud) -->
+<a href="#getting-started" >Get started now</a>
+<a href="/cloud/docs/learn" >How it works</a>
+<a href="https://xv4b63nuizx.typeform.com/cloudbeta#email=xxxxx" target="_blank" >Get early access</a>
 
 **PLEASE NOTE:** We're accepting users selectively for Serverless Cloud at this stage. If you'd like to sign up for the early access list, please visit [https://serverless.com/cloud](https://serverless.com/cloud).
 

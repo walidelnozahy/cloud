@@ -9,7 +9,7 @@ last_modified_date: 2021-07-20
 
 # Using Typescript
 
-Serverless Cloud supports both Javascript and [Typescript](https://www.typescriptlang.org/).
+Serverless Cloud supports both Javascript and <a href="https://www.typescriptlang.org/" target="_blank" >Typescript</a>.
 
 Enable Typescript by changing the entry point of your application to `index.ts`.
 

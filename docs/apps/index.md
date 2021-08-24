@@ -28,8 +28,8 @@ You can then use the `api`, `data`, `schedule`, and `params` helpers to build yo
 
 ### Learn more about:
 
-[APIs](/cloud/apps/api.html)
-[Serverless Data](/cloud/apps/data.html)
-[Scheduled Tasks](/cloud/apps/schedule.html)
-[Params](/cloud/apps/params.html)
-[Using Typescript](/cloud/apps/typescript.html)
+[APIs](/cloud/apps/api)
+[Serverless Data](/cloud/apps/data)
+[Scheduled Tasks](/cloud/apps/schedule)
+[Params](/cloud/apps/params)
+[Using Typescript](/cloud/apps/typescript)

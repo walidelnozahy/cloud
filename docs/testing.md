@@ -12,11 +12,11 @@ Serverless Cloud has built-in support for automated unit and integration testing
 
 Simply create your test files and run the `cloud test` command from the command line, or enter `test` in the Cloud shell.
 
-Your tests are run on Cloud, using the [Jest testing framework](https://jestjs.io/).
+Your tests are run on Cloud, using the <a href="https://jestjs.io/" target="_blank" >Jest testing framework</a>.
 
 ## Writing tests
 
-Serverless Cloud uses [Jest](https://jestjs.io/) under the hood and you have access to all its features like matchers, mock functions, and setup/teardown.
+Serverless Cloud uses <a href="https://jestjs.io/" target="_blank" >Jest</a> under the hood and you have access to all its features like matchers, mock functions, and setup/teardown.
 
 As an example let's create a test for the to-do sample application. This is the code we'd like to test:
 
@@ -77,7 +77,8 @@ test("should get all todos", async () => {
 
 And that's it! You can use the same techniques to add more test cases, such as changing the `status=all` query string parameter, and testing other methods like `POST` and `DELETE`.
 
-Check out Jest's [Getting Started Guide](https://jestjs.io/docs/getting-started) to learn more about writing tests with the Jest framework.
+<a href="https://jestjs.io/docs/getting-started" target="_blank" >Getting Started Guide</a>
+Check out Jest's <a href="https://jestjs.io/docs/getting-started" target="_blank" >Getting Started Guide</a> to learn more about writing tests with the Jest framework.
 
 [Our to-do example application](https://github.com/serverless/cloud/tree/main/examples/default) also includes tests that you can use as a starting point.
 
