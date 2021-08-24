@@ -9,12 +9,18 @@ menuOrder: 1
 
 Serverless Cloud lets you build scalable, highly-secure, pay-per-use applications, without needing a deep knowledge of cloud services. Focus on writing code, instead of worrying about infrastructure.
 
-![Serverless Cloud Beta](https://user-images.githubusercontent.com/2053544/125860147-6a1b7414-b59a-4369-b78f-36c3ffadb791.png)
+![Serverless Cloud Beta](./assets/logo-serverless-cloud.jpg)
 
-[Get started now](#getting-started)
-[How it works](/cloud/learn.html)
+<!-- [Get started now](#getting-started) -->
+
+<a href="#getting-started" >Get started now</a>
+<a href="/cloud/docs/learn" >How it works</a>
+<a href="https://xv4b63nuizx.typeform.com/cloudbeta#email=xxxxx" target="_blank">Get early access</a>
+
+<!-- [How it works](/cloud/learn.html) -->
+
 [Get early access](https://www.serverless.com/cloud)
-
+deploy-cta
 **PLEASE NOTE:** We're accepting users selectively for Serverless Cloud at this stage. If you'd like to sign up for the early access list, please visit [https://serverless.com/cloud](https://serverless.com/cloud).
 
 ## Getting Started
