@@ -11,6 +11,7 @@ test("should post a todo", async () => {
       {
         id: "123",
         name: "Something to do",
+        createdAt: expect.any(Number),
       },
     ],
   });
@@ -24,6 +25,7 @@ test("should get todos", async () => {
       {
         id: "123",
         name: "Something to do",
+        createdAt: expect.any(Number),
       },
     ],
   });
