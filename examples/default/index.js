@@ -1,5 +1,3 @@
-"use strict";
-
 /*
   The @serverless/cloud package is included by default in the cloud runtime.
   So you don't have to include it in package.json.
@@ -9,14 +7,12 @@
 
   If you want to serve up static assets, just put them in the '/static' folder
 */
-const { api, data, schedule, params } = require("@serverless/cloud"); // eslint-disable-line
-
+import { api, data, schedule, params } from '@serverless/cloud'
 
 /* 
  * Create a route to GET our TODO items
 */
 api.get('/todos', async (req, res) => {
-
   // Call our getTodos function with the status
   let result = await getTodos(req.query.status, req.query.meta ? true : {});
   
