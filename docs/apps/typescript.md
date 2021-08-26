@@ -22,12 +22,9 @@ Add `tsconfig.json` to the root of your project, with this minimum configuration
 }
 ```
 
-The `@serverless/cloud` library doesn't have type definitions yet, so you may want to add a `@ts-ignore` directive above the import statement to disable warnings.
-
 ```typescript
 // index.ts
 
-// @ts-ignore
 import { api } from "@serverless/cloud";
 
 api.get("/message", async (req: any, res: any) => {

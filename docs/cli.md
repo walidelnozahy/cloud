@@ -10,9 +10,9 @@ The following CLI commands are available to develop, manage, and deploy instance
 
 **Current CLI Version:** `v0.0.22`
 
-## `cloud [--seed] [--org] [--service]`
+## `cloud [--seed] [--org] [--service] [--template]`
 
-Enables interactive development mode and syncs and deploys local changes to your **personal instance**. This will watch your current directory and immediately sync and publish any changes you save. You can enable automatic data reseeding by passing the optional `--seed` flag. When automatic seeding is enabled, changes saved to your `data.json` file will update your **personal instance**'s data. You can update the organization and/or service of the app attached to your personal instance by passing the optional --org and --service flags respevctively.
+Enables interactive development mode and syncs and deploys local changes to your **personal instance**. This will watch your current directory and immediately sync and publish any changes you save. You can enable automatic data reseeding by passing the optional `--seed` flag. When automatic seeding is enabled, changes saved to your `data.json` file will update your **personal instance**'s data. You can update the organization and/or service of the app attached to your personal instance by passing the optional --org and --service flags respevctively. You can initialize a new project with any of the projects in the [examples repository](https://github.com/serverless/cloud/tree/main/examples). For example, `--template=cloud-chat`.
 
 ## `cloud help`
 
