@@ -6,7 +6,7 @@
 
 For more information please review the [full documentation](https://serverless.github.io/cloud/).
 
-**PLEASE NOTE:** If you'd like to register for the early access list, please [sign up to get early access](https://xv4b63nuizx.typeform.com/cloudbeta#email=xxxxx).
+**PLEASE NOTE:** If you'd like to register for the early access list, please [sign up to get early access](https://xv4b63nuizx.typeform.com/cloud).
 
 ## Feedback
 

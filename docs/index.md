@@ -1,5 +1,4 @@
 ---
-
 title: Overview
 menuText: Overview
 menuOrder: 1
@@ -13,9 +12,10 @@ Serverless Cloud lets you build scalable, highly-secure, pay-per-use application
 
 <a href="#getting-started" >Get started now</a>
 <a href="/cloud/docs/learn" >How it works</a>
-<a href="https://xv4b63nuizx.typeform.com/cloudbeta#email=xxxxx" target="_blank" >Get early access</a>
+<a href="https://xv4b63nuizx.typeform.com/cloud" target="_blank" >Get early access</a>
 
-**PLEASE NOTE:** If you'd like to register for the early access list, please [sign up to get early access](https://xv4b63nuizx.typeform.com/cloudbeta#email=xxxxx).
+**PLEASE NOTE:** If you'd like to register for the early access list, please [sign up to get early access](https://xv4b63nuizx.typeform.com/cloud).
+
 ## Getting Started
 
 Install globally from npm...
