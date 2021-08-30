@@ -37,7 +37,9 @@ api.get("/todos", async (req, res) => {
 
 The test for this handler will do a few things. First, it will set up some test data to retrieve. Then it will simulate the GET request using the built-in `invoke()` method and check the response. Finally it will clean up the test data.
 
-Create a file called `api.test.js` in the `tests` folder. Use `beforeAll` and `afterAll` blocks to set up the test data and delete it after the test has finished:
+Create a file called `api.test.js` in the `tests` folder. Test files can either have a file name ending with `.test.js` or `.test.ts`, or by placing them in a folder named `__tests__`.
+
+Use `beforeAll` and `afterAll` blocks to set up the test data and delete it after the test has finished:
 
 ```js
 // api.test.js
@@ -97,50 +99,30 @@ serverless ⚡ cloud
 ⚡› test
 ```
 
-This will start running your tests in your personal instance, and then display the results when they finish.
-
-Here is the example output from the to-do example application:
+This will run your tests in your personal instance, and display the results when they finish. If all tests pass the output will be:
 
 ```
-10:03:16 a.m. ─  PASS  tests/integration/api.test.js
-  ● Console
+✔ All tests passed
 
-    console.log
-      Serverless Data item size: 73 bytes
-
-      at Object.set (../../opt/nodejs/node_modules/@serverless/cloud/node_modules/@serverless/data_internal/dist/index.js:2:496474)
-
- PASS  tests/integration/schedule.test.js
-  ● Console
-
-    console.log
-      Serverless Data item size: 93 bytes
-
-      at Object.set (../../opt/nodejs/node_modules/@serverless/cloud/node_modules/@serverless/data_internal/dist/index.js:2:496474)
-
-
-Test Suites: 2 passed, 2 total
-Tests:       5 passed, 5 total
-Snapshots:   0 total
-Time:        1.597 s, estimated 2 s
-Ran all test suites.
+⚡›
 ```
-
-Notice that console output from your tests is displayed along with your test results.
 
 Let's make a change and break the tests. In `api.test.js` change "Something to do" to "Something else" and then save the file, and enter the `test` command again. We now see this test failure:
 
 ```
+✖ 1 of 5 tests failed
+
   ● should post a todo
 
     expect(received).toEqual(expected) // deep equality
 
-    _ Expected  _ 1
+    - Expected  - 1
     + Received  + 1
 
       Object {
         "items": Array [
           Object {
+            "createdAt": Any<Number>,
             "id": "123",
     -       "name": "Something else",
     +       "name": "Something to do",
