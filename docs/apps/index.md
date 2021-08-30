@@ -1,15 +1,16 @@
 ---
-layout: default
+
 title: Building Applications
-nav_order: 4
+menuText: Building Applications
+menuOrder: 4
 has_children: true
 has_toc: false
-last_modified_date: 2021-05-30
+
 ---
 
 # Building Applications on Serverless Cloud
 
-Serverless Cloud uses a familar *Express.js-like* API for building cloud applications. Using the `@serverless/cloud` npm package gives you a simple interface to build `api`s, access `data`, pass `params` and `schedule` tasks. 
+Serverless Cloud uses a familar *Express.js-like* API for building cloud applications. Using the `@serverless/cloud` npm package gives you a simple interface to build `api`s, access `data`, pass `params` and `schedule` tasks.
 
 ## Importing the `@serverless/cloud` package
 
@@ -27,8 +28,8 @@ You can then use the `api`, `data`, `schedule`, and `params` helpers to build yo
 
 ### Learn more about:
 
-[APIs](/cloud/apps/api.html){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 .mr-2 }
-[Serverless Data](/cloud/apps/data.html){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 .mr-2 }
-[Scheduled Tasks](/cloud/apps/schedule.html){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 }
-[Params](/cloud/apps/params.html){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 .mr-2 }
-[Using Typescript](/cloud/apps/typescript.html){: .btn .btn-primary .fs-5 .mt-4 .mb-md-0 .mr-2 }
+[APIs](/cloud/apps/api)
+[Serverless Data](/cloud/apps/data)
+[Scheduled Tasks](/cloud/apps/schedule)
+[Params](/cloud/apps/params)
+[Using Typescript](/cloud/apps/typescript)

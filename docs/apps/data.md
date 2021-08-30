@@ -1,27 +1,15 @@
 ---
-layout: default
 title: Serverless Data
-nav_order: 2
+menuText: Serverless Data
+menuOrder: 2
 parent: Building Applications
-last_modified_date: 2021-05-30
 ---
 
 # Serverless Data
 
-{: .no_toc }
-
 Serverless Data is a super fast, automatically scalable datastore that's built in to Serverless Cloud. It's capable of storing simple K/V items, or massive collections of complex objects that can be queried on multiple dimensions, sorted, and paginated. With single-digit millisecond response times, it provides enough power to cover your most common needs and use cases.
 
 With Serverless Data, **your data is just there** as part of your application's runtime. No connection strings, credentials, capacity planning, or database maintenance. You can use the Serverless Cloud `data` helper to `get`, `set`, and `remove` data whenever you need access to state. Plus, Serverless Data is isolated to each **INSTANCE**, giving every developer, stage, and preview build of a **SERVICE** a completely independent copy of your application's data.
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 ## Using Serverless Data
 
@@ -67,7 +55,7 @@ await data.set("foo", "bar", {
   meta: true,
   ttl: 3600,
   label1: "baz",
-  label2: "baz:bat",
+  label2: "baz:bat"
 });
 ```
 
@@ -147,7 +135,7 @@ Serverless Data either returns a single item or an array of multiple items. Any 
   items: [
     { key: "foo:bar", value: "item1" },
     { key: "foo:bat", value: { some: "value" } },
-    { key: "foo:baz", value: 1234 },
+    { key: "foo:baz", value: 1234 }
   ];
 }
 ```
@@ -160,7 +148,7 @@ Collections give you super powers, allowing you to limit the items returned base
 
 ### Partial matches
 
-You've already seen the `*` wildcard used to retrieve _all_ items from a collection, but you can also use the wildcard to retrieve items with partially matching keys as well. **Note:** Wildcards are only supported at the end of a key expression.
+You've already seen the `*` wildcard used to retrieve *all* items from a collection, but you can also use the wildcard to retrieve items with partially matching keys as well. **Note:** Wildcards are only supported at the end of a key expression.
 
 ```javascript
 // Retrieve all keys from the `user123` collection
@@ -203,7 +191,7 @@ You can get items by their labels using the `get` method and the `{ label: 'labe
 
 Labels support collections as well as simple keys. Since they behave the same way, you can also use collection querying methods like `*` and `>=` on labels as well.
 
-Labels are incredibly powerful, allowing you to pivot and access your data in multiple "views". For example, if you store orders in a "user" collection (e.g. `user-1234`), then you can store their order date and number as the key (e.g. `user-1234:ORDER_2021-05-18_9321`). This would let you list all (or some) of their orders and sort them by date. But if you wanted to access this same information by the unique order number (`9321`), a simple key-value store wouldn't let you. With Serverless Data, you can set `label1` to something like `ORDER-9321`. Now you can either get the orders _BY USER_ or _BY ORDER ID_:
+Labels are incredibly powerful, allowing you to pivot and access your data in multiple "views". For example, if you store orders in a "user" collection (e.g. `user-1234`), then you can store their order date and number as the key (e.g. `user-1234:ORDER_2021-05-18_9321`). This would let you list all (or some) of their orders and sort them by date. But if you wanted to access this same information by the unique order number (`9321`), a simple key-value store wouldn't let you. With Serverless Data, you can set `label1` to something like `ORDER-9321`. Now you can either get the orders *BY USER* or *BY ORDER ID*:
 
 ```javascript
 // Set the order

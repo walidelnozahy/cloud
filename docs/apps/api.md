@@ -1,22 +1,11 @@
 ---
-layout: default
 title: APIs
-nav_order: 1
+menuText: APIs
+menuOrder: 1
 parent: Building Applications
-last_modified_date: 2021-05-30
 ---
 
 # Creating API Routes
-{: .no_toc }
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 API routes in Serverless Cloud use Express.js syntax and methods. For more information regarding Express.js, visit [http://expressjs.com/en/4x/api.html](http://expressjs.com/en/4x/api.html).
 
@@ -48,14 +37,14 @@ Currently, all Express.js [Application](http://expressjs.com/en/4x/api.html#app)
 
 Methods accept a `path` and `callback` parameter.
 
-Method  | Description |
---------|-------------|
-`all()` | This method is like the standard app.METHOD() methods, except it matches all HTTP verbs. |
-`delete()` | Routes HTTP DELETE requests to the specified path with the specified callback functions.  |
-`get()` | Routes HTTP GET requests to the specified path with the specified callback functions. |
-`post()` | Routes HTTP POST requests to the specified path with the specified callback functions. |
-`put()` | Routes HTTP PUT requests to the specified path with the specified callback functions. |
-`use()` | Mounts the specified middleware function or functions at the specified path: the middleware function is executed when the base of the requested path matches path. |
+| Method     | Description                                                                                                                                                        |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `all()`    | This method is like the standard app.METHOD() methods, except it matches all HTTP verbs.                                                                           |
+| `delete()` | Routes HTTP DELETE requests to the specified path with the specified callback functions.                                                                           |
+| `get()`    | Routes HTTP GET requests to the specified path with the specified callback functions.                                                                              |
+| `post()`   | Routes HTTP POST requests to the specified path with the specified callback functions.                                                                             |
+| `put()`    | Routes HTTP PUT requests to the specified path with the specified callback functions.                                                                              |
+| `use()`    | Mounts the specified middleware function or functions at the specified path: the middleware function is executed when the base of the requested path matches path. |
 
 ## Specifying paths
 
@@ -76,14 +65,14 @@ The Request object currently supports the same properties and methods as the Exp
 
 The most used `req` properties are as follows:
 
-Properties    | Description
---------------|-------------
-`req.body`    | The parsed body of the request. If the `Content-Type` is `application/json`, the value will automatically be parsed into an object.
-`req.cookies` | An object that contains any passed cookis.
-`req.method`  | The HTTP VERB used to trigger this route.
-`req.params`  | An object that contains parsed parameters from the url as defined using `:paramName`.
-`req.path`    | The path used in the request.
-`req.query`   | An object containing parsed querystring parameters.
+| Properties    | Description                                                                                                                         |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `req.body`    | The parsed body of the request. If the `Content-Type` is `application/json`, the value will automatically be parsed into an object. |
+| `req.cookies` | An object that contains any passed cookis.                                                                                          |
+| `req.method`  | The HTTP VERB used to trigger this route.                                                                                           |
+| `req.params`  | An object that contains parsed parameters from the url as defined using `:paramName`.                                               |
+| `req.path`    | The path used in the request.                                                                                                       |
+| `req.query`   | An object containing parsed querystring parameters.                                                                                 |
 
 ### Response object
 
@@ -91,13 +80,13 @@ The Response object currently supports the same methods as the Express.js [Respo
 
 The most used `res` methods are as follows:
 
-Method           | Description
------------------|-------------
-`res.cookie()`   | Sets cookie name to value. See [res.cookie()](http://expressjs.com/en/4x/api.html#res.cookie).
-`res.json()`     | Sends a JSON response. This method sends a response (with the correct content-type) that is the parameter converted to a JSON string using `JSON.stringify()`.
-`res.location()` | Sets the response `Location` HTTP header to the specified path parameter.
-`res.redirect()` | Redirects to the URL derived from the specified path, with specified status, a positive integer that corresponds to an HTTP status code. If not specified, status defaults to “302 Found”.
-`res.send()`     | Sends the HTTP response. The body parameter can be a `Buffer` object, a `String`, an `object`, `Boolean`, or an `Array`.
+| Method           | Description                                                                                                                                                                                |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `res.cookie()`   | Sets cookie name to value. See [res.cookie()](http://expressjs.com/en/4x/api.html#res.cookie).                                                                                             |
+| `res.json()`     | Sends a JSON response. This method sends a response (with the correct content-type) that is the parameter converted to a JSON string using `JSON.stringify()`.                             |
+| `res.location()` | Sets the response `Location` HTTP header to the specified path parameter.                                                                                                                  |
+| `res.redirect()` | Redirects to the URL derived from the specified path, with specified status, a positive integer that corresponds to an HTTP status code. If not specified, status defaults to “302 Found”. |
+| `res.send()`     | Sends the HTTP response. The body parameter can be a `Buffer` object, a `String`, an `object`, `Boolean`, or an `Array`.                                                                   |
 
 ## Middleware
 
