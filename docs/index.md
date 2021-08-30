@@ -52,7 +52,7 @@ clone [service_name]/prod
 
 And continue developing on the code and data copied from `prod`:
 
-Visit Serverless Cloud Dashboard to see your services and instances, to define secrets and apply it to your instances and to check the logs and metrics of your instances via [cloud.serverless.com](https://cloud.serverless.com)
+Visit Serverless Cloud Dashboard to see your services and instances, to define secrets and apply it to your instances and to check the logs and metrics of your instances via [cloud.serverless.com](https://cloud.serverless.com).
 
 ## Feedback
 
