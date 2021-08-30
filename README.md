@@ -1,13 +1,13 @@
-# The way serverless was meant to be.
+![Serverless Cloud](https://user-images.githubusercontent.com/2053544/130823246-ef906e79-ce0e-4bb4-b1d6-3420b93d8fc6.jpeg)
 
-### Serverless Cloud lets you build scalable, highly-secure, pay-per-use applications, without needing a deep knowledge of cloud services. Focus on writing code, instead of worrying about infrastructure.
+Introducing Serverless Cloud, a new platform that combines the best features of modern cloud into an experience that’s fast, familiar and frictionless. [Learn more](https://serverless.com/cloud/).
 
-![serverless cloud](https://user-images.githubusercontent.com/22547594/130658274-99331bce-8f6d-4a03-83b5-7a51030ac08a.jpg)
+Full documentation: [https://serverless.com/cloud/docs](https://serverless.com/cloud/docs)
 
-For more information please review the [full documentation](https://serverless.github.io/cloud/).
+## CLI
 
-**PLEASE NOTE:** If you'd like to register for the early access list, please [sign up to get early access](https://xv4b63nuizx.typeform.com/cloud).
+For a complete reference of CLI commands, please visit [https://serverless.com/cloud/docs-cli](https://serverless.com/cloud/docs-cli).
 
 ## Feedback
 
-Many parts of this are still experimental, so please keep that in mind when testing. Please log any issues and additional feedback can be sent to cloud@serverless.com.
+Please log any issues in [GitHub](https://github.com/serverless/cloud/issues) and send any additional feedback cloud@serverless.com.
