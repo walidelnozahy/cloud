@@ -84,61 +84,73 @@ Check out Jest's <a href="https://jestjs.io/docs/getting-started" target="_blank
 
 ## Running tests
 
-To run your tests start the Cloud shell, type `test` at the prompt then press enter:
+You can run your tests in the Cloud shell or from the command line.
+
+To run your tests in the Cloud shell, enter `test` at the prompt:
 
 ```
 % cloud
 
-serverless ⚡ cloud
-
-✔ Deployed your personal instance
-✔ Enabled automatic syncing and deployment
-✔ Enabled log streaming
+✔ Connected to your instance of "smoke-todo-cjs".
+✔ Enabled automatic file syncing and log streaming.
+✔ Copied personal instance url to your clipboard.
 → https://<instance-url>
 
-⚡› test
+› test
 ```
 
-This will run your tests in your personal instance, and display the results when they finish. If all tests pass the output will be:
+This will run your tests in your personal instance, and display the results when they finish.
+
+Alternatively, you can run your tests directly from the command line using `cloud test`:
 
 ```
-✔ All tests passed
-
-⚡›
+% cloud test
 ```
 
-Let's make a change and break the tests. In `api.test.js` change "Something to do" to "Something else" and then save the file, and enter the `test` command again. We now see this test failure:
+This will create a new test instance, run your tests, and then delete the instance. Using a test instance lets you test your code without impacting your personal instance data, and can be used in your automated CI/CD process.
+
+In our To-Do example, when all tests pass the output will be:
 
 ```
-✖ 1 of 5 tests failed
+✔ 5/5 tests passed (3.871s)
+
+  tests/integration/api.test.js
+
+    ✔ should post a todo
+    ✔ should get todos
+    ✔ should delete the todo
+    ✔ should get no todos
+
+  tests/integration/schedule.test.js
+
+    ✔ deletes overdue items
+
+›
+```
+
+Let's make a change and break the tests. In `api.test.js` change "Something to do" to "Something else" in the expectation and then save the file, and enter the `test` command again. We now see this test failure:
+
+```
+✖ 1/5 tests failed (3.984s)
+
+  tests/integration/api.test.js
 
   ● should post a todo
 
-    expect(received).toEqual(expected) // deep equality
+    expect(received).toContainEqual(expected) // deep equality
 
-    - Expected  - 1
-    + Received  + 1
+    Expected value: {"id": "123", "name": "Something else"}
+    Received array: [{"id": "123", "name": "Something to do"}]
 
-      Object {
-        "items": Array [
-          Object {
-            "createdAt": Any<Number>,
-            "id": "123",
-    -       "name": "Something else",
-    +       "name": "Something to do",
-          },
-        ],
-      }
-
-       7 |   });
+       7 |   })
        8 |
-    >  9 |   expect(body).toEqual({
-         |                ^
-      10 |     items: [
-      11 |       {
-      12 |         id: "123",
+    >  9 |   expect(body.items).toContainEqual({
+         |                      ^
+      10 |     id: '123',
+      11 |     name: 'Something else'
+      12 |   })
 
-      at Object.<anonymous> (tests/integration/api.test.js:9:16)
+      at Object.<anonymous> (tests/integration/api.test.js:9:22)
 ```
 
 Jest provides a detailed report including the reason the test failed and the code location, so you can make the fix and re-run the tests.
