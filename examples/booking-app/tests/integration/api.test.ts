@@ -1,8 +1,9 @@
-// @ts-ignore
 import { api, data } from '@serverless/cloud'
+import { jest } from '@jest/globals'
 import { Destination, DestinationManager } from '../../managers/destination-manager'
 import { ReadableUser, UserManager } from '../../managers/user-manager'
 import { BookingErrors } from "../../managers/booking-manager";
+import { Auth } from "../../auth";
 
 const TEST_PASSWORD = 'Testing123'
 
@@ -13,6 +14,9 @@ let user1: ReadableUser
 let user1Token: string
 
 beforeAll(async () => {
+    jest.spyOn(Auth, 'middleware').mockImplementation(() => {})
+    jest.spyOn(Auth, 'createToken').mockImplementation(() => 'token')
+
     destination1 = await DestinationManager.createDestination({
        name: 'Test House',
        state: 'TX',
@@ -58,7 +62,8 @@ afterAll(async () => {
 describe('API Tests', () => {
     describe('Destination Routes', () => {
         test('Should return a destination', async () => {
-            const { body } = await api.get(`/destination/${destination1.id}`).invoke()
+            const { body, status } = await api.get(`/destination/${destination1.id}`).invoke()
+            console.log(body, status)
             expect(body.destination).toBeTruthy()
             expect(body.destination.city).toEqual('Testville')
         })

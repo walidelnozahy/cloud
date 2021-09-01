@@ -24,11 +24,12 @@ export type Destination = {
 type NewDestination = Omit<Destination, 'id'>
 
 const getById = async (id: string): Promise<Optional<Destination>> => {
-    const { items } = await data.get<Destination>(`destination:${id}`)
-    if (!items.length) {
-        return undefined
-    }
-    return items[0].value
+    const item = await data.get<Destination>(`destination:${id}`, true)
+    // if (!items.length) {
+    //     return undefined
+    // }
+    // return items[0].value
+    return item.value
 }
 
 const getAvailable = async (): Promise<Destination[]> => {
