@@ -1,4 +1,4 @@
-const { api } = require("@serverless/cloud");
+import { api } from "@serverless/cloud";
 
 test("should post a todo", async () => {
   const { body } = await api.post("/todos/123?status=all").invoke({

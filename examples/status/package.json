@@ -6,10 +6,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "start": "cloud",
-    "test": "cloud test"
-  },
   "author": "Serverless, Inc.",
   "license": "MIT",
   "files": [

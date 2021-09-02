@@ -9,6 +9,11 @@
     "test": "cloud test"
   },
   "devDependencies": {
+    "@jest/globals": "^27.1.0",
     "@serverless/cloud": "^0.0.22"
+  },
+  "serverless": {
+    "org": "rschick",
+    "service": "todo"
   }
 }

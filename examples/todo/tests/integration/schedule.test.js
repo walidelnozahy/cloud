@@ -1,4 +1,5 @@
-const { schedule, data } = require("@serverless/cloud");
+import { schedule, data } from "@serverless/cloud";
+import { jest } from "@jest/globals"
 
 const log = jest.spyOn(console, "log");
 

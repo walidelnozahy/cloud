@@ -6,5 +6,8 @@
   "scripts": {
     "start": "cloud",
     "test": "cloud test"
+  },
+  "dependencies": {
+    "@serverless/cloud": "^2.0.1"
   }
 }
