@@ -16,4 +16,4 @@ The cloud is immensely powerful, but also complex and filled with lots of moving
 
 ### Want to get started building apps on Serverless Cloud?
 
-[Sign up for early access](https://xv4b63nuizx.typeform.com/cloud)
+[Get early access](https://cloud.serverless.com/?view=register)
