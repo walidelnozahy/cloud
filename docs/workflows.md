@@ -4,7 +4,7 @@ menuText: Development Workflows
 menuOrder: 3
 ---
 
-# Workflows to interate at the speed of Serverless
+# Workflows to iterate at the speed of Serverless
 
 Serverless Cloud provides flexible workflows to make publishing and sharing your applications as easy as possible. Whether you're a single developer, or a team working on multiple projects, Serverless Cloud provides the tools you need for rapid iteration and feedback.
 
@@ -20,7 +20,7 @@ While _instance_ enviroments are identical, Serverless Cloud lets you classify i
 
 ### Developer Instances
 
-Every developer on your team gets a **Developer Instance** for every **SERVICE** they work on. Each _Developer Instances_ is your own "personal development workspace" that automatically syncs and deploys changes from your local IDE as you code. To enable this interactive development mode, type `cloud start` into the CLI within your project directory. You'll immediately have access to your own cloud environment, complete with your own data store and streaming logs to help you iterate quickly.
+Every developer on your team gets a **Developer Instance** for every **SERVICE** they work on. Each _Developer Instance_ is your own "personal development workspace" that automatically syncs and deploys changes from your local IDE as you code. To enable this interactive development mode, type `cloud start` into the CLI within your project directory. You'll immediately have access to your own cloud environment, complete with your own data store and streaming logs to help you iterate quickly.
 
 ### Stages (Permanent Instances)
 
@@ -29,6 +29,10 @@ When you're ready to show your work to the world, you can _deploy_ your code to 
 ### Previews (Ephemeral Instances)
 
 If you want to get feedback on your application, but don't yet want to publish it to one of the permanent stages above, you can created **PREVIEWS** instead. Type `cloud share` into the CLI, and Serverless Cloud will create a _preview_ that contains your **code AND data**. _Previews_ are just like _stages_, except that previews will automatically expire when they are no longer being used.
+
+### Test instances
+
+When you run `cloud test`, Serverless Cloud creates a new **Test Instance** to run your tests, then deletes it once your tests have finished. This lets you test your code without impacting other instances, and is used to run tests as part of your automated CI/CD process.
 
 ## Forking Existing Instances
 
