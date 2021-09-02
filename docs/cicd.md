@@ -1,7 +1,7 @@
 ---
 title: CI/CD
 menuText: CI/CD
-menuOrder: 1
+menuOrder: 6
 parent: Development Workflows
 ---
 

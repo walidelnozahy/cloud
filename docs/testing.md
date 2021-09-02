@@ -1,7 +1,7 @@
 ---
 title: Automated Testing
 menuText: Automated Testing
-menuOrder: 4
+menuOrder: 5
 ---
 
 # Automated Testing
@@ -30,7 +30,7 @@ api.get("/todos", async (req, res) => {
 
   // Return the results
   res.send({
-    items: result.items
+    items: result.items,
   });
 });
 ```
@@ -47,7 +47,7 @@ Use `beforeAll` and `afterAll` blocks to set up the test data and delete it afte
 beforeAll(async () => {
   await data.set("todo:123456", {
     id: "123456",
-    name: "Something to do"
+    name: "Something to do",
   });
 });
 
@@ -68,9 +68,9 @@ test("should get all todos", async () => {
     items: [
       {
         id: "123456",
-        name: "Something to do"
-      }
-    ]
+        name: "Something to do",
+      },
+    ],
   });
 });
 ```

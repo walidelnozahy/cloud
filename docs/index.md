@@ -4,17 +4,9 @@ menuText: Overview
 menuOrder: 1
 ---
 
-# The way serverless was meant to be.
+# Serverless Cloud Documentation
 
 Serverless Cloud lets you build scalable, highly-secure, pay-per-use applications, without needing a deep knowledge of cloud services. Focus on writing code, instead of worrying about infrastructure.
-
-![logo-serverless-cloud](https://user-images.githubusercontent.com/22547594/130658274-99331bce-8f6d-4a03-83b5-7a51030ac08a.jpg)
-
-<a href="#getting-started" >Get started now</a>
-<a href="/cloud/docs/learn" >How it works</a>
-<a href="https://xv4b63nuizx.typeform.com/cloud" target="_blank" >Get early access</a>
-
-**PLEASE NOTE:** If you'd like to register for the early access list, please [sign up to get early access](https://xv4b63nuizx.typeform.com/cloud).
 
 ## Getting Started
 
