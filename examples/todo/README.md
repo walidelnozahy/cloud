@@ -6,7 +6,7 @@ You now own a personal development instance on Serverless Cloud. Just play with 
 ## APIs
 
 Note that several endpoints are already defined by using the `api` object in `index.js`. You can create new API routes or update the existing ones to see the effect. 
-More information about APIs can be found [here](https://serverless.github.io/cloud/apps/api.html).
+More information about APIs can be found [here](https://serverless.com/cloud/docs/apps/api).
  
 ## Serverless Data
 
@@ -16,27 +16,27 @@ Serverless Data is just there as a part of runtime so you don't need to provide 
 
 You can import and export data to/from your personal development instance by typing `import` and `export` while you're in Cloud Shell or you can just directly type `cloud import` or `cloud export` without starting the Cloud Shell.
 
-More information about Serverless Data can be found [here](https://serverless.github.io/cloud/apps/data.html).
+More information about Serverless Data can be found [here](https://serverless.com/cloud/docs/apps/data).
 
 ## Schedules
 
 Serverless Cloud lets you create scheduled tasks using either `.every()` or `.cron()` methods. In this way, you can build automation for periodic tasks like batch processing etc. 
 
-More information about Schedules can be found [here](https://serverless.github.io/cloud/apps/schedule.html).
+More information about Schedules can be found [here](https://serverless.com/cloud/docs/apps/schedule).
 
 ## Testing
 
 Serverless Cloud has built-in support for automated unit and integration testing. See the tests written for the sample app under tests/integration folder. You can write tests based on [Jest testing framework](https://jestjs.io/){:target="_blank"}.
 Just type `test` when you're in Cloud Shell or type `cloud test` from your terminal to run the tests on your personal development instance.
 
-More information about testing can be found [here](https://serverless.github.io/cloud/apps/testing.html).
+More information about testing can be found [here](https://serverless.com/cloud/docs/testing).
 
 
 ## CLI and Cloud Shell
 
 Serverless Cloud provides a seamless CLI experience to manage the service you built on Serverless Cloud. You can type `cloud start` or `cloud` when you are in the root directory of a Serverless Cloud project. This will trigger the Cloud Shell where you can run commands to list/delete your instances and services, share/clone the instances, import/export data to/from your personal development instances. All the available cloud commands can be seen when you type `help` from Cloud Shell or `cloud help` from your terminal.
 
-More information about the CLI can be found [here](https://serverless.github.io/cloud/cli.html).
+More information about the CLI can be found [here](https://serverless.com/cloud/docs/cli).
 
 ## Development Workflows
 
@@ -47,8 +47,8 @@ When you need to show your work to others or deploy applications so the rest of 
 * Type `deploy <stage>` when you need to deploy your code to a permanent stage and make it accessible to your CI tool or your users. 
 * Type `clone <stage>` when you need to copy both code and data of an instance to your personal development data and reproduce a bug on a stage. 
 
-More information about development workflows can be found [here](https://serverless.github.io/cloud/workflows.html).
+More information about development workflows can be found [here](https://serverless.com/cloud/docs/workflows).
 
 ## Feedback
 
-Many parts of this are still experimental, so please keep that in mind when testing. Please log any issues and additional feedback can be sent to cloud@serverless.com.
+ Please log any issues and additional feedback can be sent to cloud@serverless.com.
