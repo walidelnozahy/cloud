@@ -24,7 +24,7 @@
     "/templates"
   ],
   "devDependencies": {
-    "@serverless/cloud": "^0.0.22",
+    "@serverless/cloud": "^2.0.0",
     "@serverless/eslint-config": "^3.0.0",
     "eslint": "^7.17.0",
     "eslint-plugin-import": "^2.22.1",
