@@ -6,29 +6,29 @@ test("should post a todo", async () => {
     name: "Something to do",
   });
 
-  expect(body).toEqual({
-    items: [
+  expect(body.items).toEqual(
+    expect.arrayContaining([
       {
         id: "123",
         name: "Something to do",
         createdAt: expect.any(Number),
       },
-    ],
-  });
+    ])
+  );
 });
 
 test("should get todos", async () => {
   const { body } = await api.get("/todos?status=all").invoke();
 
-  expect(body).toEqual({
-    items: [
+  expect(body.items).toEqual(
+    expect.arrayContaining([
       {
         id: "123",
         name: "Something to do",
         createdAt: expect.any(Number),
       },
-    ],
-  });
+    ])
+  );
 });
 
 test("should delete the todo", async () => {
@@ -38,7 +38,11 @@ test("should delete the todo", async () => {
 
 test("should get no todos", async () => {
   const { body } = await api.get("/todos?status=all").invoke();
-  expect(body).toEqual({
-    items: [],
-  });
+  expect(body.items).not.toEqual(
+    expect.arrayContaining([
+      expect.objectContaining({
+        id: "123",
+      }),
+    ])
+  );
 });
