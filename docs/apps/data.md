@@ -225,3 +225,94 @@ let results = await data.remove("foo");
 let results = await data.remove("foo:bar");
 let results = await data.remove(["key1", "someOtherKey", "namespacedKey:keyX"]);
 ```
+
+## Reacting to changes
+
+Serverless Data emits an event every time a data item is created, updated, or deleted, which you can react to by writing an event handler. This lets you decouple your application and process changes to your data asynchronously. For example your API could set data and then immediately send a response, while your event handler can do some data aggregation or send a request to an outside service.
+
+### Defining event handlers
+
+You define an event handler using the `data.on()` method.
+
+```javascript
+data.on("created", async (event) => {
+  // an item has been created
+});
+```
+
+The first argument is the event name: `created`, `updated`, or `deleted`. The second argument is your handler function, which receives a single "event" argument.
+
+You can also react to more than one event using an array of event names, or `*` to react to any event:
+
+```javascript
+data.on(["created", "updated"], async (event) => {
+  // an item has been created or updated
+})
+
+data.on("*", async (event) => {
+  // an item has been created, updated, or deleted
+})
+```
+
+It's possible for more than one handler to be called for a given change to a data item, in which case the handlers are called in the order they were defined. In the example above, the first handler will always be called the before the second handler when an item is created or updated, and only the second handler will be called when an item is deleted.
+
+### Event format
+
+The event passed to your handler has the following properties:
+
+- `name`: the event name, which is one of `created`, `updated`, or `deleted`
+- `item`: the item, including metadata and the value of the item in the `value` property
+- `previous`: the previous state of the item when the event is `updated`
+
+
+### Filtering by key
+
+You can define a handler that is only called when specific keys are affected by adding namespace and key filters to the event name.
+
+To add a filter you can use one of these formats:
+
+- `<event-name>:<key-filter>`
+- `<event-name>:<namespace-filter>:<key-filter>`
+
+Each filter can either be an exact string or a prefix by adding `*` to the end of the filter.
+
+For example, to filter using a specific simple key:
+
+```javascript
+data.on("*:global-item", (event) => {
+  // called when the item with key `global-item` is created, updated or deleted
+})
+```
+
+To filter using a simple key prefix:
+
+```javascript
+data.on("created:order_*", (event) => {
+  // called when an item with a simple key starting with `order_` is created
+})
+```
+
+To filter using both a namespace and key prefix:
+
+```javascript
+data.on("created:order_*:item_*", (event) => {
+  // called when an item is created that has a namespace starting with `order_`
+  // and a key starting with `item_`
+})
+```
+
+### Event ordering
+
+Data events are processed in the order that the changes were applied to your data items, within a item namespace. It's possible for multiple handlers to be invoked in parallel, but for different namespaces.
+
+### Handling errors
+
+If a handler throws an error, it will be retried with exponential backoff for up to 24 hours until it succeeds. After 24 hours the event will be dropped.
+
+It's important to handle errors in your handler, since a failing handler will prevent new events from being processed.
+
+Handlers should only throw an exception for "retryable" errors such as downstream request failures. If the error is a permanent error, the handler should use a try-catch block to capture the error and let the handler succeed.
+
+### Avoiding event loops
+
+It's possible to create an "event loop" where your event handler triggers itself and results in an infinite loop that exhausts resources. If you are calling `data.set()` or `data.remove()` within a handler, make sure it will not result in the same handler being invoked again with a new event.
