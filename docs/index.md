@@ -4,48 +4,13 @@ menuText: Overview
 menuOrder: 1
 ---
 
-# Serverless Cloud Documentation
+# Build _faster_ & _better_ with Serverless Cloud
 
-Serverless Cloud lets you build scalable, highly-secure, pay-per-use applications, without needing a deep knowledge of cloud services. Focus on writing code, instead of worrying about infrastructure.
+The cloud is immensely powerful, but also complex and filled with lots of moving parts. Developers are now wearing more hats than ever before, not only building and designing software, but becoming cloud architects that need to understand countless cloud services, scalable data engines, fault tolerance, and so much more. The goal of Serverless Cloud is to reduce this complexity by focusing on interpretation instead of configuration, and by automatically applying best practices to common use cases, removing the need for all the boilerplate and configuration, and allowing developers to do what they do best: build software.
 
-## Getting Started
 
-Install globally from npm...
+## How it works
 
-```
-npm i -g @serverless/cloud@latest
-```
+Serverless Cloud lets you build scalable, highly-secure, pay-per-use applications, without needing a deep knowledge of cloud services with a familiar _Express.js-like_ API. Focus on writing code, instead of worrying about infrastructure. Using our lightweight command line tool, we monitor your local directory as you code, and then instanteously sync those changes to your own, fully-isolated **personal development instance**, giving you a high-fidelity cloud environment to test updates in a rapid feedback loop. Plus, you have your own copy of Serverless Data to work with, letting you test your data-driven applications without affecting other team members or production instances. Build serverless workflows that gets triggered by API calls and/or capturing data events just by writing code. Serverless Cloud automatically takes care of spinning up the required infra that scales ultimately in the most efficient way.
 
-Create a new directory...
 
-```
-mkdir my-cloud && cd my-cloud
-```
-
-Initialize a sample project and start developing
-
-```
-cloud
-```
-
-Visit the url, see live logs, make changes, and watch them quickly deploy to your own **personal development instance**. Cloud Shell helps you write commands and go back in command history.
-
-When ready, you can publish to `prod` from Cloud Shell:
-
-```
-deploy prod
-```
-
-This will publish to a completely seperate instance. You may continue developing using `cloud start` without affecting `prod`, but anytime you want to copy the entire `prod` instance (including data) into your own personal development instance, just run:
-
-```
-clone [service_name]/prod
-```
-
-And continue developing on the code and data copied from `prod`:
-
-Visit Serverless Cloud Dashboard to see your services and instances, to define secrets and apply it to your instances and to check the logs and metrics of your instances via [cloud.serverless.com](https://cloud.serverless.com).
-
-## Feedback
-
-Please log any issues and additional feedback can be sent to [cloud@serverless.com](mailto:cloud@serverless.com).

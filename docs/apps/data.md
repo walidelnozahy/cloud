@@ -1,7 +1,7 @@
 ---
 title: Serverless Data
 menuText: Serverless Data
-menuOrder: 2
+menuOrder: 4
 parent: Building Applications
 ---
 

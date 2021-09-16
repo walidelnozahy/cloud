@@ -1,7 +1,7 @@
 ---
 title: CLI Reference
 menuText: CLI Reference
-menuOrder: 7
+menuOrder: 5
 ---
 
 # CLI Reference
