@@ -19,9 +19,11 @@ Serverless Cloud provides the preview build of each service via instances. A ser
 
 While _instance_ enviroments are identical, Serverless Cloud lets you classify instances to complement your workflow.
 
-### Developer Instances
+### Personal Instances
 
-Every developer on your team gets a **Developer Instance** for every **SERVICE** they work on. Each _Developer Instance_ is your own "personal development workspace" that automatically syncs and deploys changes from your local as you code. To enable this interactive development mode, type `cloud` into the CLI within your project directory. This will spin up your own developer instance on Cloud with your own data store. You'll be able to see the URL of your instance and detect the impact of changes you make. The logs for developer instance will start streaming instantly into your terminal to help you iterate quickly. Every change you make to your application, every static asset that you'll add under `/static` folder will be synced to your own developer instance immediately. Note that the URL for developer instances won't be accessible after the personal development mode is ended. For this reason, it's encouraged to deploy your app to a stage. 
+Every developer on your team gets a **Personal Instance** for every **SERVICE** they work on. Each _Personal Instance_ is your own "personal development workspace" that automatically syncs and deploys changes from your local as you code. To enable this interactive development mode, type `cloud` into the CLI within your project directory. This will spin up your own personal instance on Cloud with your own data store. You'll be able to see the URL of your personal instance and detect the impact of changes you make. The logs for developer instance will start streaming instantly into your terminal to help you iterate quickly. Every change you make to your application, every static asset that you'll add under `/static` folder will be synced to your own personal instance under 5 seconds depending on the size of the change. 
+
+Note that the URL for personal instances won't be accessible after the personal development mode is ended. For this reason, it's encouraged to deploy your app to a stage. 
 
 ### Stages (Permanent Instances)
 
@@ -33,7 +35,7 @@ If you want to get feedback on your application, but don't yet want to publish i
 
 ### Test instances
 
-When you run `cloud test`, Serverless Cloud creates a new **Test Instance** to run your tests, then deletes it once your tests have finished. This lets you test your code without impacting other instances, and is used to run tests as part of your automated CI/CD process.
+When you run `cloud test`, Serverless Cloud spins up a new **Test Instance** to run your tests, then tears it down once your tests have finished. This lets you test your code without impacting other instances, and is used to run tests as part of your automated CI/CD process.
 
 
 

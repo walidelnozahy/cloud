@@ -6,9 +6,9 @@ has_children: true
 has_toc: false
 ---
 
-## Sample Workflows
+# Workflows in Serverless Cloud
 
-Workflows are meant to be flexible, giving each unique team (or single developer) serverless superpowers.
+Serverless Cloud lets you deliver applications both when you are building alone and with your colleagues. Run your tests against Cloud, share your work with colleagues, integrate with your favorite CI/CD tool. Below are some example workflows for delivering applications fast. 
 
 ### Single Developer with a sample project
 
@@ -59,3 +59,14 @@ Workflows are meant to be flexible, giving each unique team (or single developer
 # for additional integration tests and feedback
 > deploy dev
 ```
+
+
+### Learn more about the concepts around building applications:
+
+- [Developer Instances](/cloud/workflows/developer-instances)
+- [Preview Instances](/cloud/workflows/preview-instances)
+- [Stages](/cloud/workflows/stages)
+- [Cloning Instances](/cloud/workflows/cloning)
+- [Automated Testing](/cloud/workflows/testing)
+- [Promoting Stages](/cloud/workflows/promoting-stages)
+- [CI/CD](/cloud/workflows/cicd)

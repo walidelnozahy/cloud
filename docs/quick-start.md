@@ -24,7 +24,7 @@ Initialize a sample project and start developing
 cloud
 ```
 
-Visit the url, see live logs, make changes, and watch them quickly deploy to your own **personal development instance**. Cloud Shell helps you write commands and go back in command history.
+Visit the url, see live logs, make changes, and watch them quickly deploy to your own **personal instance**. Cloud Shell helps you write commands and go back in command history.
 
 When ready, you can publish to `prod` from Cloud Shell:
 
@@ -32,7 +32,7 @@ When ready, you can publish to `prod` from Cloud Shell:
 deploy prod
 ```
 
-This will publish to a completely seperate instance. You may continue developing using `cloud start` without affecting `prod`, but anytime you want to copy the entire `prod` instance (including data) into your own personal development instance, just run:
+This will publish to a completely seperate instance. You may continue developing using `cloud` without affecting `prod`, but anytime you want to copy the entire `prod` instance (including data) into your own personal development instance, just run:
 
 ```
 clone [service_name]/prod
