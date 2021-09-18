@@ -2,7 +2,7 @@
   "name": "status-page",
   "version": "1.0.0",
   "description": "Serverless Status Page",
-  "main": "./src/api.js",
+  "main": "./backend/api.js",
   "type": "module",
   "scripts": {
     "start": "cloud",
