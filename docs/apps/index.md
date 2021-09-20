@@ -12,10 +12,10 @@ Serverless Cloud provides easy-to-use building blocks for building applications 
 
 ### Learn more about the building blocks of Serverless Cloud:
 
-- [Services & Instances](/cloud/apps/services-instances)
-- [APIs](/cloud/apps/api)
-- [Scheduled Tasks](/cloud/apps/schedule)
-- [Serverless Data](/cloud/apps/data)
-- [Static Assets](/cloud/apps/static-assets)
-- [Parameters](/cloud/apps/params)
-- [Using Typescript](/cloud/apps/typescript)
+- [Services & Instances](/cloud/docs/apps/services-instances)
+- [APIs](/cloud/docs/apps/api)
+- [Scheduled Tasks](/cloud/docs/apps/schedule)
+- [Serverless Data](/cloud/docs/apps/data)
+- [Static Assets](/cloud/docs/apps/static-assets)
+- [Parameters](/cloud/docs/apps/params)
+- [Using Typescript](/cloud/docs/apps/typescript)
