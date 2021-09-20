@@ -60,7 +60,7 @@ Serverless Cloud lets you deliver applications both when you are building alone 
 > share feature-1 --overwrite
 
 # Once the team is happy with the changes, publish to "dev"
-# for additional integration tests and  feedback
+# for additional integration tests and feedbacks
 > deploy dev
 ```
 
