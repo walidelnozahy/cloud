@@ -91,3 +91,21 @@ The most used `res` methods are as follows:
 ## Middleware
 
 Serverless Cloud supports both *Application* and *Route-level* middleware. For more information on middleware, please visit the [Express.js docs](http://expressjs.com/en/guide/using-middleware.html).
+
+## CORS
+
+To enable CORS on your API routes, you can use the CORS middleware.
+
+```javascript
+import cors from "cors";
+
+api.use(cors());
+```
+
+Alternatively, you can apply CORS to specific routes.
+
+```javascript
+import cors from "cors";
+
+api.get('/user', cors(), (req,res) => { ...do something... })
+```
