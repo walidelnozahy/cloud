@@ -39,7 +39,8 @@ Serverless Cloud lets you deliver applications both when you are building alone 
 > deploy dev
 ```
 
-TO-DO: Image here Serverless Cloud-SingleDeveloper without CodeRepository
+![Serverless Cloud-Single Developer with CodeRepo and MultipleStages](https://user-images.githubusercontent.com/85096820/134008888-6c2c53ee-f2d0-453e-9e5e-71979fb0438e.png)
+
 
 ### Team collaborating on a project
 
@@ -62,7 +63,8 @@ TO-DO: Image here Serverless Cloud-SingleDeveloper without CodeRepository
 > deploy dev
 ```
 
-TO-DO: Image here Serverless Cloud Developer Team with CodeRepository
+![Serverless Cloud-TeamWithMultipleFeatureBranches](https://user-images.githubusercontent.com/85096820/134009112-5ddda582-c1f9-4360-a110-fb59f22b5f92.png)
+
 
 ### Learn more about the concepts around building applications:
 
