@@ -5,7 +5,7 @@ menuOrder: 3
 parent: Worklows
 ---
 
-# Stages 
+#Stages 
 
 When you're ready to show your work to the world, you can _deploy_ your code to a **stage**. These are permanent instances like `prod`, `staging` and `dev`. Deploying to a stage is achieved typing `deploy <stage-name>` on Cloud Shell and by typing `cloud deploy <stage-name>` from your terminal. This command will publish only the **CODE** to a permanent stage, creates a new stage if there's no stage with this name. 
 
