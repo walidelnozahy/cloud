@@ -1,6 +1,6 @@
 ---
-title: Quick Start
-menuText: Quick Start
+title: Getting Started
+menuText: Get Started
 menuOrder: 2
 ---
 
