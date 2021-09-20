@@ -22,3 +22,5 @@ src
 ```
 
 This will allow you to run a separate terminal with your SPA build scripts running and only sync when it generates output files.
+
+**NOTE:** Please be sure to restart your cloud shell after changing the `.serverlessignore` file.
