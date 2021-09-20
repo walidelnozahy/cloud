@@ -26,8 +26,9 @@ When you need to deploy directly from terminal:
 
 ## Stages for Solo Developers 
 
-Even when you're working alone, it's better to have a way of sharing the work you're proud of with the rest of the world. Solo developers can take advantage of stages when it's time to show the work. Here's an example workflow of a solo developer using stages on Serverless Cloud. TO-DO: Image here (Serverless Cloud-SingleDeveloper w/ CodeRepository.png)
+Even when you're working alone, it's better to have a way of sharing the work you're proud of with the rest of the world. Solo developers can take advantage of stages when it's time to show the work. Here's an example workflow of a solo developer using stages on Serverless Cloud.
 
+![Diagrams for Documentation (1)](https://user-images.githubusercontent.com/85096820/134013651-ae4bc0a6-2094-47d5-8994-b8ba126423ba.png)
 
 ```
 # Start your project from Cloud Shell
@@ -43,9 +44,11 @@ Even when you're working alone, it's better to have a way of sharing the work yo
 > cloud deploy prod
 ```
 
-## Stages for Development Teams
+## Stages for Development Teams
 
-When working with a team, it's required to share your work with your colleagues for collaboration, CI/CD, manual testing and more. Serverless Cloud provides an efficient way of sharing your work with your team integrated with feature branches and your preffered CI/CD solution. Here's an example workflows that shows how a team could collaborate better with stages on Serverless Cloud. TO-DO: Image here (Serverless Cloud Developer Team with CodeRepository.png)
+When working with a team, it's required to share your work with your colleagues for collaboration, CI/CD, manual testing and more. Serverless Cloud provides an efficient way of sharing your work with your team integrated with feature branches and your preffered CI/CD solution. Here's an example workflows that shows how a team could collaborate better with stages on Serverless Cloud.
+
+![Diagrams for Documentation (2)](https://user-images.githubusercontent.com/85096820/134013584-721dae6e-d1f4-4f3a-bad8-f41882867e55.png)
 
 ```
 # Start your project from Cloud Shell
