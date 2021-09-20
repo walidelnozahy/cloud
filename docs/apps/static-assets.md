@@ -1,7 +1,7 @@
 ---
 title: Static Websites & Assets
 menuText: Static Websites & Assets
-menuOrder: 6
+menuOrder: 5
 parent: Building Applications
 ---
 

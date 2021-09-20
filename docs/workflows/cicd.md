@@ -2,7 +2,7 @@
 title: CI/CD
 menuText: CI/CD
 menuOrder: 6
-parent: Development Workflows
+parent: Workflows
 ---
 
 # CI/CD

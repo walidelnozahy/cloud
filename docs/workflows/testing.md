@@ -2,6 +2,7 @@
 title: Automated Testing
 menuText: Automated Testing
 menuOrder: 5
+parent: Worklows
 ---
 
 # Automated Testing

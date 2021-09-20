@@ -1,34 +1,21 @@
 ---
 title: Building Applications
 menuText: Building Applications
-menuOrder: 4
+menuOrder: 3
 has_children: true
 has_toc: false
 ---
 
 # Building Applications on Serverless Cloud
 
-Serverless Cloud uses a familar _Express.js-like_ API for building cloud applications. Using the `@serverless/cloud` npm package gives you a simple interface to build `api`s, access `data`, pass `params` and `schedule` tasks.
+Serverless Cloud provides easy-to-use building blocks for building applications easily. By using helpers (`api`, `data`,`params`, and `schedule`) for each building block, developers can build ultimately scaleable application with zero infrastructure concern. 
 
-## Importing the `@serverless/cloud` package
+### Learn more about the building blocks of Serverless Cloud:
 
-In order for your applications to run properly on Serverless Cloud, you need to require some helpers from the `@serverless/cloud` npm package. At the top of your `index.js` file, include the following:
-
-```javascript
-// CommonJS
-const { api, data, schedule, params } = require("@serverless/cloud");
-
-// ES Modules
-import { api, data, schedule, params } from "@serverless/cloud";
-```
-
-You can then use the `api`, `data`, `schedule`, and `params` helpers to build your application.
-
-### Learn more about:
-
+- [Services & Instances](/cloud/apps/services-instances)
 - [APIs](/cloud/apps/api)
-- [Serverless Data](/cloud/apps/data)
 - [Scheduled Tasks](/cloud/apps/schedule)
-- [Params](/cloud/apps/params)
-- [Using Typescript](/cloud/apps/typescript)
+- [Serverless Data](/cloud/apps/data)
 - [Static Assets](/cloud/apps/static-assets)
+- [Parameters](/cloud/apps/params)
+- [Using Typescript](/cloud/apps/typescript)

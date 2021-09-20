@@ -1,7 +1,7 @@
 ---
 title: Using Typescript
 menuText: Using Typescript
-menuOrder: 5
+menuOrder: 7
 parent: Building Applications
 ---
 
