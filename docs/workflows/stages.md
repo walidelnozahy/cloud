@@ -28,7 +28,7 @@ When you need to deploy directly from terminal:
 
 ## Stages for Solo Developers 
 
-Even when you're working alone, it's better to have a way of sharing the work you're proud of with the rest of the world. Solo developers can take advantage of stages when it's time to show the work. Here's an example workflow that a solo developer can follow with stages. TO-DO: Image here 
+Even when you're working alone, it's better to have a way of sharing the work you're proud of with the rest of the world. Solo developers can take advantage of stages when it's time to show the work. Here's an example workflow of a solo developer using stages on Serverless Cloud. TO-DO: Image here (Serverless Cloud-SingleDeveloper w/ CodeRepository.png)
 
 
 ```
@@ -41,10 +41,27 @@ Even when you're working alone, it's better to have a way of sharing the work yo
 # Run your tests before you push it to a permanent stage. 
 > cloud test
 
-# Deploy your changes to prod the permanent stage if there's no issue
+# Deploy your changes to prod the permanent stage if there's no issue or let your CI process handle the rest.
 > cloud deploy prod
 ```
 
 ## Stages for Development Teams
 
-When working with a team, it's important to share your work with your teammates in the same department and also with QA and other teams. Serverless Cloud provides an efficient way of sharing your work with your team integrated with feature branches and your preffered CI/CD solution. 
+When working with a team, it's required to share your work with your colleagues for collaboration, CI/CD, manual testing and more. Serverless Cloud provides an efficient way of sharing your work with your team integrated with feature branches and your preffered CI/CD solution. Here's an example workflows that shows how a team could collaborate better with stages on Serverless Cloud. TO-DO: Image here (Serverless Cloud Developer Team with CodeRepository.png)
+
+```
+# Start your project from Cloud Shell
+> cloud
+
+# Edit your code locally and watch the changes automatically and quit Cloud Shell
+> quit
+
+# Run your tests before you push it to a permanent stage. 
+> cloud test
+
+# Share your work with your colleagues by creating a preview instance that has the same code and data with your personal instance
+> cloud share 
+
+# Manual tests are okay so we can let CI run its tasks and push the app to prod. 
+> cloud deploy prod
+```

@@ -17,11 +17,12 @@ Serverless Cloud lets you deliver applications both when you are building alone 
 > cloud
 
 # Edit your code locally and watch the changes automatically
-# deploy into your own developer instance
 
 # Deploy your code to "production"
 > deploy production
 ```
+
+TO-DO: Image here Serverless Cloud-SingleDeveloper without CodeRepository
 
 ### Single Developer editing/debugging an existing project
 
@@ -38,6 +39,8 @@ Serverless Cloud lets you deliver applications both when you are building alone 
 # Deploy your code back to "dev"
 > deploy dev
 ```
+
+TO-DO: Image here Serverless Cloud-SingleDeveloper without CodeRepository
 
 ### Team collaborating on a project
 
@@ -60,10 +63,11 @@ Serverless Cloud lets you deliver applications both when you are building alone 
 > deploy dev
 ```
 
+TO-DO: Image here Serverless Cloud Developer Team with CodeRepository
 
 ### Learn more about the concepts around building applications:
 
-- [Developer Instances](/cloud/workflows/developer-instances)
+- [Personal Instances](/cloud/workflows/personal-instances)
 - [Preview Instances](/cloud/workflows/preview-instances)
 - [Stages](/cloud/workflows/stages)
 - [Cloning Instances](/cloud/workflows/cloning)
