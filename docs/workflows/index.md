@@ -8,7 +8,7 @@ has_toc: false
 
 # Workflows in Serverless Cloud
 
-Serverless Cloud lets you deliver applications both when you are building alone and with your colleagues. Run your tests against Cloud, share your work with colleagues, integrate with your favorite CI/CD tool. Below are some example workflows for  delivering applications fast. 
+Serverless Cloud lets you deliver applications both  when you are building alone and with your colleagues. Run your tests against Cloud, share your work with colleagues, integrate with your favorite CI/CD tool. Below are some example workflows for  delivering applications fast. 
 
 ### Single Developer with a sample project
 
