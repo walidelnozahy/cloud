@@ -9,7 +9,7 @@ parent: Workflows
 
 You can use a CI/CD provider to test and deploy your Serverless Cloud applications.
 
-First create an access key in the Serverless dashboard by visiting https://app.serverless.com/{your-org-name}/settings/accessKeys, and add it as an environment variable named `SERVERLESS_ACCESS_KEY` in your CI/CD environment.
+First create an access key in the Serverless dashboard by visiting https://cloud.serverless.com/{your-org-name}/settings/accessKeys, and add it as an environment variable named `SERVERLESS_ACCESS_KEY` in your CI/CD environment.
 
 You can then use the `cloud test` command to test your code, and the `cloud deploy` command to deploy to a stage such as `prod`.
 
