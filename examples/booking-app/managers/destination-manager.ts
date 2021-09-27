@@ -1,7 +1,7 @@
 import { data } from '@serverless/cloud'
 import { prop } from 'ramda'
 import { DateTime } from 'luxon'
-import { v4 } from 'uuid'
+import { randomUUID as v4 } from 'crypto'
 import { Optional } from "../util";
 
 export enum DestinationErrors {

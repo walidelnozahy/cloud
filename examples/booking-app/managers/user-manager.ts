@@ -1,5 +1,5 @@
 import { data, params } from '@serverless/cloud'
-import { v4 } from 'uuid'
+import { randomUUID as v4 } from 'crypto'
 import { omit } from 'ramda'
 import { Auth } from '../auth'
 import bcrypt from 'bcryptjs'
