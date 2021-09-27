@@ -29,13 +29,15 @@ Serverless Cloud provides a [modern API framework](/cloud/docs/apps/api) that ma
 Serverless Cloud provides the `http` helper function that will automatically import your
 
 ```javascript
+// Import and initialize your framework
 import Express from "express"; // or any supported framework
 const app = new Express();
 
+// Import the http helper and wrap your app
 import { http } from "@serverless/cloud";
 http.use(app);
 ```
 
 ## Limitations
 
-Your code is running in a distributed serverless environment. You cannot rely on your server being 'up' in the sense that you can/should not use in-memory sessions, web sockets, etc. You are also subject to restrictions on request/response size, duration, etc.
+Your code is running in a distributed serverless environment. You cannot rely on your server being 'up' in the sense that you can/should not use in-memory sessions, web sockets, etc. You are also subject to restrictions on Serverless Cloud's request/response size, maximum duration, etc.
