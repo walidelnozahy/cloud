@@ -1,6 +1,6 @@
 import { data } from '@serverless/cloud'
 import { DateTime } from 'luxon'
-import { v4 } from 'uuid'
+import { randomUUID as v4 } from 'crypto'
 import { prop } from 'ramda'
 
 import { Optional } from '../util'
