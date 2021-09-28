@@ -5,9 +5,9 @@ menuOrder: 2
 parent: Building Applications
 ---
 
-# Creating API Routes
+# APIs
 
-API routes in Serverless Cloud use Express.js syntax and methods. For more information regarding Express.js, visit [http://expressjs.com/en/4x/api.html](http://expressjs.com/en/4x/api.html).
+Serverless Cloud provides a modern API framework that makes it easy to build and deploy cloud native APIs. If you would rather use Express.js, Koa, or another framework, you can **[bring your own framework](/cloud/docs/apps/frameworks)** while still taking advantage of the other features of Serverless Cloud.
 
 ## Creating an API
 
@@ -33,7 +33,7 @@ api.post('/users', (req,res) => { ...do something... })
 
 ## Supported methods
 
-Currently, all Express.js [Application](http://expressjs.com/en/4x/api.html#app) methods are supported. The following is a list of common API methods in Serverless Cloud.
+The following is a list of common API methods supported in Serverless Cloud.
 
 Methods accept a `path` and `callback` parameter.
 
@@ -48,7 +48,7 @@ Methods accept a `path` and `callback` parameter.
 
 ## Specifying paths
 
-Though Express.js supports multiple formats, we suggest using simple string representions for your paths. Dynamic parameters can be set using the `:paramName` syntax. This value will be available in your callback function via the `req.params` object.
+Paths are specified using simple string representions. Dynamic parameters can be set using the `:paramName` syntax. This value will be available in your callback function via the `req.params` object.
 
 ```javascript
 // Create a GET route for /users with a dynamic parameter
@@ -61,9 +61,7 @@ API route methods accept one or more callback functions as the second parameter.
 
 ### Request object
 
-The Request object currently supports the same properties and methods as the Express.js [Request](http://expressjs.com/en/4x/api.html#req) object. By convention, the Request object is referenced as `req`.
-
-The most used `req` properties are as follows:
+The Request object supports the following properties and methods. By convention, the Request object is referenced as `req`.
 
 | Properties    | Description                                                                                                                         |
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
@@ -76,9 +74,7 @@ The most used `req` properties are as follows:
 
 ### Response object
 
-The Response object currently supports the same methods as the Express.js [Response](http://expressjs.com/en/4x/api.html#res) object. By convention, the Response object is referenced as `res`.
-
-The most used `res` methods are as follows:
+The Response object supports the following methods. By convention, the Response object is referenced as `res`.
 
 | Method           | Description                                                                                                                                                                                |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -90,7 +86,7 @@ The most used `res` methods are as follows:
 
 ## Middleware
 
-Serverless Cloud supports both *Application* and *Route-level* middleware. For more information on middleware, please visit the [Express.js docs](http://expressjs.com/en/guide/using-middleware.html).
+Serverless Cloud supports both _Application_ and _Route-level_ middleware. For more information on middleware, please visit the [Express.js docs](http://expressjs.com/en/guide/using-middleware.html).
 
 ## CORS
 
@@ -108,4 +104,14 @@ Alternatively, you can apply CORS to specific routes.
 import cors from "cors";
 
 api.get('/user', cors(), (req,res) => { ...do something... })
+```
+
+## Timeouts
+
+By default, API routes will timeout after 10 seconds. To change the default, you can specify an object as your second parameter with a `timeout` key. Timeouts are specified in milliseconds and must be a positive integer. API routes support a maximum timeout of 29 seconds.
+
+```javascript
+api.get('/user', { timeout: 2000 }, (req,res) => {
+  ...do something...
+})
 ```
