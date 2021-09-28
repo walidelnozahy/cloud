@@ -31,14 +31,14 @@ Serverless Cloud provides the `http` helper function that will automatically imp
 ```javascript
 // Import and initialize your framework
 import express from "express"; // or any supported framework
-const api = new express();
+const app = new express();
 
 // Enable express body parsing middleware
-api.use(express.json());
+app.use(express.json());
 
 // Import the http helper and wrap your app
 import { http } from "@serverless/cloud";
-http.use(api);
+http.use(app);
 ```
 
 Then you can create routes and use middleware as usual.
