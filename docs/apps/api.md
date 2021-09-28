@@ -106,14 +106,12 @@ import cors from "cors";
 api.get('/user', cors(), (req,res) => { ...do something... })
 ```
 
-## Specifying Timeouts
+## Timeouts
 
-By default, API routes will timeout after 29 seconds. To change this timeout, you can specify a `timeout` setting in an object as your second parameter.
+By default, API routes will timeout after 10 seconds. To change the default, you can specify an object as your second parameter with a `timeout` key. Timeouts are specified in milliseconds and must be a positive integer. API routes support a maximum timeout of 29 seconds.
 
 ```javascript
 api.get('/user', { timeout: 2000 }, (req,res) => {
   ...do something...
 })
 ```
-
-Timeouts are specified in milliseconds and must be a positive integer.

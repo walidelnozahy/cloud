@@ -58,3 +58,14 @@ schedule.cron("0 0 * * TUE *", () => {
 - The L wildcard in the Day-of-month or Day-of-week fields specifies the last day of the month or week.
 - The W wildcard in the Day-of-month field specifies a weekday. In the Day-of-month field, 3W specifies the weekday closest to the third day of the month.
 - The # wildcard in the Day-of-week field specifies a certain instance of the specified day of the week within a month. For example, 3#2 would be the second Tuesday of the month: the 3 refers to Tuesday because it is the third day of each week, and the 2 refers to the second day of that type within the month.
+
+## Timeouts
+
+By default, scheduled tasks will timeout after 60 seconds. To change the default, you can specify an object as your second parameter with a `timeout` key. Timeouts are specified in milliseconds and must be a positive integer. Scheduled tasks support a maximum timeout of 300 seconds (5 minutes).
+
+```javascript
+schedule.every("12 hours", { timeout: 300000 }, () => {
+  // This will run every 12 hours and timeout after 5 mins!
+  console.log("I run every 12 hours!");
+});
+```

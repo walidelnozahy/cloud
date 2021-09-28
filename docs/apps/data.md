@@ -55,7 +55,7 @@ await data.set("foo", "bar", {
   meta: true,
   ttl: 3600,
   label1: "baz",
-  label2: "baz:bat"
+  label2: "baz:bat",
 });
 ```
 
@@ -135,7 +135,7 @@ Serverless Data either returns a single item or an array of multiple items. Any 
   items: [
     { key: "foo:bar", value: "item1" },
     { key: "foo:bat", value: { some: "value" } },
-    { key: "foo:baz", value: 1234 }
+    { key: "foo:baz", value: 1234 },
   ];
 }
 ```
@@ -148,7 +148,7 @@ Collections give you super powers, allowing you to limit the items returned base
 
 ### Partial matches
 
-You've already seen the `*` wildcard used to retrieve *all* items from a collection, but you can also use the wildcard to retrieve items with partially matching keys as well. **Note:** Wildcards are only supported at the end of a key expression.
+You've already seen the `*` wildcard used to retrieve _all_ items from a collection, but you can also use the wildcard to retrieve items with partially matching keys as well. **Note:** Wildcards are only supported at the end of a key expression.
 
 ```javascript
 // Retrieve all keys from the `user123` collection
@@ -191,7 +191,7 @@ You can get items by their labels using the `get` method and the `{ label: 'labe
 
 Labels support collections as well as simple keys. Since they behave the same way, you can also use collection querying methods like `*` and `>=` on labels as well.
 
-Labels are incredibly powerful, allowing you to pivot and access your data in multiple "views". For example, if you store orders in a "user" collection (e.g. `user-1234`), then you can store their order date and number as the key (e.g. `user-1234:ORDER_2021-05-18_9321`). This would let you list all (or some) of their orders and sort them by date. But if you wanted to access this same information by the unique order number (`9321`), a simple key-value store wouldn't let you. With Serverless Data, you can set `label1` to something like `ORDER-9321`. Now you can either get the orders *BY USER* or *BY ORDER ID*:
+Labels are incredibly powerful, allowing you to pivot and access your data in multiple "views". For example, if you store orders in a "user" collection (e.g. `user-1234`), then you can store their order date and number as the key (e.g. `user-1234:ORDER_2021-05-18_9321`). This would let you list all (or some) of their orders and sort them by date. But if you wanted to access this same information by the unique order number (`9321`), a simple key-value store wouldn't let you. With Serverless Data, you can set `label1` to something like `ORDER-9321`. Now you can either get the orders _BY USER_ or _BY ORDER ID_:
 
 ```javascript
 // Set the order
@@ -247,11 +247,11 @@ You can also react to more than one event using an array of event names, or `*` 
 ```javascript
 data.on(["created", "updated"], async (event) => {
   // an item has been created or updated
-})
+});
 
 data.on("*", async (event) => {
   // an item has been created, updated, or deleted
-})
+});
 ```
 
 It's possible for more than one handler to be called for a given change to a data item, in which case the handlers are called in the order they were defined. In the example above, the first handler will always be called the before the second handler when an item is created or updated, and only the second handler will be called when an item is deleted.
@@ -263,7 +263,6 @@ The event passed to your handler has the following properties:
 - `name`: the event name, which is one of `created`, `updated`, or `deleted`
 - `item`: the item, including metadata and the value of the item in the `value` property
 - `previous`: the previous state of the item when the event is `updated`
-
 
 ### Filtering by key
 
@@ -281,7 +280,7 @@ For example, to filter using a specific simple key:
 ```javascript
 data.on("*:global-item", (event) => {
   // called when the item with key `global-item` is created, updated or deleted
-})
+});
 ```
 
 To filter using a simple key prefix:
@@ -289,7 +288,7 @@ To filter using a simple key prefix:
 ```javascript
 data.on("created:order_*", (event) => {
   // called when an item with a simple key starting with `order_` is created
-})
+});
 ```
 
 To filter using both a namespace and key prefix:
@@ -298,7 +297,7 @@ To filter using both a namespace and key prefix:
 data.on("created:order_*:item_*", (event) => {
   // called when an item is created that has a namespace starting with `order_`
   // and a key starting with `item_`
-})
+});
 ```
 
 ### Event ordering
@@ -316,3 +315,14 @@ Handlers should only throw an exception for "retryable" errors such as downstrea
 ### Avoiding event loops
 
 It's possible to create an "event loop" where your event handler triggers itself and results in an infinite loop that exhausts resources. If you are calling `data.set()` or `data.remove()` within a handler, make sure it will not result in the same handler being invoked again with a new event.
+
+### Timeouts
+
+By default, data events will timeout after 20 seconds. To change the default, you can specify an object as your second parameter with a `timeout` key. Timeouts are specified in milliseconds and must be a positive integer. Data events support a maximum timeout of 60 seconds.
+
+```javascript
+data.on("created"], { timeout: 1000 } async (event) => {
+  // an item has been created
+  // timeout after 1 second
+})
+```
