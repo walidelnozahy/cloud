@@ -1,7 +1,7 @@
 ---
 title: Changelog
 menuText: Changelog
-menuOrder: 5
+menuOrder: 6
 ---
 
 # Serverless Cloud updates and changes
