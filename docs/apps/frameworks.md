@@ -7,7 +7,7 @@ parent: Building Applications
 
 # Bring your own framework (BYOF)
 
-Serverless Cloud provides a [modern API framework](/cloud/docs/apps/api) that makes it easy to build and deploy cloud native APIs. However, if you're migrating an application that already uses a different HTTP framework, Serverless Cloud will support your framework's API routing while still allowing you to take advantage of our other features.
+Serverless Cloud provides a [modern API framework](/cloud/docs/apps/api) that makes it easy to build and deploy cloud native APIs. However, if you're migrating an application that already uses a different HTTP framework, Serverless Cloud will support your framework's API routing capabilities while still allowing you to take advantage of our other features.
 
 ## Supported frameworks
 
@@ -26,7 +26,7 @@ Serverless Cloud provides a [modern API framework](/cloud/docs/apps/api) that ma
 
 ## Importing your framework
 
-Serverless Cloud provides the `http` helper function that will automatically import your
+HTTP frameworks like [Connect](https://github.com/senchalabs/connect) and [Express](https://expressjs.com/) were designed to function as Node.js HTTP servers using ports and sockets to respond to requests. In modern distributed systems, each request is isolated and responds to events rather than HTTP requests. Serverless Cloud provides an `http` helper function that will import your existing HTTP framework and make it compatible with our platform.
 
 ```javascript
 // Import and initialize your framework
@@ -36,7 +36,7 @@ const app = new express();
 // Enable express body parsing middleware
 app.use(express.json());
 
-// Import the http helper and wrap your app
+// Import the http helper and wrap your initialized app
 import { http } from "@serverless/cloud";
 http.use(app);
 ```
