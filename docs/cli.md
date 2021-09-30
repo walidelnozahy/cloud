@@ -9,7 +9,7 @@ menuOrder: 5
 
 The following CLI commands are available to develop, manage, and deploy instances. These are subject to change.
 
-**Current CLI Version:** `v2.1.0`
+**Current CLI Version:** `v2.2.1`
 
 ## `cloud [--seed] [--org] [--service] [--template]`
 
