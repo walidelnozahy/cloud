@@ -1,6 +1,7 @@
 ---
 title: Getting Started
 menuText: Get Started
+description: Get started using Serverless Cloud with just a few simple steps.
 menuOrder: 2
 ---
 
@@ -40,9 +41,9 @@ clone [service_name]/prod
 
 And continue developing on the code and data copied from `prod`:
 
-## Building Applications with Serverless Cloud Helpers 
+## Building Applications with Serverless Cloud Helpers
 
-`api`, `data`, `schedule`, and `params` are the helpers that you can use while developing applications on Serverless Cloud. You can import those helpers by importing them from @serverless/cloud package at the top of your index.js file as follows. 
+`api`, `data`, `schedule`, and `params` are the helpers that you can use while developing applications on Serverless Cloud. You can import those helpers by importing them from @serverless/cloud package at the top of your index.js file as follows.
 
 ```javascript
 // CommonJS
@@ -55,7 +56,6 @@ import { api, data, schedule, params } from "@serverless/cloud";
 ## Serverless Cloud Dashboard
 
 Visit Serverless Cloud Dashboard to see your services and instances, to define secrets and apply it to your instances and to check the logs and metrics of your instances via [cloud.serverless.com](https://cloud.serverless.com).
-
 
 ### Want to get started building apps on Serverless Cloud?
 

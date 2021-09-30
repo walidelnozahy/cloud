@@ -1,6 +1,7 @@
 ---
 title: Building Applications
 menuText: Building Applications
+description: Serverless Cloud provides easy-to-use building blocks for building applications quickly.
 menuOrder: 3
 has_children: true
 has_toc: false

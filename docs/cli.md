@@ -1,6 +1,7 @@
 ---
 title: CLI Reference
 menuText: CLI Reference
+description: CLI commands reference to develop, manage, and deploy Serverless Cloud applications.
 menuOrder: 5
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Overview
 menuText: Overview
-description: Build faster & better with Serverless Cloud. Build scalable, highly-secure, pay-per-use applications, without needing a deep knowledge of cloud services.
+description: Build scalable, highly-secure, pay-per-use applications, without needing a deep knowledge of cloud services.
 menuOrder: 1
 ---
 

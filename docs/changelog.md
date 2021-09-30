@@ -1,6 +1,7 @@
 ---
 title: Changelog
 menuText: Changelog
+description: See what's new in Serverless Cloud as we build the most developer-friendly serverless app platform ever! 🚀
 menuOrder: 6
 ---
 
