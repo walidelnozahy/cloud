@@ -13,7 +13,7 @@ See what's new in Serverless Cloud as we build the most developer-friendly serve
 
 ### Introducing Bring Your Own Framework (BYOF) Support
 
-You can now use your existing HTTP frameworks like Express.js or Connect with Serverless Cloud. Using our new `http` helper, we will support your framework's API routing capabilities while still allowing you to take advantage of our other features. Serverless Cloud provides our own [modern API framework](/cloud/docs/apps/api) that makes it easy to build and deploy cloud native APIs, but if you've already invested in another framework, you can now easily migrate that application to Serverless Cloud.
+You can now use your existing HTTP frameworks like Express.js or Connect with Serverless Cloud. Using our new `http` helper, we will support your framework's API routing capabilities while still allowing you to take advantage of our other features. Serverless Cloud provides our own [modern API framework](/cloud/docs/apps/api) that makes it easy to build and deploy cloud native APIs, but if you've already invested in another framework, you can now easily migrate that application to Serverless Cloud. Learn more about this feature in the [documentation](https://www.serverless.com/cloud/docs/apps/frameworks)
 
 ### Introducing Lightning Fast Syncing!
 
@@ -31,9 +31,9 @@ We are very excited to announce the release of **Data Events** to Serverless Clo
 
 When you need to share your work with the outside world, it’s probably best to do it with your own brand. With this new update, you’ll be able to assign a custom domain to stages and start serving your application on your domain. In order to take advantage of this update:
 
-Visit the settings page for any stage: https://cloud.serverless.com/{yourOrgName }/services/{yourServiceName}/instances/{stageName}/settings/domains
-Click “Add Domain” and type in your domain name.
-Add the record appeared in your domain registrar to verify the domain name.
+1. Visit the settings page for any stage from the dashboard.
+2. Click “Add Domain” and type in your domain name.
+3. Add the record appeared in your domain registrar to verify the domain name.
 
 ### Serverless Cloud Private Preview
 
