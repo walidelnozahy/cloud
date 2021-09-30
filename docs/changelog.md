@@ -11,6 +11,10 @@ See what's new in Serverless Cloud as we build the most developer-friendly serve
 
 ## September 2021
 
+### Introducing Bring Your Own Framework (BYOF) Support
+
+You can now use your existing HTTP frameworks like Express.js or Connect with Serverless Cloud. Using our new `http` helper, we will support your framework's API routing capabilities while still allowing you to take advantage of our other features. Serverless Cloud provides our own [modern API framework](/cloud/docs/apps/api) that makes it easy to build and deploy cloud native APIs, but if you've already invested in another framework, you can now easily migrate that application to Serverless Cloud.
+
 ### Introducing Lightning Fast Syncing!
 
 Serverless Cloud gives you a personal developer instance which syncs your code changes automatically from your IDE as you develop your application. This typically took 5-10 seconds to sync these changes. We are excited to release a major perfomance improvement that reduces the sync time to less than 1 seconds for normal code changes. With this update, code changes are immediately synced and deployed to your personal developer instance before you can even switch to your browser to test them. This feature requires you to update your CLI to the latest version.
