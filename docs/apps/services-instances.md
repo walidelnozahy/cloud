@@ -1,13 +1,14 @@
 ---
 title: Services & Instances
 menuText: Services & Instances
+description: Learn about Serverless Cloud's service and instance concepts.
 menuOrder: 1
 parent: Building Applications
 ---
 
 # Services & Instances
 
-Serverless Cloud lets developers build in rapid iterations and aims to reduce the feedback loop both while working as a solo-developer or collaborating with colleagues. Developing services with several instances options accelerate the process towards production without sacrificing the processes around CI/CD and testing. 
+Serverless Cloud lets developers build in rapid iterations and aims to reduce the feedback loop both while working as a solo-developer or collaborating with colleagues. Developing services with several instances options accelerate the process towards production without sacrificing the processes around CI/CD and testing.
 
 ## Services
 
@@ -21,9 +22,9 @@ While **instance** enviroments are identical, Serverless Cloud lets you classify
 
 ### Personal Instances
 
-Every developer on your team gets a **Personal Instance** for every **SERVICE** they work on. Each **Personal Instance** is your own "personal development workspace" that automatically syncs and deploys changes from your local as you code. To enable this interactive development mode, type `cloud` into the CLI within your project directory. This will spin up your own personal instance on Cloud with your own data store. You'll be able to see the URL of your personal instance and detect the impact of changes you make. The logs for developer instance will start streaming instantly into your terminal to help you iterate quickly. Every change you make to your application, every static asset that you'll add under `/static` folder will be synced to your own personal instance under a second depending on the size of the change. 
+Every developer on your team gets a **Personal Instance** for every **SERVICE** they work on. Each **Personal Instance** is your own "personal development workspace" that automatically syncs and deploys changes from your local as you code. To enable this interactive development mode, type `cloud` into the CLI within your project directory. This will spin up your own personal instance on Cloud with your own data store. You'll be able to see the URL of your personal instance and detect the impact of changes you make. The logs for developer instance will start streaming instantly into your terminal to help you iterate quickly. Every change you make to your application, every static asset that you'll add under `/static` folder will be synced to your own personal instance under a second depending on the size of the change.
 
-Note that the URL for personal instances won't be accessible after the personal development mode is ended. For this reason, it's encouraged to deploy your app to a stage. 
+Note that the URL for personal instances won't be accessible after the personal development mode is ended. For this reason, it's encouraged to deploy your app to a stage.
 
 ### Stages (Permanent Instances)
 
@@ -36,6 +37,3 @@ If you want to get feedback on your application, but don't yet want to publish i
 ### Test instances
 
 When you run `cloud test`, Serverless Cloud spins up a new **Test Instance** to run your tests, then tears it down once your tests have finished. This lets you test your code without impacting other instances, and is used to run tests as part of your automated CI/CD process.
-
-
-
