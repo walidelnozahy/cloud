@@ -1,6 +1,7 @@
 ---
 title: Scheduled Tasks
 menuText: Scheduled Tasks
+description: Create scheduled tasks to run your code.
 menuOrder: 3
 parent: Building Applications
 ---

@@ -1,6 +1,7 @@
 ---
 title: Workflows
 menuText: Workflows
+description: Learn how to quickly develop Serverless Cloud apps with a single developer or an entire team.
 menuOrder: 4
 has_children: true
 has_toc: false
@@ -8,7 +9,7 @@ has_toc: false
 
 # Workflows in Serverless Cloud
 
-Serverless Cloud lets you deliver applications both  when you are building alone and with your colleagues. Run your tests against Cloud, share your work with colleagues, integrate with your favorite CI/CD tool. Below are some example workflows for  delivering applications fast. 
+Serverless Cloud lets you deliver applications both when you are building alone and with your colleagues. Run your tests against Cloud, share your work with colleagues, integrate with your favorite CI/CD tool. Below are some example workflows for delivering applications fast.
 
 ### Single Developer with a sample project
 
@@ -21,8 +22,8 @@ Serverless Cloud lets you deliver applications both  when you are building alone
 # Deploy your code to "production"
 > deploy production
 ```
-![Diagrams for Documentation (3)](https://user-images.githubusercontent.com/85096820/134044297-945190ee-15b1-437f-b9ba-c442a636e007.png)
 
+![Diagrams for Documentation (3)](https://user-images.githubusercontent.com/85096820/134044297-945190ee-15b1-437f-b9ba-c442a636e007.png)
 
 ### Single Developer editing/debugging an existing project
 
@@ -41,7 +42,6 @@ Serverless Cloud lets you deliver applications both  when you are building alone
 ```
 
 ![Diagrams for Documentation (4)](https://user-images.githubusercontent.com/85096820/134044342-e71946df-d3dc-42ed-8170-d049e6103d73.png)
-
 
 ### Team collaborating on a project
 
@@ -63,6 +63,7 @@ Serverless Cloud lets you deliver applications both  when you are building alone
 # for additional integration tests and feedbacks
 > deploy dev
 ```
+
 ![Diagrams for Documentation (5)](https://user-images.githubusercontent.com/85096820/134044389-3a8b9b50-13bd-4cdc-985b-5bff7196d4a6.png)
 
 ### Learn more about the concepts around building applications:

@@ -1,6 +1,7 @@
 ---
 title: APIs
 menuText: APIs
+description: Serverless Cloud provides a modern API framework that makes it easy to build and deploy cloud native APIs.
 menuOrder: 2
 parent: Building Applications
 ---

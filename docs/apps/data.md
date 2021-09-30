@@ -1,6 +1,7 @@
 ---
 title: Serverless Data
 menuText: Serverless Data
+description: Serverless Data is a super fast, automatically scalable datastore that's built in to Serverless Cloud.
 menuOrder: 4
 parent: Building Applications
 ---

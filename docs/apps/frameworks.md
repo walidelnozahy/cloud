@@ -1,6 +1,7 @@
 ---
 title: Bring your own framework
 menuText: Using Other Frameworks
+description: Learn how to use other HTTP frameworks like Express to build your apps.
 menuOrder: 8
 parent: Building Applications
 ---

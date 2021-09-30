@@ -1,6 +1,7 @@
 ---
 title: Using Typescript
 menuText: Using Typescript
+description: Learn how to use Typescript in your Serverless Cloud apps
 menuOrder: 7
 parent: Building Applications
 ---

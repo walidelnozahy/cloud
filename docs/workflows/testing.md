@@ -1,6 +1,7 @@
 ---
 title: Automated Testing
 menuText: Automated Testing
+description: Learn how to use Serverless Cloud's built-in support for automated unit and integration testing.
 menuOrder: 5
 parent: Worklows
 ---

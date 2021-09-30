@@ -1,6 +1,7 @@
 ---
 title: CI/CD
 menuText: CI/CD
+description: Use a CI/CD provider to test and deploy your Serverless Cloud applications.
 menuOrder: 6
 parent: Workflows
 ---
