@@ -31,8 +31,6 @@ Additional flags can be passed to the `cloud` command to configure the behavior 
 
 To exit the interactive Cloud Shell, type `exit`.
 
-![Serverless Cloud interactive Cloud Shell](https://user-images.githubusercontent.com/2053544/135511480-748cd463-9ff1-43a8-ab62-88ac78d2d75d.png)
-
 ### `share [NAME]`
 
 Deploys the **code AND data** from your **personal instance** to a **preview instance** named `NAME`. If no `NAME` is provided, a randomly generated name will be created for you.
