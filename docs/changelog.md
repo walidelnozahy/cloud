@@ -11,11 +11,13 @@ See what's new in Serverless Cloud as we build the most developer-friendly serve
 
 ## September 2021
 
-### Introducing Bring Your Own Framework (BYOF) Support
+### Bring Your Own Framework (BYOF) Support
 
 You can now use your existing HTTP frameworks like Express.js or Connect with Serverless Cloud. Using our new `http` helper, we will support your framework's API routing capabilities while still allowing you to take advantage of our other features. Serverless Cloud provides our own [modern API framework](/cloud/docs/apps/api) that makes it easy to build and deploy cloud native APIs, but if you've already invested in another framework, you can now easily migrate that application to Serverless Cloud. Learn more about this feature in the [documentation](https://www.serverless.com/cloud/docs/apps/frameworks)
 
-### Introducing Lightning Fast Syncing!
+![code](https://user-images.githubusercontent.com/2053544/135691309-71a7145f-a907-4284-993e-a908ae78fbc3.png)
+
+### Lightning Fast Syncing!
 
 Serverless Cloud gives you a personal developer instance which syncs your code changes automatically from your IDE as you develop your application. This typically took 5-10 seconds to sync these changes. We are excited to release a major perfomance improvement that reduces the sync time to less than 1 seconds for normal code changes. With this update, code changes are immediately synced and deployed to your personal developer instance before you can even switch to your browser to test them. This feature requires you to update your CLI to the latest version.
 
@@ -23,11 +25,11 @@ Serverless Cloud gives you a personal developer instance which syncs your code c
 
 We continue to work on the onboarding process to make it incredible fast and easy to get a project up and running with Serverless Cloud. This update introduces new features to let you select between different sample applications, as well as some style/usability updates to the CLI to enhance developer productivity. Just type `cloud` from your terminal to see the latest changes! This feature requires you to update your CLI to the latest version.
 
-### Introducing Data Events
+### Data Events
 
 We are very excited to announce the release of **Data Events** to Serverless Cloud. With this new update, you’re able to listen for changes to Serverless Data items, and then perform tasks asynchronously on the changed data. This opens up more use cases and processing capabilities for Serverless Cloud, including Slackbots and other applications that require asynchronous processing. Read more about this update from the [documentation](https://www.serverless.com/cloud/docs/apps/data#reacting-to-changes).
 
-### Introducing Custom Domains
+### Custom Domains Support
 
 When you need to share your work with the outside world, it’s probably best to do it with your own brand. With this new update, you’ll be able to assign a custom domain to stages and start serving your application on your domain. In order to take advantage of this update:
 
@@ -43,23 +45,23 @@ We’d like to thank all of our private beta users for helping us get Serverless
 
 ## August 2021
 
-### Introducing TypeScript Support
+### TypeScript Support
 
 We are happy to announce that you can now build your Serverless Cloud applications using Typescript. Change the entry point of the application to `index.ts` to enable TypeScript. More information can be found in our [documentation](https://www.serverless.com/cloud/docs/apps/typescript).
 
-### Introducing CI/CD Integration
+### CI/CD Integration
 
 We are happy to announce that you can now add CI/CD automation to your Serverless Cloud workflows. Create an access key in the Serverless Cloud dashboard and add it as an environment variable name `SERVERLESS_ACCESS_KEY` in your CI/CD environment. See the GitHub Actions example from our [documentation](https://www.serverless.com/cloud/docs/workflows/cicd).
 
-### Introducing Monitoring with Instance Level Metrics
+### Monitoring with Instance Level Metrics
 
 For any customer facing application, it’s crucial to see the performance of your application by keeping track of the important metrics. We are happy to announce instance level metrics that provides information about the number of requests, errors, and duration with additional summary data. Visit the metrics page for your instance from the Serverless Cloud dashboard to track performance.
 
-### Introducing Testing for Serverless Cloud Applications
+### Testing for Serverless Cloud Applications
 
 We are excited to announce new built-in testing capabilities for Serverless Cloud. You’ll be able to write unit and integration tests by using a Jest-compatible testing framework. Serverless Cloud creates an isolated test instance when you type `cloud test`, seeds it with data you provide, runs your tests and tears down the test instance. You can now run your tests against real cloud environments with a single command. You can also run your tests against your personal instance by typing `test` command from Cloud Shell. Visit our [documentation](https://www.serverless.com/cloud/docs/workflows/testing) for more information.
 
-### Setting Timeout for APIs and Schedules
+### Set Timeouts for APIs and Schedules
 
 We are happy to introduce the ability to set timeout values for APIs and scheduled tasks on Serverless Cloud. You can now set timeouts of up to 29 seconds for API routes and up to 5 minutes for scheduled tasks.
 
@@ -73,7 +75,7 @@ schedule.every('1 hour', { timeout: 30000 }, (event) => { ...do something ... })
 
 ## July 2021
 
-### Introducing Parameter/Secrets Support
+### Parameter/Secrets Support
 
 You are now able to define service level parameters and read the values programmatically from your Serverless Cloud applications. When you change a parameter in the dashboard, all running instances are immediately updated with the new value. Parameters can also be overridden at the instance level to allow you to set different values for different instances. All the parameters are encrypted and stored securely by Serverless Cloud. Visit our [documentation](https://www.serverless.com/cloud/docs/apps/params) for more information.
 
