@@ -15,7 +15,7 @@ See what's new in Serverless Cloud as we build the most developer-friendly serve
 
 You can now use your existing HTTP frameworks like Express.js or Connect with Serverless Cloud. Using our new `http` helper, we will support your framework's API routing capabilities while still allowing you to take advantage of our other features. Serverless Cloud provides our own [modern API framework](/cloud/docs/apps/api) that makes it easy to build and deploy cloud native APIs, but if you've already invested in another framework, you can now easily migrate that application to Serverless Cloud. Learn more about this feature in the [documentation](https://www.serverless.com/cloud/docs/apps/frameworks)
 
-![code](https://user-images.githubusercontent.com/2053544/135691309-71a7145f-a907-4284-993e-a908ae78fbc3.png)
+![Bring Your Own Framework (BYOF) Support](https://user-images.githubusercontent.com/2053544/135691309-71a7145f-a907-4284-993e-a908ae78fbc3.png)
 
 ### Lightning Fast Syncing!
 
