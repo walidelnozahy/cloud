@@ -32,7 +32,7 @@ If you need more control over your scheduled tasks, you can use the `.cron()` me
 For example, the following will log "I run on Tuesdays!" every Tuesday at midnight UTC:
 
 ```javascript
-schedule.cron("0 0 * * TUE *", () => {
+schedule.cron("0 0 * * TUE", () => {
   // This code block will run at midnight on Tuesdays!
   console.log("I run on Tuesdays!");
 });
@@ -47,7 +47,6 @@ schedule.cron("0 0 * * TUE *", () => {
 | Day-of-month | 1-31            | , - \* ? / L W |
 | Month        | 1-12 or JAN-DEC | , - \* /       |
 | Day-of-week  | 1-7 or SUN-SAT  | , - \* ? L #   |
-| Year         | 1970-2199       | , - \* /       |
 
 **Wildcards**
 
