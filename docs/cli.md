@@ -26,7 +26,7 @@ Additional flags can be passed to the `cloud` command to configure the behavior 
 - `--seed`: Seed data from your `data.json` file on initialization.
 - `--reseed`: Enable automatic data reseeding when the `data.json` file is updated.
 - `--org`: Overwrites the organization of the project in your current directory.
-- `--service`: Overwrites the service of the project in your current directory.
+- `--app`: Overwrites the app of the project in your current directory.
 - `--template`: Initiate a new project from a template in the [examples repository](https://github.com/serverless/cloud/tree/main/examples). E.g. `--template=cloud-chat`.
 
 To exit the interactive Cloud Shell, type `exit`.
@@ -43,7 +43,7 @@ A **preview instance** is an ephermeral instance that you can use to easily shar
 
 Deploys the **code** from your **personal instance** to the provided `STAGE`. If no `STAGE` is provided, it will prompt you to enter a `STAGE`.
 
-A `STAGE` is a long-lived instance/environment that hosts your service. Common names for `STAGE`s are `prod`, `staging`, `qa`, and `dev`.
+A `STAGE` is a long-lived instance/environment that hosts your app. Common names for `STAGE`s are `prod`, `staging`, `qa`, and `dev`.
 
 ### `promote [from] [to]`
 
@@ -71,7 +71,7 @@ Displays the current URL of your **Personal Instance**.
 
 ### `open`
 
-Opens the dashboard to the current service in your default browser.
+Opens the dashboard to the current app in your default browser.
 
 ### `docs`
 
@@ -115,11 +115,11 @@ A **preview instance** is an ephermeral instance that you can use to easily shar
 
 Deploys the **code** from your local directory to the provided `STAGE`. If no `STAGE` is provided, it will prompt you for a `STAGE` name.
 
-A `STAGE` is a long-lived instance/environment that hosts your service. Common names for `STAGE`s are `prod`, `staging`, `qa`, and `dev`.
+A `STAGE` is a long-lived instance/environment that hosts your app. Common names for `STAGE`s are `prod`, `staging`, `qa`, and `dev`.
 
-### `cloud clone [SERVICE_NAME/INSTANCE_NAME] [--overwrite]`
+### `cloud clone [APP_NAME/INSTANCE_NAME] [--overwrite]`
 
-Copies **code** AND **data** from `INSTANCE_NAME` of service `SERVICE_NAME` to your local directory and your **personal instance**. `INSTANCE_NAME` can specify either a stage (like `prod` or `dev`), or a preview instance. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag. If no `SERVICE_NAME` is specified, it will default to the service in your current directory. If not `INSTANCE_NAME` is specified, it will display a list of available instance to choose from.
+Copies **code** AND **data** from `INSTANCE_NAME` of service `APP_NAME` to your local directory and your **personal instance**. `INSTANCE_NAME` can specify either a stage (like `prod` or `dev`), or a preview instance. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag. If no `APP_NAME` is specified, it will default to the app in your current directory. If not `INSTANCE_NAME` is specified, it will display a list of available instance to choose from.
 
 ### `cloud promote [from] [to]`
 
@@ -147,7 +147,7 @@ Displays the current URL of your **Personal Instance**.
 
 ### `cloud open`
 
-Opens the dashboard to the current service in your default browser.
+Opens the dashboard to the current app in your default browser.
 
 ### `cloud docs`
 

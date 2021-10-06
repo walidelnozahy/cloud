@@ -10,7 +10,7 @@ parent: Building Applications
 
 Serverless Data is a super fast, automatically scalable datastore that's built in to Serverless Cloud. It's capable of storing simple K/V items, or massive collections of complex objects that can be queried on multiple dimensions, sorted, and paginated. With single-digit millisecond response times, it provides enough power to cover your most common needs and use cases.
 
-With Serverless Data, **your data is just there** as part of your application's runtime. No connection strings, credentials, capacity planning, or database maintenance. You can use the Serverless Cloud `data` helper to `get`, `set`, and `remove` data whenever you need access to state. Plus, Serverless Data is isolated to each **INSTANCE**, giving every developer, stage, and preview build of a **SERVICE** a completely independent copy of your application's data.
+With Serverless Data, **your data is just there** as part of your application's runtime. No connection strings, credentials, capacity planning, or database maintenance. You can use the Serverless Cloud `data` helper to `get`, `set`, and `remove` data whenever you need access to state. Plus, Serverless Data is isolated to each **INSTANCE**, giving every developer, stage, and preview build of an **APP** a completely independent copy of your application's data.
 
 ## Using Serverless Data
 
@@ -229,7 +229,7 @@ let results = await data.remove(["key1", "someOtherKey", "namespacedKey:keyX"]);
 
 ## Reacting to changes
 
-Serverless Data emits an event every time a data item is created, updated, or deleted, which you can react to by writing an event handler. This lets you decouple your application and process changes to your data asynchronously. For example your API could set data and then immediately send a response, while your event handler can do some data aggregation or send a request to an outside service.
+Serverless Data emits an event every time a data item is created, updated, or deleted, which you can react to by writing an event handler. This lets you decouple your application and process changes to your data asynchronously. For example your API could set data and then immediately send a response, while your event handler can do some data aggregation or send a request to an outside app.
 
 ### Defining event handlers
 
