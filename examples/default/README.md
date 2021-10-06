@@ -33,7 +33,7 @@ More information about testing can be found [here](https://serverless.com/cloud/
 
 ## CLI and Cloud Shell
 
-Serverless Cloud provides a seamless CLI experience to manage the service you built on Serverless Cloud. You can type `cloud start` or `cloud` when you are in the root directory of a Serverless Cloud project. This will trigger the Cloud Shell where you can run commands to list/delete your instances and services, share/clone the instances, import/export data to/from your personal development instances. All the available cloud commands can be seen when you type `help` from Cloud Shell or `cloud help` from your terminal.
+Serverless Cloud provides a seamless CLI experience to manage the app you built on Serverless Cloud. You can type `cloud start` or `cloud` when you are in the root directory of a Serverless Cloud project. This will trigger the Cloud Shell where you can run commands to list/delete your instances and apps, share/clone the instances, import/export data to/from your personal development instances. All the available cloud commands can be seen when you type `help` from Cloud Shell or `cloud help` from your terminal.
 
 More information about the CLI can be found [here](https://serverless.com/cloud/docs/cli).
 
