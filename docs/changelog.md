@@ -93,7 +93,7 @@ schedule.every('1 hour', { timeout: 30000 }, (event) => { ...do something ... })
 
 ### Parameter/Secrets Support
 
-You are now able to define service level parameters and read the values programmatically from your Serverless Cloud applications. When you change a parameter in the dashboard, all running instances are immediately updated with the new value. Parameters can also be overridden at the instance level to allow you to set different values for different instances. All the parameters are encrypted and stored securely by Serverless Cloud. Visit our [documentation](https://www.serverless.com/cloud/docs/apps/params) for more information.
+You are now able to define app level parameters and read the values programmatically from your Serverless Cloud applications. When you change a parameter in the dashboard, all running instances are immediately updated with the new value. Parameters can also be overridden at the instance level to allow you to set different values for different instances. All the parameters are encrypted and stored securely by Serverless Cloud. Visit our [documentation](https://www.serverless.com/cloud/docs/apps/params) for more information.
 
 ### Introducing Serverless Cloud Dashboard
 
@@ -101,8 +101,8 @@ Early users of Serverless Cloud have been using our CLI to build applications an
 
 You can take following actions on Serverless Cloud Dashboard:
 
-- View services, create new services, delete existing services.
-- View instances of services, edit the name of an instance, delete an instance, create a new instance.
+- View apps, create new apps, delete existing apps.
+- View instances of apps, edit the name of an instance, delete an instance, create a new instance.
 - View the API routes and scheduled tasks for an instance.
 
 We’ll continue to add new capabilities to the Serverless Cloud Dashboard. Stay tuned for upcoming updates!

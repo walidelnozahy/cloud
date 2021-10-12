@@ -13,7 +13,7 @@ Serverless Cloud provides easy-to-use building blocks for building applications 
 
 ### Learn more about the building blocks of Serverless Cloud:
 
-- [Services & Instances](/cloud/docs/apps/services-instances)
+- [Apps & Instances](/cloud/docs/apps/apps-instances)
 - [APIs](/cloud/docs/apps/api)
 - [Scheduled Tasks](/cloud/docs/apps/schedule)
 - [Serverless Data](/cloud/docs/apps/data)

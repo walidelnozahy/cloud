@@ -12,7 +12,7 @@ Serverless Cloud supports parameters, which can store secrets that your applicat
 
 ## Setting parameters
 
-Parameters are configured via the dashboard. Parameters are first specified per service, and then overriden per instance.
+Parameters are configured via the dashboard. Parameters are first specified per app, and then overriden per instance.
 
 ## Reading parameters
 

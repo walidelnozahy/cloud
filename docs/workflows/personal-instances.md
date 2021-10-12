@@ -8,7 +8,7 @@ parent: Worklows
 
 # Personal Instances
 
-Personal instances are the place that you start working on your Cloud application. When you type cloud from your terminal, Serverless Cloud CLI instantiate a personal instance of the service in that folder. If the folder is empty and doesn't include a project, you'll be prompted to select a service or start a new service from templates.
+Personal instances are the place that you start working on your Cloud application. When you type cloud from your terminal, Serverless Cloud CLI instantiate a personal instance of the app in that folder. If the folder is empty and doesn't include a project, you'll be prompted to select an app or start a new app from templates.
 
 Personal instances are temporary and will be teared down when you exit from Cloud Shell either by typing `quit`, `exit` or pressing `ctrl+c`. The personal instance URL that you see on Cloud Shell becomes inaccessible when you quit from Cloud Shell.
 
