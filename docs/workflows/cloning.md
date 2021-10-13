@@ -8,7 +8,9 @@ parent: Worklows
 
 # Cloning Instances
 
-Developer Instances are just versatile working copies that can be used for developing, testing, debugging, and more. If you have an existing **git workflow**, you can load the current version of your code from your git repository. However, you can also **clone** an existing instance to give you a starting point. Type `cloud clone my-app-name/my-stage-name` into the CLI and it will copy both the **code AND data** of `my-app-name` from the `my-stage-name` instance into your Developer Instance and creates a new folder in your local working directory. This allows you to quickly begin working with the current version of the code.
+Developer Instances are just versatile working copies that can be used for developing, testing, debugging, and more. If you have an existing **git workflow**, you can load the current version of your code from your git repository. However, you can also **clone** an existing instance to give you a starting point. Type `cloud clone @my-org-name/my-app-name/my-stage-name` into the CLI and it will copy both the **code AND data** of `my-app-name` in `my-org-name organization from the `my-stage-name` instance into your Developer Instance and creates a new folder in your local working directory. 
+
+Note that you should have access to `my-org-name`. You can also run clone command without specifying `org-name` and this will clone from your default org. 
 
 ```
 # An error is occuring at staging but you can't reproduce it on your personal instance.
