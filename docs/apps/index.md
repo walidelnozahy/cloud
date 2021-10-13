@@ -9,7 +9,7 @@ has_toc: false
 
 # Building Applications on Serverless Cloud
 
-Serverless Cloud provides easy-to-use building blocks for building applications easily. By using our built-in helpers (`api`, `schedule`, `data`, and `params`), developers can build modern, cloud native applications without thinking about infrastructure. 
+Serverless Cloud provides easy-to-use building blocks for building applications easily. By using our built-in helpers (`api`, `schedule`, `data`, and `params`), developers can build modern, cloud native applications without thinking about infrastructure.
 
 ### Learn more about the building blocks of Serverless Cloud:
 
