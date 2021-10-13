@@ -8,7 +8,7 @@ parent: Building Applications
 
 # Apps & Instances
 
-Serverless Cloud lets developers build in rapid iterations and aims to reduce the feedback loop both while working as a solo-developer or collaborating with colleagues. Developing apps with several instances options accelerate the process towards production without sacrificing the processes around CI/CD and testing.
+Serverless Cloud lets developers build in rapid iterations and aims to reduce the feedback loop both while working as a solo-developer or collaborating with colleagues. Developing apps with several instances options accelerate the process towards production without sacrificing the processes around CI/CD and testing. 
 
 ## Apps
 
