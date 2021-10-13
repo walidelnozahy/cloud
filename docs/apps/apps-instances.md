@@ -36,4 +36,4 @@ If you want to get feedback on your application, but don't yet want to publish i
 
 ### Test instances
 
-When you run `cloud test`, Serverless Cloud spins up a new **Test Instance** to run your tests, then tears it down once your tests have finished. This lets you test your code without impacting other instances, and is used to run tests as part of your automated CI/CD process.
+When you run `cloud test`, Serverless Cloud spins up a new **Test Instance** to run your tests, then tears it down once your tests have finished. This lets you test your code without impacting other instances, and is used to run tests as part of your automated CI/CD process. 
