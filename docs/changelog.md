@@ -9,6 +9,24 @@ menuOrder: 6
 
 See what's new in Serverless Cloud as we build the most developer-friendly serverless app platform ever! 🚀
 
+## October 2021
+
+### Serverless Cloud Public Preview 🚀
+
+After nearly a year of work, pur hyper-productive serverless app platform with single second deployments is now open to everyone! Serverless Cloud is now in Public Preview and is accepting new registrations. Please be sure to update to the latest version of our CLI, and check out our [announcement post](https://www.serverless.com/blog/introducing-serverless-cloud-public-preview) for more details.
+
+Thank you to all of our early users for helping us get Serverless Cloud ready for this launch. We're only getting started, so please keep the feedback and ideas coming.
+
+### Public Profiles and Forkable Apps
+
+Serverless Cloud accounts now have public profile pages that allow you to feature apps built on Serverless Cloud. Apps are `private` by default, but can be set to `public`, allowing anyone to view the app description and link to the live production version. Developers can also set apps to `forkable`, which allows other developers outside of their organization to make a copy of their app and deploy it to their own account.
+
+<img width="1280" alt="profile-screenshot" src="https://user-images.githubusercontent.com/2053544/137222925-13db27a7-af44-495b-8271-28c3e691aa84.png">
+
+Forking an app also copies the `parameter` names, letting users customize the app with their own values.
+
+<img width="1280" alt="forkable-screenshot" src="https://user-images.githubusercontent.com/2053544/137223039-3a043442-b1c4-4369-8911-464ce11e64ed.png">
+
 ## September 2021
 
 ### Bring Your Own Framework (BYOF) Support
