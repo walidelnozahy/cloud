@@ -31,6 +31,9 @@ Serverless Cloud lets you deliver applications both when you are building alone 
 # Clone the "dev" stage
 > cloud clone dev
 
+#Get into your folder to start with
+> cd <appName>
+
 # Enable interactive development mode
 > cloud
 
