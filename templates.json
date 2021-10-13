@@ -13,5 +13,10 @@
     "name": "ts-api",
     "title": "TypeScript API",
     "description": "API starter template in TS"
+  },
+  {
+    "name": "vue-js",
+    "title": "Vue.js with API",
+    "description": "Vue.js starter service"
   }
 ]
