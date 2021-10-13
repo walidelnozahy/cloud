@@ -20,4 +20,4 @@ Serverless Cloud provides easy-to-use building blocks for building applications 
 - [Static Assets](/cloud/docs/apps/static-assets)
 - [Parameters](/cloud/docs/apps/params)
 - [Typescript](/cloud/docs/apps/typescript)
-- [Bring Your Own Framework](/cloud/docs/apps/frameworks)
+- [Bring Your Own Framework](/cloud/docs/apps/frameworks) 
