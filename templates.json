@@ -7,6 +7,11 @@
   {
     "name": "js-api",
     "title": "JavaScript API",
-    "description": "API scaffolding in JS"
+    "description": "API starter template in JS"
+  },
+  {
+    "name": "ts-api",
+    "title": "TypeScript API",
+    "description": "API starter template in TS"
   }
 ]
