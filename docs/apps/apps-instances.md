@@ -1,12 +1,12 @@
 ---
-title: Apps & Instances
-menuText: Apps & Instances
+title: Apps and Instances
+menuText: Apps and Instances
 description: Learn about Serverless Cloud's app and instance concepts.
 menuOrder: 1
 parent: Building Applications
 ---
 
-# Apps & Instances
+# Apps and Instances
 
 Serverless Cloud lets developers build in rapid iterations and aims to reduce the feedback loop both while working as a solo-developer or collaborating with colleagues. Developing apps with several instances options accelerate the process towards production without sacrificing the processes around CI/CD and testing. 
 
