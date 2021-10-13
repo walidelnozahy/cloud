@@ -1,12 +1,12 @@
 [
   {
     "name": "todo",
-    "title": "Todo",
+    "title": "Sample App",
     "description": "A sample TODO app"
   },
   {
-    "name": "status",
-    "title": "Status Page",
-    "description": "A sample status page"
+    "name": "js-api",
+    "title": "JavaScript API",
+    "description": "API scaffolding in JS"
   }
 ]
