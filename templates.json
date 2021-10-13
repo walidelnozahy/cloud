@@ -1,22 +1,10 @@
 [
   {
-    "name": "default",
-    "title": "Starter"
-  },
-  {
     "name": "todo",
     "title": "Todo"
   },
   {
     "name": "status",
     "title": "Status Page"
-  },
-  {
-    "name": "cloud-chat",
-    "title": "Chat"
-  },
-  {
-    "name": "booking-app",
-    "title": "Booking"
   }
 ]
