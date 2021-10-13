@@ -1,10 +1,12 @@
 [
   {
     "name": "todo",
-    "title": "Todo"
+    "title": "Todo",
+    "description": "A sample TODO app"
   },
   {
     "name": "status",
-    "title": "Status Page"
+    "title": "Status Page",
+    "description": "A sample status page"
   }
 ]
