@@ -13,7 +13,7 @@ See what's new in Serverless Cloud as we build the most developer-friendly serve
 
 ### Serverless Cloud Public Preview 🚀
 
-After nearly a year of work, pur hyper-productive serverless app platform with single second deployments is now open to everyone! Serverless Cloud is now in Public Preview and is accepting new registrations. Please be sure to update to the latest version of our CLI, and check out our [announcement post](https://www.serverless.com/blog/introducing-serverless-cloud-public-preview) for more details.
+After nearly a year of work, our hyper-productive serverless app platform with single second deployments is now open to everyone! Serverless Cloud is now in Public Preview and is accepting new registrations. Please be sure to update to the latest version of our CLI, and check out our [announcement post](https://www.serverless.com/blog/introducing-serverless-cloud-public-preview) for more details.
 
 Thank you to all of our early users for helping us get Serverless Cloud ready for this launch. We're only getting started, so please keep the feedback and ideas coming.
 
