@@ -36,7 +36,7 @@ deploy prod
 This will publish to a completely seperate instance. You may continue developing using `cloud` without affecting `prod`, but anytime you want to copy the entire `prod` instance (including data) into your own personal development instance, just run:
 
 ```
-clone [service_name]/prod
+clone [app_name]/prod
 ```
 
 And continue developing on the code and data copied from `prod`:
