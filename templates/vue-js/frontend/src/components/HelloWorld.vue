@@ -23,9 +23,11 @@
     <h3>Edit this Vue.js app locally:</h3>
     <p>
       Open a separate terminal, run <code>cd frontend</code> and then
-      <code>npm run serve</code>. You can then make changes and view them
-      locally. If you want to connect to your personal developer instance from
-      your local Vue project, update the <code>axios.defaults.baseURL</code> in
+      <code>npm i</code> to install the Vue.js dependencies. Run
+      <code>npm run serve</code> to launch a local version enabling you to make
+      changes and view them locally. If you want to connect to your personal
+      developer instance from your local Vue project, update the
+      <code>axios.defaults.baseURL</code> in
       <code>/frontend/src/main.js</code> to your URL.
     </p>
   </div>
