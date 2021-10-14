@@ -13,7 +13,7 @@ The Serverless Cloud CLI is a command-line interface (CLI) that provides a simpl
 - **Standard Mode**: Standard mode allows developers to run commands from your terminal without having to open an interactive session. Login is still required.
 - **Headless Mode**: Headless mode allows developers to run commands from [CI/CD](/cloud/docs/workflows/cicd) systems using an Access Token.
 
-**Current CLI Version:** `v2.2.1`
+**Current CLI Version:** `v2.3.1`
 
 ## Cloud Shell
 
