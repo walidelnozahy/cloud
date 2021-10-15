@@ -16,8 +16,8 @@ const Users = (props) => {
     return users.map((user) => {
         return (
             <div key={user.id}>
-                <strong key={user.id}>{user.value.name}</strong>
-                <span key={user.id} className={user.value.status}>{` ${user.value.status}`}</span>
+                <strong>{user.value.name}</strong>
+                <span className={user.value.status}>{` ${user.value.status}`}</span>
             </div>
         )
     })
