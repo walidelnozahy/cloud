@@ -17,6 +17,11 @@
   {
     "name": "vue-js",
     "title": "Vue.js with API",
-    "description": "Vue.js starter service"
+    "description": "Simple Vue.js starter service"
+  },
+  {
+    "name": "react-js",
+    "title": "React with API",
+    "description": "Simple React starter service"
   }
 ]
