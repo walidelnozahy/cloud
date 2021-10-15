@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
 
-axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? 'your-base-api-url-here' : ''
+axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? 'https://broad-darkness-ximpt.cloud.serverless.com' : ''
 
 const Loading = () => (
     <div>
@@ -13,18 +13,14 @@ const Loading = () => (
 
 const Users = (props) => {
     const { users } = props
-    return (
-        <div>
-            {users.map((user) => {
-                return (
-                    <div key={user.id}>
-                        <strong>{user.value.name}</strong>
-                        <span className={user.value.status}>{` ${user.value.status}`}</span>
-                    </div>
-                )
-            })}
-        </div>
-    )
+    return users.map((user) => {
+        return (
+            <div key={user.id}>
+                <strong key={user.id}>{user.value.name}</strong>
+                <span key={user.id} className={user.value.status}>{` ${user.value.status}`}</span>
+            </div>
+        )
+    })
 }
 
 
@@ -45,10 +41,8 @@ const App = () => {
   }
 
   useEffect(() => {
-     if (users.length === 0) {
-         fetchAndSetUsers()
-     }
-  })
+    fetchAndSetUsers()
+  }, [])
 
   return (
     <div className='App' style={{ display: 'flex', alignItems: 'center', textAlign: 'center', flexDirection: 'column', height: '100vh' }}>
@@ -63,7 +57,7 @@ const App = () => {
                 className="App-link"
                 href="https://reactjs.org"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
             >
                 React Documentation
             </a>.
