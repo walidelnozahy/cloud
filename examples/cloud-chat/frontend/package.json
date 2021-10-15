@@ -1,6 +1,5 @@
 {
-  "name": "cloud-chat-client",
-  "version": "0.1.0",
+  "name": "chat-client",
   "private": true,
   "scripts": {
     "build": "next build && next export && cp -R out/ ../static",

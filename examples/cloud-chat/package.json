@@ -4,10 +4,10 @@
   "main": "index.ts",
   "scripts": {
     "start": "cloud",
-    "build": "npm --prefix frontend run build",
     "deploy": "cloud deploy production",
-    "test": "cloud test",
-    "postinstall": "npm i --prefix frontend"
+    "preview:deploy": "cloud deploy ${PREVIEW_INSTANCE_NAME}",
+    "preview:delete": "cloud delete ${PREVIEW_INSTANCE_NAME}",
+    "test": "cloud test"
   },
   "dependencies": {
     "@jest/globals": "^27.2.5",
@@ -23,7 +23,7 @@
     "@types/jest": "^27.0.2"
   },
   "serverless": {
-    "org": "rschick",
-    "app": "cloud-chat"
+    "org": "serverless",
+    "app": "chat"
   }
 }

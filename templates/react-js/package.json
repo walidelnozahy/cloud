@@ -1,7 +1,7 @@
 {
-  "name": "todo",
+  "name": "test-react",
   "version": "1.0.0",
-  "description": "Serverless Cloud todo api",
+  "description": "Serverless Cloud JavaScript API template",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -9,7 +9,6 @@
     "test": "cloud test"
   },
   "devDependencies": {
-    "@jest/globals": "^27.1.0",
     "@serverless/cloud": "^2.0.0"
   }
 }
