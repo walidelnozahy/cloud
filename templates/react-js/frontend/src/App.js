@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
 
-axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? 'https://broad-darkness-ximpt.cloud.serverless.com' : ''
+axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? 'your-base-api-url-here' : ''
 
 const Loading = () => (
     <div>
