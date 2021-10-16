@@ -13,7 +13,7 @@ See what's new in Serverless Cloud as we build the most developer-friendly serve
 
 ### New Starter Templates
 
-Sample projects are great, but sometimes you just want some basic scaffolding to get your new app started. We've added several starter templates to the CLI experience when creating a new app from scratch. Start with just the right amount of boilerplate to kick off your JavaScript or TypeScript API, or launch a preconfigured Vue.js or React project with a Serverless Cloud API backend in just seconds. Type `cloud` in a new directory and select "Create new app" to try it out.
+Sample projects are great, but sometimes you just want some basic scaffolding to get your new app started. We've added several starter templates to the CLI experience when creating a new app from scratch. Start with just the right amount of boilerplate to kick off your JavaScript or TypeScript API, or launch a preconfigured Vue.js or React project with a Serverless Cloud API backend in just seconds. Type `cloud` in a new directory and select "Create new app" to give it a try.
 
 ### Serverless Cloud Public Preview 🚀
 
