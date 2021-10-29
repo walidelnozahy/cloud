@@ -23,9 +23,14 @@ Select one template application and fork it to your account:
 
 <img width="367" alt="ForkAnApp" src="https://user-images.githubusercontent.com/85096820/139436453-e51ce71b-86fe-495d-ab1d-cd90e8cdd797.png">
 
+
+
+
 Some template applications require you to assign values to some of the parameters and won't work properly until you pass this parameter.
 
 <img width="364" alt="ForkAnAppParameter" src="https://user-images.githubusercontent.com/85096820/139436501-ffa09ae3-5f92-4ad3-8ff7-8eae6eca2539.png">
+
+
 
 See the steps required to start working on your local when fork operation is completed. The first step to install Serverless Cloud from npm.
 
@@ -76,4 +81,4 @@ Select one of the app templates that lets you build with Javascript or Typescrip
 Visit the url, see live logs, make changes, and watch them quickly deploy to your own **personal instance**. Cloud Shell helps you write commands and go back in command history.
 
 
-# Next: [Serverless Cloud Concepts](/cloud/docs/get-started/concepts)
+### Next: [Serverless Cloud Concepts](/cloud/docs/get-started/concepts)
