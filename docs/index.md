@@ -33,3 +33,7 @@ Learn how to [Get Started](/cloud/docs/getting-started)!
   height: 100%;
 }
 </style>
+
+## Feedback
+
+Please log any issues and additional feedback can be sent to [cloud@serverless.com](mailto:cloud@serverless.com).
