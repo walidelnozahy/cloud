@@ -12,7 +12,7 @@ has_toc: false
 It literally takes seconds to have your first application running on Serverless Cloud. After signup to Serverless Cloud from [here](https://cloud.serverless.com/?view=register), you'll see two options to get started. 
 
 - [Fork an public app and start working on it](#fork-an-app)
-- [Build your own app using templated](#build-your-own-app)
+- [Build your own app using templates](#build-your-own-app)
 
 
 ## Fork an App
