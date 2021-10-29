@@ -11,7 +11,7 @@ parent: Quick Start
 Serverless Cloud introduces a new way to develop applications against Cloud by collaborating with your colleagues. In this page, we'll briefly mention the concepts around Serverless Cloud. 
 
 
-## Apps and Instances 
+## Apps and Instances 
 
 Serverless Cloud allows you to build **APPS** within your team's **ORGANIZATION**. You can create as many apps as you want for different use cases or applications. Serverless Cloud provides the preview build of each app via instances. An app can have multiple instances and each **instance** is completely separate from all the other **instances** in an **app**, and even store their own copy of the data. The first instance that you start to use immediately is your **personal instance** that syncs your changes to cloud as you code. There are also different type of instances like preview instances, test instances and stages.  See [here](/cloud/docs/apps/apps-instances) for more information.
 
@@ -37,7 +37,7 @@ Serverless Data is a powerful, scaleable datastore that's built-in to Serverless
 
 You can also seed data to your **personal instance** from a seed file (data.json by default), export and import data from your personal instance. See [here](/cloud/docs/apps/data) for more information. 
 
-## Serverless Cloud Params/Secrets 
+## Serverless Cloud Params/Secrets 
 
 Serverless Cloud lets you define parameters/secrets to inject on your application on runtime. Parameters can be defined on Serverless Cloud Dashboard for organization or app level and can be overriden for specific instance. For example; you can define your development `STRIPE_TOKEN` app-wide and override it with a production value for your `production` stage. You can use `params` helper to read params params programmatically from your application. 
 
@@ -45,7 +45,7 @@ Serverless Cloud lets you define parameters/secrets to inject on your applicatio
 
 Using `schedule` helper, you can define periodic tasks on Serverless Cloud. This is particularly useful when you have to run a batch job or make a periodic check. See [here](/cloud/docs/apps/schedule) for more information. 
 
-## Serverless Cloud Dashboard 
+## Serverless Cloud Dashboard 
 
 Serverless Cloud Dashboard lets developers manage their apps and instances, create/edit params, monitor apps, make their apps forkable, and manage their developer and organizational profiles. 
 
