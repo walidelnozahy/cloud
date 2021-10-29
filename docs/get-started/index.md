@@ -81,4 +81,4 @@ Select one of the app templates that lets you build with Javascript or Typescrip
 Visit the url, see live logs, make changes, and watch them quickly deploy to your own **personal instance**. Cloud Shell helps you write commands and go back in command history.
 
 
-### Next: [Serverless Cloud Concepts](/cloud/docs/get-started/concepts)
+**Next:** [Serverless Cloud Concepts](/cloud/docs/get-started/concepts)
