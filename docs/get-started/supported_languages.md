@@ -1,6 +1,6 @@
 ---
 title: Supported Languages
-menuText: Serverless Cloud Concepts
+menuText: Supported Languages
 description: Learn about Serverless Cloud's concepts with helpers Dashboard. 
 menuOrder: 1
 parent: Quick Start
