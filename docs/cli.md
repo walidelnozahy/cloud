@@ -47,6 +47,10 @@ Deploys the **code** from your **personal instance** to the provided `STAGE`. If
 
 A `STAGE` is a long-lived instance/environment that hosts your app. Common names for `STAGE`s are `prod`, `staging`, `qa`, and `dev`.
 
+### `delete [STAGE]`
+
+Deletes the instance named `[STAGE]`. Warning: this is a destructive action.
+
 ### `promote [from] [to]`
 
 Deploys code from one stage to another stage. If `from` and `to` are not provided, it will prompt you to enter the `from` and `to` stages.
@@ -118,6 +122,10 @@ A **preview instance** is an ephermeral instance that you can use to easily shar
 Deploys the **code** from your local directory to the provided `STAGE`. If no `STAGE` is provided, it will prompt you for a `STAGE` name.
 
 A `STAGE` is a long-lived instance/environment that hosts your app. Common names for `STAGE`s are `prod`, `staging`, `qa`, and `dev`.
+
+### `cloud delete [STAGE]`
+
+Deletes the instance named `[STAGE]`. Warning: this is a destructive action.
 
 ### `cloud clone [APP_NAME/INSTANCE_NAME] [--overwrite]`
 
