@@ -9,6 +9,12 @@ menuOrder: 6
 
 See what's new in Serverless Cloud as we build the most developer-friendly serverless app platform ever! 🚀
 
+## November 2021
+
+### Auto-updating CLI
+
+The CLI is the tool that enables Serverless Cloud workflows, single-second code syncing, and access to typings within your local IDE. In order to have access to the latest features and fixes, we've released support for auto-updating in version 2.3.4. If you are currently using a previous version (run `cloud version` to check), then please update to the latest version by running `npm i -g @serverless/cloud@latest`. This should be the *last time* you need to run a manual install, including for any projects that are using a local installation.
+
 ## October 2021
 
 ### New Starter Templates
