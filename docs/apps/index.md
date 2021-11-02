@@ -28,6 +28,8 @@ Learn more about these SDK interfaces and how to use them:
 - [APIs](/cloud/docs/apps/api)
 - [Scheduled Tasks](/cloud/docs/apps/schedule)
 - [Serverless Data](/cloud/docs/apps/data)
+- [Serverless Storage](/cloud/docs/apps/blob-storage)
+- [Static Assets](/cloud/docs/apps/static-assets)
 - [Parameters](/cloud/docs/apps/params)
 - [Bring Your Own Framework](/cloud/docs/apps/frameworks)
 
