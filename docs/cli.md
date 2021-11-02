@@ -7,13 +7,15 @@ menuOrder: 5
 
 # CLI Reference
 
-The Serverless Cloud CLI is a command-line interface (CLI) that provides a simple, unified interface to Serverless Cloud. The CLI has multiple modes to optimize the experience for different contexts:
+The Serverless Cloud CLI is an auto-updating command-line interface (CLI) that provides a simple, unified interface to Serverless Cloud. The CLI has multiple modes to optimize the experience for different contexts:
 
 - **Cloud Shell**: The interactive Cloud Shell allows developers to connect to their Personal Instance from their local IDE, auto sync code changes, stream logs, and run common commands to manager their development workflow.
 - **Standard Mode**: Standard mode allows developers to run commands from your terminal without having to open an interactive session. Login is still required.
 - **Headless Mode**: Headless mode allows developers to run commands from [CI/CD](/cloud/docs/workflows/cicd) systems using an Access Token.
 
-**Current CLI Version:** `v2.3.2`
+The CLI automatically updates to the latest version to ensure that users have access to the latest features and fixes. This includes auto-updates of the package locally installed in a project.
+
+**Current CLI Version:** `v2.3.6`
 
 **PLEASE NOTE:** The CLI requires Node.js v14 or higher. You can check your current Node.js version by running `node -v`.
 
