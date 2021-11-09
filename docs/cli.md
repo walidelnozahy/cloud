@@ -15,7 +15,7 @@ The Serverless Cloud CLI is an auto-updating command-line interface (CLI) that p
 
 The CLI automatically updates to the latest version to ensure that users have access to the latest features and fixes. This includes auto-updates of the package locally installed in a project.
 
-**Current CLI Version:** `v2.3.6`
+**Current CLI Version:** `v2.3.7`
 
 **PLEASE NOTE:** The CLI requires Node.js v14 or higher. You can check your current Node.js version by running `node -v`.
 
@@ -129,9 +129,9 @@ A `STAGE` is a long-lived instance/environment that hosts your app. Common names
 
 Deletes the instance named `[STAGE]`. Warning: this is a destructive action.
 
-### `cloud clone [APP_NAME/INSTANCE_NAME] [--overwrite]`
+### `cloud clone [@ORG_NAME/APP_NAME/INSTANCE_NAME] [--overwrite]`
 
-Copies **code** AND **data** from `INSTANCE_NAME` of service `APP_NAME` to your local directory and your **personal instance**. `INSTANCE_NAME` can specify either a stage (like `prod` or `dev`), or a preview instance. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag. If no `APP_NAME` is specified, it will default to the app in your current directory. If not `INSTANCE_NAME` is specified, it will display a list of available instance to choose from.
+Copies **code** AND **data** from `INSTANCE_NAME` of service `APP_NAME` of org `ORG_NAME` to your local directory and your **personal instance**. If `ORG_NAME` is not specified it will clone from the logged in organization. Note that you should have access to the given org name otherwise the operation fails. `INSTANCE_NAME` can specify either a stage (like `prod` or `dev`), or a preview instance. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag. If no `APP_NAME` is specified, it will default to the app in your current directory. If not `INSTANCE_NAME` is specified, it will display a list of available instance to choose from.
 
 ### `cloud promote [from] [to]`
 
@@ -148,10 +148,6 @@ Exports data from your **personal instance** to a JSON file named `FILENAME` in 
 ### `cloud version`
 
 Displays the running version of the CLI.
-
-### `cloud activate [code]`
-
-Activates your Serverless Cloud account with an access code.
 
 ### `cloud url`
 
