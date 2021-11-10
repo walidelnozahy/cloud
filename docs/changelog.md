@@ -11,6 +11,12 @@ See what's new in Serverless Cloud as we build the most developer-friendly serve
 
 ## November 2021
 
+### Discover and Test APIs with Interact (`beta`)
+
+We've released our new **Interact** feature that lets you discover and test your app's API endpoints right from the Serverless Cloud dashboard. Explore a list of API endpoints you defined, then add parameters, headers, and a post body to call the endpoint and examine the response body and returned headers. You can even use tabs to interact with multiple APIs at the same time. This feature is in beta, so please share your feedback with us.
+
+<img width="1280" alt="profile-screenshot" src="https://user-images.githubusercontent.com/2053544/141191632-8be32a16-43f5-4c37-876c-34ea701252e2.png">
+
 ### Auto-updating CLI
 
 The CLI is the tool that enables Serverless Cloud workflows, single-second code syncing, and access to typings within your local IDE. In order to have access to the latest features and fixes, we've released support for auto-updating in version 2.3.4. If you are currently using a previous version (run `cloud version` to check), then please update to the latest version by running `npm i -g @serverless/cloud@latest`. This should be the *last time* you need to run a manual install, including for any projects that are using a local installation.
