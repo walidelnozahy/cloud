@@ -15,7 +15,7 @@ The cloud is immensely powerful, but also complex and filled with lots of moving
 
 Serverless Cloud lets you build scalable, highly-secure, pay-per-use applications, without needing a deep knowledge of cloud services with a familiar Express.js-like API. Focus on writing code, instead of worrying about infrastructure. Using our lightweight command line tool, we monitor your local directory as you code, and then instanteously sync those changes to your own, fully-isolated **personal instance**, giving you a high-fidelity cloud environment to test updates in a rapid feedback loop. Plus, you have your own copy of Serverless Data to work with, letting you test your data-driven applications without affecting other team members or production instances. Build serverless workflows that gets triggered by API calls and/or capturing data events just by writing code. Serverless Cloud automatically takes care of spinning up the required infra that scales ultimately in the most efficient way.
 
-Learn how to [Get Started](/cloud/docs/getting-started)!
+Learn how to [Get Started](/cloud/docs/get-started)!
 
 ## Feedback
 
