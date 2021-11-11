@@ -17,23 +17,6 @@ Serverless Cloud lets you build scalable, highly-secure, pay-per-use application
 
 Learn how to [Get Started](/cloud/docs/getting-started)!
 
-<style>
-	.video {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  height: 0;
-}
-
-.video iframe{
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-</style>
-
 ## Feedback
 
 Please log any issues and additional feedback can be sent to [cloud@serverless.com](mailto:cloud@serverless.com).
