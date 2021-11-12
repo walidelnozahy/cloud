@@ -6,7 +6,7 @@ menuOrder: 1
 parent: Public/Forkable Apps
 ---
 
-# Public Profiles
+# Public Profiles
 
 Serverless Cloud allows developers to share their applications built on Serverless Cloud on their public profiles. When you sign up for an account, a public serverless profile is created automatically at the URL 'cloud.serverless.com/yourUserName'. See the public profile of Serverless Inc. [here](https://cloud.serverless.com/serverless).
 
