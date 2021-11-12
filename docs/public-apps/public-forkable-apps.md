@@ -6,7 +6,7 @@ menuOrder: 2
 parent: Public/Forkable Apps
 ---
 
-# Public and Forkable Apps 
+# Public and Forkable Apps 
 
 Serverless Cloud lets you share the apps you are building with the outside world to get feedback and to show off your portfolio. To achieve this, you can make your existing apps public or forkable.
 
@@ -21,7 +21,7 @@ The App Detail Page has several sections that provide information about your app
 - **The stats section** shows the average deploy time of the application and the average response time of your APIs on your Serverless Cloud account.
 - **The Readme Section** is generated from the `README.md` file in your app directory. You are expected to give information about your app and installation instructions if required in this section.
 - **The Fork App button** starts the forking process of the app to your Serverless Cloud account. You’ll be required to sign up for a new account if you don’t already have one. Note that this button is enabled only for forkable apps and disabled for public apps.
-- **The App Metadata Section** provides meta information about your app. Visit the [app settings page](https://cloud.serverless.com/orgs/<yourOrgName >/apps/<yourAppName>/settings) to edit the information here and add a Github link for your project.
+- **The App Metadata Section** provides meta information about your app. Visit the [app settings page](https://cloud.serverless.com/orgs/yourOrgName/apps/yourAppName/settings) to edit the information here and add a Github link for your project.
 - **Action buttons** let you visit the application running on the Serverless Cloud, check out the GitHub Profile, and share the app on Twitter.
 
 ![AppDetailPage](https://user-images.githubusercontent.com/85096820/141509961-4e6ba209-2735-4024-8d82-c1aa1a63760f.png)
