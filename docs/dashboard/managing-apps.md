@@ -6,7 +6,7 @@ menuOrder: 1
 parent: Serverless Cloud Dashboard
 ---
 
-# Managing Apps on Serverless Cloud Dashboard
+# Managing Apps on Serverless Cloud Dashboard
 
 Serverless Cloud lets developers add new apps or edit existing ones, delete when there’s no instance attached, and fork apps to copy existing apps without impacting your colleagues. 
 
