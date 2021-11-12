@@ -16,8 +16,8 @@ You can manage your public profile by adding some additional information, such a
 
 ![ProfileDetails](https://user-images.githubusercontent.com/85096820/141496205-059b828c-a076-4cc0-9b97-6a150188d882.png)
 
-By default, all the apps on the Serverless Cloud are created as private. You will need to make the apps public or forkable in order to share them. Follow [these docs] (cloud/docs/public-apps/public-forkable-apps#making-an-app-public-or-forkable) to make your apps forkable.
+By default, all the apps on the Serverless Cloud are created as private. You will need to make the apps public or forkable in order to share them. Follow [these docs](cloud/docs/public-apps/public-forkable-apps#making-an-app-public-or-forkable) to make your apps forkable.
 
-If you want to work on an existing app rather than starting from templates, you can start by forking an app from a public profile. Follow [these docs] (/cloud/docs/public-apps/forking-apps) to fork an app directly from a user's profile.
+If you want to work on an existing app rather than starting from templates, you can start by forking an app from a public profile. Follow [these docs](/cloud/docs/public-apps/forking-apps) to fork an app directly from a user's profile.
 
 **Next:** [Public and Forkable Apps](cloud/docs/public-apps/public-forkable-apps)
