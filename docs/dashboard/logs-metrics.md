@@ -15,7 +15,7 @@ Serverless Cloud abstracts away infrastructure and all the concerns related to i
 
 If you notice an issue, you can switch to either the Logs view to dig deeper, or the Metrics view to track the metrics over time with charts.
 
-## Logs View
+## Logs View
 
 This view is presented as a tab in the Instance details view to let developers see the logs that the selected instance is producing. Note that logs of an instance are completely isolated from other instances of the same app or the other apps.
 
