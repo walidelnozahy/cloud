@@ -1,6 +1,7 @@
 ---
 title: Get Started
 menuText: Get Started
+firstChildMenuText: Quick Start
 description: Here's the guide to get started with Serveless Cloud in seconds
 menuOrder: 2
 has_children: true
