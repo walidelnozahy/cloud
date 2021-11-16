@@ -166,7 +166,7 @@ Serverless Cloud's runtime provides helpers that make it easy to invoke your eve
 The API helpers invoke the handler for a given URL and HTTP method.
 
 ```js
-api.<method>(url).invoke(requestBody)
+api.<method>(url).invoke(requestBody, options = { headers })
 ```
 
 Where `<method>` is the HTTP method you wish to invoke, in lower-case.
@@ -175,6 +175,11 @@ Parameters:
 
 - url (string): URL to request
 - requestBody (object): the body of the request
+- options (object): additional options (optional)
+
+Options:
+
+- headers (object): headers to send with the request (optional)
 
 Return value: `Promise<object>` with object properties:
 
