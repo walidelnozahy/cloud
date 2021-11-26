@@ -109,7 +109,7 @@ Alternatively, you can run your tests directly from the command line using `clou
 % cloud test
 ```
 
-This will create a new test instance, run your tests, and then delete the instance. Using a test instance lets you test your code without impacting your personal instance data, and can be used in your automated CI/CD process.
+This will create a new test instance, run your tests, and then delete the instance. Using a test instance lets you test your code without impacting your personal instance data, and can be used in your automated CI/CD process. It's recommended to run `cloud test` command from terminal for the development workflows. Test command in Cloud Shell is useful when you're developing your tests. 
 
 In our To-Do example, when all tests pass the output will be:
 
