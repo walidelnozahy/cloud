@@ -35,7 +35,7 @@ await storage.write("your/path/binaryData.ext", binaryData);
 await storage.write('your/path/binaryData.ext', binaryData, { metadata: { isThisAFile: true } })
 await storage.write('your/path/binaryData.ext', binaryData, { type: ‘application/octet-stream’ })
 // this goes to root
-await storage.write('', binaryData)
+await storage.write('/', binaryData)
 ```
 
 ## Reading Files
