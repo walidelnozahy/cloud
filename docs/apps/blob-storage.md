@@ -1,7 +1,7 @@
 ---
 title: Serverless Storage
 menuText: Serverless Storage
-description: Serverless Storage is a low profile, easy to use, file service that allows for file system like applications in a serverless environment.
+description: Serverless Storage is an easy to use file service that allows for file system like applications in a serverless environment.
 menuOrder: 5
 parent: Building Applications
 ---
@@ -62,7 +62,7 @@ await storage.copy("bin/binaryData.ext", "bin-copy");
 // binaryData is now located at both bin/binaryData.ext and bin-copy/binaryData.ext
 ```
 
-## Checking File Existance
+## Checking File Existence
 
 To avoid a read operation, you may want to just check if a file exists before going forward.
 
