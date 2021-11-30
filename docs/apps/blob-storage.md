@@ -95,6 +95,14 @@ const topLevelList = await storage.list();
 // [‘bin/’, ‘bin-copy/’]
 ```
 
+## Removing Files
+
+Files can be removed using the `remove` function.
+
+```javascript
+await storage.remove("/bin/binaryData.ext");
+```
+
 ## Cloud Integrations with Storage
 
 Storage can be used in tandem with other Cloud services, such as the API.

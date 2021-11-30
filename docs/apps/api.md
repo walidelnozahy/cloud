@@ -119,7 +119,7 @@ api.get('/user', { timeout: 2000 }, (req,res) => {
 
 ## Handling Uploads
 
-API has built in interface functions for uploading. `upload` takes both a route and a standard request handler function. Files supplied either via a binary body or multipart form will be available via `req.file` or `req.files`. The path will be available via both POST and PUT routes.
+API has a built in function for uploading files. `upload` takes both a route and a standard request handler function. Files supplied either via a binary body or multipart form will be available via `req.file` or `req.files`. The path will be available via both POST and PUT routes.
 
 ```javascript
 api.upload("/save", async (req, res) => {
