@@ -10,8 +10,6 @@ parent: Building Applications
 
 Serverless Storage is an easy to use file service that allows for file system like applications in a serverless environment. It can be used for storing any sort of binary data, and can be read back at anytime.
 
-# Using Serverless Storage
-
 Access to Serverless Storage is automatically included in the runtime environment, just import the `storage` interface from `@serverless/cloud`. Note, all storage operations are asyncronous, so async/await or `.then` is required for their use.
 
 ```javascript
@@ -31,9 +29,9 @@ You can optionally not pass a path for the file, which will save it at the "root
 Metadata and custom mimetypes can also be passed to be saved alongside your file.
 
 ```javascript
-await storage.write("your/path/binaryData.ext", binaryData);
-await storage.write('your/path/binaryData.ext', binaryData, { metadata: { isThisAFile: true } })
-await storage.write('your/path/binaryData.ext', binaryData, { type: ‘application/octet-stream’ })
+await storage.write("/your/path/binaryData.ext", binaryData);
+await storage.write('/your/path/binaryData.ext', binaryData, { metadata: { isThisAFile: true } })
+await storage.write('/your/path/binaryData.ext', binaryData, { type: ‘application/octet-stream’ })
 // this goes to root
 await storage.write('/', binaryData)
 ```
@@ -47,7 +45,7 @@ Also included is `readBuffer` for ease of use, if you want to only use buffers w
 const stream = await storage.read("binaryData.ext");
 
 const buffer = await storage.read("binaryData.ext", { buffer: true });
-const buffer = await storage.readBuffer("your/path/binaryData.ext");
+const buffer = await storage.readBuffer("/your/path/binaryData.ext");
 ```
 
 ## Copying and Moving Files
@@ -58,7 +56,7 @@ Files can be moved or copied to any directory within storage. If a destination d
 await storage.move("binaryData.ext", "bin");
 // binaryData is now located at bin/binaryData.ext
 
-await storage.copy("bin/binaryData.ext", "bin-copy");
+await storage.copy("/bin/binaryData.ext", "bin-copy");
 // binaryData is now located at both bin/binaryData.ext and bin-copy/binaryData.ext
 ```
 
@@ -67,9 +65,9 @@ await storage.copy("bin/binaryData.ext", "bin-copy");
 To avoid a read operation, you may want to just check if a file exists before going forward.
 
 ```javascript
-const exists = await storage.exists("bin/binaryData.ext");
+const exists = await storage.exists("/bin/binaryData.ext");
 
-const doesNotExist = await storage.exists("not-real/binaryData.ext");
+const doesNotExist = await storage.exists("/not-real/binaryData.ext");
 ```
 
 ## File Information and Metadata
@@ -78,7 +76,7 @@ You can retrieve when a file was last modified, size, content type, and any save
 
 ```javascript
 const { lastModified, size, metadata, type } = await storage.stat(
-  "your/path/binaryData.ext"
+  "/your/path/binaryData.ext"
 );
 ```
 
