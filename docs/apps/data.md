@@ -10,14 +10,14 @@ parent: Building Applications
 
 Serverless Data is a super fast, automatically scalable datastore that's built in to Serverless Cloud. It's capable of storing simple K/V items, or massive collections of complex objects that can be queried on multiple dimensions, sorted, and paginated. With single-digit millisecond response times, it provides enough power to cover your most common needs and use cases.
 
-With Serverless Data, **your data is just there** as part of your application's runtime. No connection strings, credentials, capacity planning, or database maintenance. You can use the Serverless Cloud `data` helper to `get`, `set`, and `remove` data whenever you need access to state. Plus, Serverless Data is isolated to each **INSTANCE**, giving every developer, stage, and preview build of an **APP** a completely independent copy of your application's data.
+With Serverless Data, **your data is just there** as part of your application's runtime. No connection strings, credentials, capacity planning, or database maintenance. You can use the Serverless Cloud `data` to `get`, `set`, and `remove` data whenever you need access to state. Plus, Serverless Data is isolated to each **INSTANCE**, giving every developer, stage, and preview build of an **APP** a completely independent copy of your application's data.
 
 ## Using Serverless Data
 
 Access to Serverless Data is automatically included in your runtime environment. It provides a simple interface for persisting and retrieving state. By default, Serverless Data is available through the `data` variable as defined by the `require` statement at the top of the `index.js` file. Serverless Data makes API calls in order to set and retrieve data, so any route/function that calls a Serverless Data method must use `async/await`.
 
 ```javascript
-// Require the data helper - CommonJS
+// Require the data interface - CommonJS
 const { data } = require("@serverless/cloud");
 
 // ES Modules

@@ -27,7 +27,7 @@ Serverless Cloud provides a [modern API framework](/cloud/docs/apps/api) that ma
 
 ## Importing your framework
 
-HTTP frameworks like [Connect](https://github.com/senchalabs/connect) and [Express](https://expressjs.com/) were designed to function as Node.js HTTP servers using ports and sockets to respond to requests. In modern distributed systems, each request is isolated and responds to events rather than HTTP requests. Serverless Cloud provides an `http` helper function that will import your existing HTTP framework and make it compatible with our platform.
+HTTP frameworks like [Connect](https://github.com/senchalabs/connect) and [Express](https://expressjs.com/) were designed to function as Node.js HTTP servers using ports and sockets to respond to requests. In modern distributed systems, each request is isolated and responds to events rather than HTTP requests. Serverless Cloud provides an `http` interface function that will import your existing HTTP framework and make it compatible with our platform.
 
 ```javascript
 // Import and initialize your framework
@@ -37,7 +37,7 @@ const app = new express();
 // Enable express body parsing middleware
 app.use(express.json());
 
-// Import the http helper and wrap your initialized app
+// Import the http interface and wrap your initialized app
 import { http } from "@serverless/cloud";
 http.use(app);
 ```
