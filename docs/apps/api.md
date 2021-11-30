@@ -130,7 +130,7 @@ api.upload("/save", async (req, res) => {
 
 ## Serving Serverless Storage files
 
-To send either disk-stored files or files stored via Storage, use `res.sendFile`. `sendFile` will first check the local directory - if the supplied path exists here, the local file will be sent. Otherwise, `sendFile` will redirect to a download url for a given path, if it exists, from Storage.
+To send either locally stored files or files stored via Storage, use `res.sendFile`. `sendFile` will first check the local directory - if the supplied path exists here, the local file will be sent. Otherwise, `sendFile` will redirect to a download url for a given path, if it exists, from Storage.
 
 ```javascript
 api.upload("/file", async (req, res) => {
