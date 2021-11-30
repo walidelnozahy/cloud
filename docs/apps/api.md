@@ -119,30 +119,15 @@ api.get('/user', { timeout: 2000 }, (req,res) => {
 
 ## Handling Uploads
 
-API has built in helper functions for uploading. `upload` takes both a route and a directory path. If no directory path is given, the root directory will be used.
+API has built in helper functions for uploading. `upload` takes both a route and a standard request handler function. Files supplied either via a binary body or multipart form will be available via `req.file` or `req.files`. The path will be available via both POST and PUT routes.
 
 ```javascript
-api.upload('/save-photo', 'photos')
-
-// A callback function can also be provided, with the entire Storage file path.
-api.upload('/save-file', 'files', (filePath) => {})
+api.upload("/save", async (req, res) => {
+  await storage.write(res.query.path, req.file.buffer);
+  return res.sendStatus(200);
+});
 ```
-
-This will create a PUT route available at `/save-photo`, where whatever file is provided will be saved using Serverless Storage. This file can retrieved using `storage.read` for later use. The file name is derived from the header key `x-file-name`. 
 
 ## Serving Serverless Storage files
 
-API also has built in serve functionality for any files stored with Storage with a GET route.
-
-```javascript
-api.serve('/download-saved-file', 'files/saved.txt')
-```
-
-If the filename needs to be derived from the API path, you can pass a getter in place of the file path that provides the request object as an argument.
-
-```javascript
-api.serve('/profile-picture/:userId', (request) => {
-  // path in Storage
-  return `avatars/${request.params.userId}.jpg`
-})
-```
+To send either disk-stored files or files stored via Storage, use `res.sendFile`. `sendFile` will first check the local directory ('/tmp') - if the supplied path exists here, the local file will be sent. Otherwise, `sendFile` will redirect to a download url for a given path, if it exists, from Storage.
