@@ -8,7 +8,7 @@ parent: Building Applications
 
 # Serverless Storage
 
-Serverless Storage is a low profile, easy to use, file service that allows for file system like applications in a serverless environment. It can be used for storing any sort of binary data, and can be read back at anytime.
+Serverless Storage is an easy to use file service that allows for file system like applications in a serverless environment. It can be used for storing any sort of binary data, and can be read back at anytime.
 
 # Using Serverless Storage
 
