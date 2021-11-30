@@ -87,13 +87,13 @@ const { lastModified, size, metadata, type } = await storage.stat(
 Files can be listed either as a whole or per directory. To list all subdirectories recursively, you can also pass a boolean recursive option to list everything in a given directory.
 
 ```javascript
-const list = await storage.list('bin')
+const list = await storage.list("bin");
 // ['binaryData.ext']
 
-const fullList = await storage.list(‘’, true)
+const fullList = await storage.list("/", true);
 // ['bin/binaryData.ext', 'bin-copy/binaryData.ext']
 
-const topLevelList = await storage.list()
+const topLevelList = await storage.list();
 // [‘bin/’, ‘bin-copy/’]
 ```
 
