@@ -19,7 +19,7 @@ We've released our new **Interact** feature that lets you discover and test your
 
 ### Auto-updating CLI
 
-The CLI is the tool that enables Serverless Cloud workflows, single-second code syncing, and access to typings within your local IDE. In order to have access to the latest features and fixes, we've released support for auto-updating in version 2.3.4. If you are currently using a previous version (run `cloud version` to check), then please update to the latest version by running `npm i -g @serverless/cloud@latest`. This should be the *last time* you need to run a manual install, including for any projects that are using a local installation.
+The CLI is the tool that enables Serverless Cloud workflows, single-second code syncing, and access to typings within your local IDE. In order to have access to the latest features and fixes, we've released support for auto-updating in version 2.3.4. If you are currently using a previous version (run `cloud version` to check), then please update to the latest version by running `npm i -g @serverless/cloud@latest`. This should be the _last time_ you need to run a manual install, including for any projects that are using a local installation.
 
 ## October 2021
 
@@ -47,7 +47,7 @@ Forking an app also copies the `parameter` names, letting users customize the ap
 
 ### Bring Your Own Framework (BYOF) Support
 
-You can now use your existing HTTP frameworks like Express.js or Connect with Serverless Cloud. Using our new `http` helper, we will support your framework's API routing capabilities while still allowing you to take advantage of our other features. Serverless Cloud provides our own [modern API framework](/cloud/docs/apps/api) that makes it easy to build and deploy cloud native APIs, but if you've already invested in another framework, you can now easily migrate that application to Serverless Cloud. Learn more about this feature in the [documentation](https://www.serverless.com/cloud/docs/apps/frameworks)
+You can now use your existing HTTP frameworks like Express.js or Connect with Serverless Cloud. Using our new `http` interface, we will support your framework's API routing capabilities while still allowing you to take advantage of our other features. Serverless Cloud provides our own [modern API framework](/cloud/docs/apps/api) that makes it easy to build and deploy cloud native APIs, but if you've already invested in another framework, you can now easily migrate that application to Serverless Cloud. Learn more about this feature in the [documentation](https://www.serverless.com/cloud/docs/apps/frameworks)
 
 ```javascript
 // Import and initialize your framework
@@ -57,7 +57,7 @@ const app = new express();
 // Enable express body parsing middleware
 app.use(express.json());
 
-// Import the http helper and wrap your initialized app
+// Import the http interface and wrap your initialized app
 import { http } from "@serverless/cloud";
 http.use(app);
 

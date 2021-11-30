@@ -1,19 +1,18 @@
 ---
 title: Supported Languages
 menuText: Supported Languages
-description: Learn about Serverless Cloud's concepts with helpers Dashboard. 
+description: Learn about Serverless Cloud's concepts with interfaces Dashboard.
 menuOrder: 1
 parent: Quick Start
 ---
 
-# Supported Langauges 
+# Supported Langauges
 
 Serverless Cloud allows developers to develop their applications both in Javascript and in Typescript.
 
+## Javascript
 
-## Javascript 
-
-You can import the `api`, `data`, `schedule`, and `params` helpers that you can use while developing on Serverless Cloud. You can import those helpers by importing them from @serverless/cloud package at the top of your index.js file as follows.
+You can import the `api`, `data`, `schedule`, and `params` interfaces that you can use while developing on Serverless Cloud. You can import those interfaces by importing them from @serverless/cloud package at the top of your index.js file as follows.
 
 ```javascript
 // ES Modules
@@ -23,11 +22,11 @@ import { api, data, schedule, params } from "@serverless/cloud";
 const { api, data, schedule, params } = require("@serverless/cloud");
 ```
 
-If you'd like to use `require` statements, you need change the extension of your file as .cjs and update your `package.json` file accordingly. However, we encourage our users to use ES modules way if possible. 
+If you'd like to use `require` statements, you need change the extension of your file as .cjs and update your `package.json` file accordingly. However, we encourage our users to use ES modules way if possible.
 
-## Typescript 
+## Typescript
 
-In order to enable Typescript, you need to change  entry point of your application to `index.ts`.
+In order to enable Typescript, you need to change entry point of your application to `index.ts`.
 
 Add `tsconfig.json` to the root of your project, with this minimum configuration:
 

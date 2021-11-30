@@ -12,7 +12,7 @@ Serverless Cloud provides a modern API framework that makes it easy to build and
 
 ## Creating an API
 
-To create an API with Serverless Cloud, you define routes in your code using the `api` helper imported from the `@serverless/cloud` module.
+To create an API with Serverless Cloud, you define routes in your code using the `api` interface imported from the `@serverless/cloud` module.
 
 ```javascript
 // CommonJS
@@ -115,4 +115,32 @@ By default, API routes will timeout after 10 seconds. To change the default, you
 api.get('/user', { timeout: 2000 }, (req,res) => {
   ...do something...
 })
+```
+
+## Handling Uploads
+
+API has built in interface functions for uploading. `upload` takes both a route and a standard request handler function. Files supplied either via a binary body or multipart form will be available via `req.file` or `req.files`. The path will be available via both POST and PUT routes.
+
+```javascript
+api.upload("/save", async (req, res) => {
+  await storage.write(res.query.path, req.file.buffer);
+  return res.sendStatus(200);
+});
+```
+
+## Serving Serverless Storage files
+
+To send either disk-stored files or files stored via Storage, use `res.sendFile`. `sendFile` will first check the local directory - if the supplied path exists here, the local file will be sent. Otherwise, `sendFile` will redirect to a download url for a given path, if it exists, from Storage.
+
+```javascript
+api.upload("/file", async (req, res) => {
+  await fs.writeFile("localPath", req.file.buffer);
+  // will reference local file
+  return res.sendFile("localPath");
+});
+
+api.get("/file", async (req, res) => {
+  // will redirect to a download url via Storage
+  return res.sendFile("storage-uploads/myFile.txt");
+});
 ```

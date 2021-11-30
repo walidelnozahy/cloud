@@ -60,7 +60,7 @@ afterAll(async () => {
 
 Now we're ready to write our test which goes in a `test` block.
 
-Using the built-in `invoke()` helper we can invoke our API handler and check the result.
+Using the built-in `invoke()` function we can invoke our API handler and check the result.
 
 ```js
 test("should get all todos", async () => {
@@ -109,7 +109,7 @@ Alternatively, you can run your tests directly from the command line using `clou
 % cloud test
 ```
 
-This will create a new test instance, run your tests, and then delete the instance. Using a test instance lets you test your code without impacting your personal instance data, and can be used in your automated CI/CD process. It's recommended to run `cloud test` command from terminal for the development workflows. Test command in Cloud Shell is useful when you're developing your tests. 
+This will create a new test instance, run your tests, and then delete the instance. Using a test instance lets you test your code without impacting your personal instance data, and can be used in your automated CI/CD process. It's recommended to run `cloud test` command from terminal for the development workflows. Test command in Cloud Shell is useful when you're developing your tests.
 
 In our To-Do example, when all tests pass the output will be:
 
@@ -157,13 +157,13 @@ Let's make a change and break the tests. In `api.test.js` change "Something to d
 
 Jest provides a detailed report including the reason the test failed and the code location, so you can make the fix and re-run the tests.
 
-## Test helpers
+## Test interfaces
 
-Serverless Cloud's runtime provides helpers that make it easy to invoke your event handlers in tests, and to seed data.
+Serverless Cloud's runtime provides interfaces that make it easy to invoke your event handlers in tests, and to seed data.
 
-### API helpers
+### API interfaces
 
-The API helpers invoke the handler for a given URL and HTTP method.
+The API interfaces invoke the handler for a given URL and HTTP method.
 
 ```js
 api.<method>(url).invoke(requestBody, options = { headers })
@@ -186,9 +186,9 @@ Return value: `Promise<object>` with object properties:
 - body: the response body
 - status: the HTTP response status code
 
-### Schedule helpers
+### Schedule interfaces
 
-The schedule helpers invoke the handler for a given schedule expression.
+The schedule interfaces invoke the handler for a given schedule expression.
 
 ```js
 schedule.every(expression).invoke();
@@ -204,9 +204,9 @@ Return value: `Promise`
 
 > Note: if there is more than one handler for a given expression, only the first will be invoked. This will be addressed in a future release. For now we recommend only using a single handler for a given schedule.
 
-### Data seed helper
+### Data seed interface
 
-The seed helper makes it easy to add data for testing:
+The seed interface makes it easy to add data for testing:
 
 ```
 data.seed(itemsOrPath, overwrite);
