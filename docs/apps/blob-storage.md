@@ -103,6 +103,26 @@ Files can be removed using the `remove` function.
 await storage.remove("/bin/binaryData.ext");
 ```
 
+## Serving Temporary Upload/Download URLs
+
+If you need to return a URL for an upload, or a redirect to a download, the Storage API includes `getDownloadUrl` and `getUploadUrl` functions.
+
+If a file exists at the path specified in `getUploadUrl`, the file will be replaced with whatever is upload via the URL.
+
+Both functions take a second argument of an expiration periond in seconds, where the default is one hour (3600s) if nothing is passed.
+
+```javascript
+const uploadUrl = await storage.getUploadUrl(
+  "bin-copy/uploaded-from-far-away.ext"
+);
+
+const downloadUrl = await storage.getDownloadUrl("bin-copy/binaryData.ext");
+const longLivedDownloadUrl = await storage.getDownloadUrl(
+  "bin-copy/binaryData.ext",
+  15000
+);
+```
+
 ## Cloud Integrations with Storage
 
 Storage can be used in tandem with other Cloud services, such as the API.
