@@ -9,6 +9,12 @@ menuOrder: 9
 
 See what's new in Serverless Cloud as we build the most developer-friendly serverless app platform ever! 🚀
 
+## December 2021
+
+### New: Serverless Storage! 
+
+We are happy to announce Serverless Storage which has been the most requested feature for a while. Developers will be able to upload/retrieve/list/remove files using [Serverless Storage](https://www.serverless.com/cloud/docs/apps/blob-storage) in the easiest way possible with the `storage` interface. Developers can use the new functions `upload` and `get` as a part of `api` interface to build [API routes interacting with storage](https://www.serverless.com/cloud/docs/apps/api#handling-uploads). Check out [the sample image resizer application](https://github.com/serverless/cloud/tree/main/examples/image-resizer) to see Serverless Storage in action! 
+
 ## November 2021
 
 ### Discover and Test APIs with Interact (`beta`)
