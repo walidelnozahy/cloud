@@ -8,7 +8,7 @@ parent: Building Applications
 
 # Serverless Storage
 
-Serverless Storage is an easy to use file service that allows for file system like applications in a serverless environment. It can be used for storing any sort of binary data, and can be read back at anytime.
+Serverless Storage is an easy to use file service that allows for file system like applications in a serverless environment. It can be used for storing any sort of binary data, and can be read back at any time.
 
 Access to Serverless Storage is automatically included in the runtime environment, just import the `storage` interface from `@serverless/cloud`. Note, all storage operations are asyncronous, so async/await or `.then` is required for their use.
 
@@ -72,7 +72,7 @@ const doesNotExist = await storage.exists("/not-real/binaryData.ext");
 
 ## File Information and Metadata
 
-You can retrieve when a file was last modified, size, content type, and any saved metadata using `stat`
+You can retrieve when a file was last modified, size, content type, and any saved metadata using `stat`.
 
 ```javascript
 const { lastModified, size, metadata, type } = await storage.stat(
