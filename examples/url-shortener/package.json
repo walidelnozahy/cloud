@@ -1,5 +1,5 @@
 {
-  "name": "url-shortner",
+  "name": "url-shortener",
   "version": "1.0.0",
   "description": "Simple serverless URL shortner, powered by Serverless Data.",
   "main": "index.js",
@@ -9,6 +9,6 @@
   },
   "serverless": {
     "org": "serverless",
-    "app": "url-shortner"
+    "app": "url-shortener"
   }
 }
