@@ -119,11 +119,38 @@ api.get('/user', { timeout: 2000 }, (req,res) => {
 
 ## Handling Uploads
 
-API has a built in function for uploading files. `upload` takes both a route and a standard request handler function. Files supplied either via a binary body or multipart form will be available via `req.file` or `req.files`. The path will be available via both POST and PUT routes.
+API has a built in function for uploading files. `upload` takes both a route and a standard request handler function. Files can be uploaded as either a binary body or multipart form data. The `upload` method creates both a POST and PUT route.
+
+### Binary Body Uploads
+
+When uploading files as a binary body, information about the uploaded file will be available via the `req.file` field. This will include the `mimetype`, `size`, and `buffer`. The `buffer` can be passed directly to the `storage` interface to save the file.
 
 ```javascript
-api.upload("/save", async (req, res) => {
-  await storage.write(res.query.path, req.file.buffer);
+api.upload("/upload", async (req, res) => {
+  await storage.write('my-uploaded-file', req.file.buffer);
+  return res.sendStatus(200);
+});
+```
+
+### Multipart Form Data Uploads
+
+When uploading files from an HTML form (see below), API will automatically parse your files into a `req.files` array. Each item in the array will contain the `fieldname`, `orginalname`, `encoding`, `mimetype`, `size`, and the `buffer`. 
+
+```html
+<form action="/upload" method="post" enctype="multipart/form-data">
+  <input type="file" name="avatar" />
+  <input type="text" name="someField" />
+</form>
+```
+
+Additional form fields will be automatically parsed into an object and available on `req.body`. The `buffer` can be passed directly to the `storage` interface to save the file. Please note that multiple files can be uploaded and have a total size limit of 6MB.
+
+```javascript
+api.upload("/upload", async (req, res) => {
+  // access other form fields
+  console.log('someField: ' + req.body.someField);
+  // save the buffer to storage
+  await storage.write(res.files[0].originalname, req.files[0].buffer);
   return res.sendStatus(200);
 });
 ```
