@@ -11,7 +11,11 @@ See what's new in Serverless Cloud as we build the most developer-friendly serve
 
 ## December 2021
 
-### New: Serverless Storage! 
+### CDN Support
+
+Serverless Cloud now serves all HTTP request via a global CDN. By default, all request are served with a `cache-control` header set to `max-age=0, must-revalidate`, but this can be overridden by your API to control caching of your API routes. The CDN also enables the ability to serve "public" Serverless Storage files using `/public` on your app's endpoint. Additional caching control support for static assets and storage files is coming soon.
+
+### Serverless Storage
 
 We're happy to announce Serverless Storage, an easy to use file service for your Serverless Cloud applications. Developers can upload, retrieve, list, and remove private and public files with [Serverless Storage](https://www.serverless.com/cloud/docs/apps/blob-storage) using the new `storage` interface from our SDK. We've also added a new `upload` method to our `api` interface, making it incredibly easy to [handle uploads](https://www.serverless.com/cloud/docs/apps/api#handling-uploads), as well as enhancements to `sendFile`, letting you easily [serve storage objects](https://www.serverless.com/cloud/docs/apps/api#serving-serverless-storage-files) from your APIs. Check out [the sample image resizer application](https://github.com/serverless/cloud/tree/main/examples/image-resizer) to see Serverless Storage in action! 
 
