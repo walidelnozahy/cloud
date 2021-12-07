@@ -103,6 +103,21 @@ Files can be removed using the `remove` function.
 await storage.remove("/bin/binaryData.ext");
 ```
 
+## Upload and Download URls
+
+URLs for both uploading and downloading files from Storage can be generated using `getDownloadUrl` and `getUploadUrl`. A second parameter can be passed to set the expiration period for a URL, as a number in seconds. The default is 1 hour (3600s).
+
+```javascript
+const downloadUrl = await storage.getDownloadUrl("bin-copy/binaryData.ext");
+
+const longDownloadUrl = await storage.getDownloadUrl(
+  "bin-copy/binaryData.ext",
+  7200
+);
+
+const uploadUrl = await storage.getUploadUrl("bin-copy/doesNotExistYet.ext");
+```
+
 ## Cloud Integrations with Storage
 
 Storage can be used in tandem with other Cloud services, such as the API.
