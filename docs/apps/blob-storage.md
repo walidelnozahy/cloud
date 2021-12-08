@@ -103,7 +103,7 @@ Files can be removed using the `remove` function.
 await storage.remove("/bin/binaryData.ext");
 ```
 
-## Upload and Download URls
+## Upload and Download URLs
 
 URLs for both uploading and downloading files from Storage can be generated using `getDownloadUrl` and `getUploadUrl`. A second parameter can be passed to set the expiration period for a URL, as a number in seconds. The default is 1 hour (3600s).
 
