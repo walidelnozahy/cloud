@@ -20,7 +20,7 @@ api.get('/api/image', async (req, res) => {
 
 api.upload('/api/new', async (req, res) => {
   const path = req.query.path as string
-  const fileBuff = req.file.buffer
+  const fileBuff = req.files[0].buffer
   if (!fileBuff) {
     return res.status(400).send('No file')
   }
@@ -43,12 +43,12 @@ api.upload('/api/resize', async (req, res) => {
     return res.status(400).send('Missing filename')
   }
 
-  if (!req.file) {
+  if (!req.files.length) {
     return res.status(400).send('No file found')
   }
 
   try {
-    const fileBuff = req.file.buffer
+    const fileBuff = req.files[0].buffer
     const image = await Jimp.read(fileBuff)
     image.resize(width, height)
     const resizedName = `resized-${filename}`
@@ -77,7 +77,7 @@ api.upload('/api/blur', async (req, res) => {
   }
 
   try {
-    const fileBuff = req.file.buffer
+    const fileBuff = req.files[0].buffer
     const image = await Jimp.read(fileBuff)
     image.blur(radius)
     await storage.write(`blurred-${filename}`, await image.getBufferAsync(Jimp.MIME_JPEG))
@@ -101,7 +101,7 @@ api.upload('/api/pixelate', async (req, res) => {
   }
 
   try {
-    const fileBuff = req.file.buffer
+    const fileBuff = req.files[0].buffer
     const image = await Jimp.read(fileBuff)
     image.pixelate(10)
     const newFilename = `pixelated-${filename}`
