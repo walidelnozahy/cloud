@@ -18,9 +18,5 @@
   "dependencies": {
     "cors": "^2.8.5",
     "jimp": "^0.16.1"
-  },
-  "serverless": {
-    "org": "serverless",
-    "app": "image-resizer"
   }
 }
