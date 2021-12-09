@@ -1,6 +1,7 @@
 import { api, storage } from '@serverless/cloud'
 import cors from 'cors'
 import Jimp from 'jimp'
+import fetch from 'node-fetch'
 
 api.use(
   cors({
@@ -30,6 +31,27 @@ api.upload('/api/new', async (req, res) => {
   } catch (error) {
     console.error(error)
     return res.status(500).send(error.message)
+  }
+})
+
+api.get('/resize', async (req, res) => {
+  const url = req.query.url as string
+  const width = parseInt(req.query.width as string)
+  const height = parseInt(req.query.height as string)
+
+  if (!url || !width || !height) {
+    return res.status(400).send('Missing parameters')
+  }
+
+  try {
+    const resp = await fetch(url)
+    const buff = await resp.buffer()
+    const image = await Jimp.read(buff)
+    image.resize(width, height)
+    return res.status(200).send(await image.getBufferAsync(Jimp.MIME_JPEG))
+  } catch (err) {
+    console.error(err)
+    return res.status(500).send(err.message || err.code)
   }
 })
 
