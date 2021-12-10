@@ -30,13 +30,13 @@ To map a custom domain to your application, you must first prove ownership of th
 
 - It may take a few minutes for your changes to take place. You can click the "Refresh" button on the Serverless Cloud Dashboard to track the progress. After a few minutes, you’ll see that your ownership of the custom domain is verified as below. Now we can continue to map our domain to our instance.
 
-![DomainVerified](https://user-images.githubusercontent.com/85096820/141490433-8c22ae1f-72d9-43fa-80c2-b9b9a2d1c502.png)
+![Screen Shot 2021-12-10 at 10 54 41 AM](https://user-images.githubusercontent.com/85096820/145537902-e73466a4-1d2d-400c-aae2-2679e85416c4.png)
 
 ## Mapping Custom Domain to Serverless Cloud Instance
 
 Continue from the previous step by adding another CNAME record at your domain registrar. See the image below to see the CNAME records added on GoDaddy.
 
-![MapDomain](https://user-images.githubusercontent.com/85096820/141490213-c1057c25-8432-4fb8-aace-adecd85d9864.png)
+![Screen Shot 2021-12-10 at 10 57 07 AM](https://user-images.githubusercontent.com/85096820/145537986-07a79e40-8896-46a7-8d3b-6e8001abd697.png)
 
 This can also take a few minutes for the mapping operation to complete. You can test the mapping by visiting the custom domain you selected. Please check your DNS records if the operation doesn’t succeed or reach out to us for help.
 
