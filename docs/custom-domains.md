@@ -11,8 +11,8 @@ By default, all instances on Serverless Cloud have a URL that ends with `cloud.s
 Note that it’s not allowed to set a domain for personal instances or preview instances as they are temporary. You’ll need to create a permanent stage by using `cloud deploy` command from your terminal, or `deploy` on Cloud Shell, or by creating a new stage on the Dashboard. 
 There are two steps that you need to take to assign a custom domain to your instance: 
 
-Verify your ownership of the custom domain
-Map your domain to the Serverless Cloud instance 
+- Verify your ownership of the custom domain
+- Map your domain to the Serverless Cloud instance 
 
 ## Verifying Custom Domain Ownership
 
