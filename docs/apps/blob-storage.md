@@ -82,17 +82,24 @@ const { lastModified, size, metadata, type } = await storage.stat(
 
 ## Listing Files
 
-Files can be listed either as a whole or per directory. To list all subdirectories recursively, you can also pass a boolean recursive option to list everything in a given directory.
+Files can be listed either as a whole or per directory.
+
+To list all subdirectories recursively, you can pass a `recursive` option to list everything in all subdirectories under the initial path.
+To control page size, you can pass in a `pageSize` value to control how many files are returned per page, the default size is 100.
+
+`list` returns an async generator, allowing for controlled iteration through your files.
 
 ```javascript
-const list = await storage.list("bin");
+const list = await storage.list("bin", { pageSize: 1 });
+const page1 = list.next();
 // ['binaryData.ext']
 
-const fullList = await storage.list("/", true);
+const pages = await storage.list("/", { recursive: true, pageSize: 10 });
+const allFiles = [];
+for await (const page of pages) {
+  allFiles.push(...page);
+}
 // ['bin/binaryData.ext', 'bin-copy/binaryData.ext']
-
-const topLevelList = await storage.list();
-// [‘bin/’, ‘bin-copy/’]
 ```
 
 ## Removing Files
