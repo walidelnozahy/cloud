@@ -91,7 +91,7 @@ To control page size, you can pass in a `pageSize` value to control how many fil
 
 ```javascript
 const list = await storage.list("bin", { pageSize: 1 });
-const page1 = list.next();
+const page1 = await list.next();
 // ['binaryData.ext']
 
 const pages = await storage.list("/", { recursive: true, pageSize: 10 });
