@@ -1,0 +1,22 @@
+{
+  "name": "web3",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "build": "esbuild _lib.mjs --bundle --platform=node --external:electron --target=node16 --minify --format=cjs --outfile=lib/index.cjs",
+    "postinstall": "npm run build"
+  },
+  "devDependencies": {
+    "@rarible/sdk": "^0.7.40",
+    "@serverless/cloud": "^2.5.10",
+    "esbuild": "^0.14.5",
+    "web3": "^1.6.1"
+  },
+  "serverless": {
+    "app": "web3",
+    "org": "serverless"
+  },
+  "dependencies": {
+    "dayjs": "^1.10.7"
+  }
+}
