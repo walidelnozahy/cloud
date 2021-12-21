@@ -11,6 +11,14 @@ See what's new in Serverless Cloud as we build the most developer-friendly serve
 
 ## December 2021
 
+### Data Manager (`beta`)
+
+We've released our new **Data Manager** in the Serverless Cloud dashboard that lets you easily explore and manager your Serverless Data. You can query and visualize collections, add and edit items, remove items in bulk, and export data. The Data Manager is available now to all your Serverless Cloud instances. 
+
+<img width="1280" alt="Serverless Cloud Data Manager" src="https://user-images.githubusercontent.com/2053544/146956197-58d83d06-1ae1-4e49-bc54-a8cd0bd34951.png">
+
+
+
 ### CDN Support
 
 Serverless Cloud now serves all HTTP request via a global CDN. By default, all request are served with a `cache-control` header set to `max-age=0, must-revalidate`, but this can be overridden by your API to control caching of your API routes. The CDN also enables the ability to serve "public" Serverless Storage files using `/public` on your app's endpoint. Additional caching control support for static assets and storage files is coming soon.
@@ -25,7 +33,7 @@ We're happy to announce Serverless Storage, an easy to use file service for your
 
 We've released our new **Interact** feature that lets you discover and test your app's API endpoints right from the Serverless Cloud dashboard. Explore a list of API endpoints you defined, then add parameters, headers, and a post body to call the endpoint and examine the response body and returned headers. You can even use tabs to interact with multiple APIs at the same time. This feature is in beta, so please share your feedback with us.
 
-<img width="1280" alt="profile-screenshot" src="https://user-images.githubusercontent.com/2053544/141191632-8be32a16-43f5-4c37-876c-34ea701252e2.png">
+<img width="1280" alt="Serverless Cloud Interact" src="https://user-images.githubusercontent.com/2053544/141191632-8be32a16-43f5-4c37-876c-34ea701252e2.png">
 
 ### Auto-updating CLI
 
