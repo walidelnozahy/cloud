@@ -1,7 +1,7 @@
 {
-  "name": "js-api",
+  "name": "images",
   "version": "1.0.0",
-  "description": "Serverless Cloud JavaScript API template",
+  "description": "Image hosting powered by Serverless Cloud",
   "main": "index.js",
   "type": "module",
   "scripts": {
