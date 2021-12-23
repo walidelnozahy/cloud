@@ -1,0 +1,18 @@
+{
+  "name": "images",
+  "version": "1.0.0",
+  "description": "Image hosting powered by Serverless Cloud",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "cloud",
+    "test": "cloud test"
+  },
+  "devDependencies": {
+    "@serverless/cloud": "^2.0.0"
+  },
+  "serverless": {
+    "app": "images",
+    "org": "serverless"
+  }
+}

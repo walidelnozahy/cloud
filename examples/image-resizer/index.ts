@@ -12,10 +12,10 @@ api.use(
 api.get('/api/image', async (req, res) => {
   const path = req.query.path as string
   try {
-    return res.sendFile(path)
+    return await res.sendFile(path)
   } catch (error) {
     console.error(error)
-    return res.status(500).send(error)
+    return res.status(500).send(error.message)
   }
 })
 
@@ -80,7 +80,7 @@ api.upload('/api/resize', async (req, res) => {
     return res.status(200).send({ downloadUrl, name: resizedName, data: resizedBuff.toString('base64') })
   } catch (error) {
     console.error(error)
-    return res.status(500).send(error)
+    return res.status(500).send(error.message)
   }
 })
 
