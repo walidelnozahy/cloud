@@ -26,7 +26,7 @@ Files can be stored just by passing the binary string to the `write` function. T
 
 You can optionally not pass a path for the file, which will save it at the "root" directory.
 
-Metadata and custom mimetypes can also be passed to be saved alongside your file.
+Metadata and custom mimetypes can also be passed to be saved alongside your file, including a `maxAge` parameters for Cache Control.
 
 ```javascript
 await storage.write("/your/path/binaryData.ext", binaryData);
