@@ -54,6 +54,7 @@ An options object can be passed as third argument. The following options are sup
 ```javascript
 await data.set("foo", "bar", {
   meta: true,
+  overwrite: true,
   ttl: 3600,
   label1: "baz",
   label2: "baz:bat",
@@ -137,11 +138,44 @@ Serverless Data either returns a single item or an array of multiple items. Any 
     { key: "foo:bar", value: "item1" },
     { key: "foo:bat", value: { some: "value" } },
     { key: "foo:baz", value: 1234 },
-  ];
+  ]
 }
 ```
 
 Any non-exact match request will return items in the array format. This includes the use of any [conditionals](#using-conditionals-to-query-items-in-a-collection), getting items [using a label](#getting-items-by-their-labels), or getting [multiple items by their keys](#getting-items-by-their-labels).
+
+### Pagination
+
+The total number of items returned by a single `data.get()` call is limited to the value specified by the `limit` parameter (default 100). If additional items are available, a `lastKey` will be returned. This value can be passed into a subsequent call to `data.get()` as the `start` parameter. A `.next()` convenience function will also be returned which can be called directly instead of constructing the additional call.
+
+```javascript
+const result = data.get('foo:*', { limit: 3 });
+
+// result:
+{
+  items: [
+    { key: "foo:bar", value: "item1" },
+    { key: "foo:bat", value: true" },
+    { key: "foo:baz", value: 1234 },
+  ],
+  lastKey: "foo:baz",
+  next: [Function: next]
+}
+
+const nextResult = data.get('foo:*', { limit: 3, start: "foo:baz" });
+```
+
+To paginate through all items using `next()`:
+
+```javascript
+let result = data.get('foo:*', { limit: 3 });
+
+while(result) {
+  // do something with result.items
+  result = result.next ? result.next() : null
+}
+```
+
 
 ## Using conditionals to query items in a collection
 
