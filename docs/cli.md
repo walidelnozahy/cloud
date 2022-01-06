@@ -69,6 +69,14 @@ Exports data from your **personal instance** to a JSON file named `FILENAME` in 
 
 Runs defined tests against your connected Personal Instance. Please note that this will use and (depending on your tests) potentially modify data in your Personal Instance. To run these tests on an isolated instance, exit the shell and run `cloud test`.
 
+### `install [PACKAGENAME]`
+
+Installs the specified npm package into your application, and syncs your personal instance once it's done. If you did not provide a package name, it'll simply install all your app's dependencies listed in `package.json`.
+
+### `uninstall [PACKAGENAME]`
+
+Uninstalls the specified npm package from your application, and syncs your personal instance once it's done.
+
 ### `version`
 
 Displays the current running version of the CLI.
@@ -128,6 +136,14 @@ A `STAGE` is a long-lived instance/environment that hosts your app. Common names
 ### `cloud delete [STAGE]`
 
 Deletes the instance named `[STAGE]`. Warning: this is a destructive action.
+
+### `cloud install [PACKAGENAME]`
+
+Installs the specified npm package into your application. If you did not provide a package name, it'll simply install all your app's dependencies listed in `package.json`.
+
+### `cloud uninstall [PACKAGENAME]`
+
+Uninstalls the specified npm package from your application.
 
 ### `cloud clone [@ORG_NAME/APP_NAME/INSTANCE_NAME] [--overwrite]`
 
