@@ -20,24 +20,24 @@ It literally takes seconds to have your first application running on Serverless 
 If you want to start with our templates and build your own application from scratch, this option is for you. Note that you should have npm installed in order to run Cloud on your workspace. You can download it from [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm). There are only two other steps required.
 
 
-Create a new directory...
+Create a new directory:
 
 ```
 mkdir my-app && cd my-app
 ```
 
-Initiate your first Cloud app 
+Initiate your first Cloud app:
 ```
 npm init cloud
 ```
 
-Select one of the app templates that lets you build with Javascript or Typescript integrated with React or Vue. Give a name to your app and start developing. 
+You need to be logged in to proceed to the next step and select one of the app templates that lets you build with Javascript or Typescript integrated with React or Vue. Give a name to your app and start developing. 
 
-Next, you'll be in Cloud Shell where you can visit the url, see live logs, make changes, and watch them quickly deploy to your own **personal instance**. Cloud Shell helps you write commands and go back in command history.Make code changes in your application and see how fast it's synced into a your application running on Cloud. 
+Next, you'll be in Cloud Shell where you can visit the url, see live logs, make changes, and watch them quickly deploy to your own **personal instance**. Cloud Shell helps you write commands and go back in command history. Make code changes in your application and see how fast it's synced into a your application running on Cloud. 
 
 ## Fork an App
 
-You can start by playing with the code of an existing app with this version. You can select one of the applications built by our team and our community and fork it to your Serverless Cloud sccount by following the below steps: 
+You can start by playing with the code of an existing app with this version. You can select one of the applications built by our team and fork it to your Serverless Cloud sccount by following the below steps: 
 
 Select one of the ready apps and fork it to your account: 
 
@@ -60,7 +60,7 @@ Clone the application to your local and start developing against Cloud:
 cloud clone @userName/appName
 ```
 
-The app is copied into a new directory named same as app, follow the instructions on CLI to start working on it. 
+Note that you need to be logged in for CLI to complete the clone operation. The app is copied into a new directory named same as app, follow the instructions on CLI to start working on it. 
 
 Note that this operation may fail with "npm install exited with code 1" error. In such cases, 
 
