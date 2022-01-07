@@ -2,7 +2,7 @@
 title: Managing Organization Settings
 menuText: Managing Organization Settings
 description: Learn how you can manage the org-wide settings using Serverless Cloud Dashboard.
-menuOrder: 4
+menuOrder: 6
 parent: Serverless Cloud Dashboard
 ---
 
