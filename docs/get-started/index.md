@@ -15,25 +15,40 @@ It literally takes seconds to have your first application running on Serverless 
 - [Fork an public app and start working on it](#fork-an-app)
 - [Build your own app using templates](#build-your-own-app)
 
+## Start with the CLI
+
+If you want to start with our templates and build your own application from scratch, this option is for you. Note that you should have npm installed in order to run Cloud on your workspace. You can download it from [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm). There are only two other steps required.
+
+
+Create a new directory...
+
+```
+mkdir my-app && cd my-app
+```
+
+Initiate your first Cloud app 
+```
+npm init cloud <loginToken>
+```
+
+Select one of the app templates that lets you build with Javascript or Typescript integrated with React or Vue. Give a name to your app and start developing. 
+
+Next, you'll be in Cloud Shell where you can visit the url, see live logs, make changes, and watch them quickly deploy to your own **personal instance**. Cloud Shell helps you write commands and go back in command history.Make code changes in your application and see how fast it's synced into a your application running on Cloud. 
 
 ## Fork an App
 
-You can start by playing with the code of an existing app with this version. You can select one of the applications built by our team and our community and fork it to your Serverless Cloud Account by following the below steps: 
+You can start by playing with the code of an existing app with this version. You can select one of the applications built by our team and our community and fork it to your Serverless Cloud sccount by following the below steps: 
 
-Select one template application and fork it to your account: 
+Select one of the ready apps and fork it to your account: 
 
-<img width="367" alt="ForkAnApp" src="https://user-images.githubusercontent.com/85096820/139436453-e51ce71b-86fe-495d-ab1d-cd90e8cdd797.png">
-
-
+<img width="467" alt="ForkAnApp" src="https://user-images.githubusercontent.com/85096820/148572490-9dde98d0-660f-4b66-9c9d-604ba00ae6ef.png">
 
 
-Some template applications require you to assign values to some of the parameters and won't work properly until you pass this parameter.
+Note that some applications require you to assign values to their parameters and won't work properly until you pass this parameter. Serverless Cloud will prompt you to enter value for those parameters. You can enter immediately or leave it for later. 
 
-<img width="364" alt="ForkAnAppParameter" src="https://user-images.githubusercontent.com/85096820/139436501-ffa09ae3-5f92-4ad3-8ff7-8eae6eca2539.png">
+After forking the app to your account, you need to clone it to your local environment and start working against **personal** instance on Cloud. 
 
-
-
-See the steps required to start working on your local when fork operation is completed. The first step to install Serverless Cloud from npm.
+The first step to install Serverless Cloud from npm.
 
 ```
 npm i -g @serverless/cloud@latest
@@ -42,44 +57,19 @@ npm i -g @serverless/cloud@latest
 Clone the application to your local and start developing against Cloud: 
 
 ```
-cloud clone @<yourUserName>/<appName> --login <loginSlug>
+cloud clone @<userName>/<appName> --login <loginSlug>
 ```
 
-The app is copied into a new directory with the app name, follow the instructions on CLI to start working on it. 
+The app is copied into a new directory named same as app, follow the instructions on CLI to start working on it. 
 
 Note that this operation may fail with "npm install exited with code 1" error. In such cases, 
 
-- Get into the directory with the app name by running `cd <appName>` 
+- Get into the directory named same as app by running `cd <appName>` 
 - Run `npm i` to install dependencies yourself
 - Type `cloud` to start working on your project. 
 
-When you type `cloud`, you'll enter the interactive Cloud Shell where you can see your personal instance URL, and see the logs that the application prints. Make code changes in your application and see how fast it's synced into a your application running on Cloud. 
- 
-## Build Your Own App
-
-If you want to start with our templates and build your own application from scratch, this option is for you. Follow the instructions provided on Serverless Cloud Dashboard as follows:
-
-Install globally from npm...
-
-```
-npm i -g @serverless/cloud@latest
-```
-
-Create a new directory...
-
-```
-mkdir my-cloud && cd my-cloud
-```
-
-Initialize a sample app and start developing
-
-```
-cloud --login <loginSlug> 
-```
-
-Select one of the app templates that lets you build with Javascript or Typescript integrated with known SPA libraries. Give a name to your app and start developing. 
-
-Visit the url, see live logs, make changes, and watch them quickly deploy to your own **personal instance**. Cloud Shell helps you write commands and go back in command history.
+When you type `cloud`, you'll enter the interactive Cloud Shell where you can see your personal instance URL, and see the logs that the application prints. 
+Make code changes in your application and see how fast it's synced into a your application running on Cloud. 
 
 
 **Next:** [Serverless Cloud Concepts](/cloud/docs/get-started/concepts)
