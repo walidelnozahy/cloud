@@ -5,8 +5,10 @@ description: Build scalable, highly-secure, pay-per-use applications, without ne
 menuOrder: 1
 -->
 
-<!-- DOCS-SITE-LINK:START  -->
+<!-- DOCS-SITE-LINK:START -->
+
 ### [Read this on the main Serverless Cloud docs site](https://www.serverless.com/cloud/docs)
+
 <!-- DOCS-SITE-LINK:END -->
 
 # Build faster & better with Serverless Cloud
