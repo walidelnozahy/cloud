@@ -28,7 +28,7 @@ mkdir my-app && cd my-app
 
 Initiate your first Cloud app 
 ```
-npm init cloud <loginToken>
+npm init cloud
 ```
 
 Select one of the app templates that lets you build with Javascript or Typescript integrated with React or Vue. Give a name to your app and start developing. 
@@ -57,7 +57,7 @@ npm i -g @serverless/cloud@latest
 Clone the application to your local and start developing against Cloud: 
 
 ```
-cloud clone @<userName>/<appName> --login <loginSlug>
+cloud clone @userName/appName
 ```
 
 The app is copied into a new directory named same as app, follow the instructions on CLI to start working on it. 
