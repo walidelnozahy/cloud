@@ -1,12 +1,12 @@
 ---
-title: Interacting with Compute Resources
-menuText: Interacting with Compute Resources
+title: Interacting with Serverless Cloud APIs
+menuText: Interacting with Serverless Cloud APIs
 description: Learn how you can test your endpoints on Serverless Cloud
 menuOrder: 3
 parent: Serverless Cloud Dashboard
 ---
 
-# Interacting with Compute Resources of Instances 
+# Interacting with Serverless Cloud APIs
 
 Developers can create endpoints on Serverless Cloud that respond to any HTTP actions like `GET`, `POST`, `DELETE`, and `PUT` as explained [here](https://www.serverless.com/cloud/docs/apps/api). Serverless Cloud provides a built-in interact functionality that lets you call the endpoints on the instances. It's available both for personal instances and stages.
 
