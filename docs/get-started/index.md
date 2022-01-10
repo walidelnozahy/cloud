@@ -33,7 +33,7 @@ npm init cloud
 
 You need to be logged in to proceed to the next step and select one of the app templates that lets you build with Javascript or Typescript integrated with React or Vue. Give a name to your app and start developing. 
 
-Next, you'll be in Cloud Shell where you can visit the url, see live logs, make changes, and watch them quickly deploy to your own **personal instance**. Cloud Shell helps you write commands and go back in command history. Make code changes in your application and see how fast it's synced into a your application running on Cloud. 
+Next, you'll be in Cloud Shell where you can visit the url, see live logs, make changes, and watch them quickly deploy to your own **personal instance**. Cloud Shell helps you write commands and go back in command history. Make code changes in your application and see how fast it's synced into your application running on Cloud. 
 
 ## Fork an App
 
