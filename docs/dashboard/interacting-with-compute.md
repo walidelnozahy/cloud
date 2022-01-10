@@ -2,7 +2,7 @@
 title: Interacting with Compute Resources
 menuText: Interacting with Compute Resources
 description: Learn how you can test your endpoints on Serverless Cloud
-menuOrder: 6
+menuOrder: 3
 parent: Serverless Cloud Dashboard
 ---
 
