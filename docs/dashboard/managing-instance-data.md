@@ -34,7 +34,7 @@ There might be some cases where you need to run a quick test with an exact data.
 
 ![Screen Shot 2022-01-10 at 11 47 42 AM](https://user-images.githubusercontent.com/85096820/148739340-7aaccf0f-a397-44a9-b57c-9126cf68182e.png)
 
-## Deleting items Data Manager
+## Deleting items with Data Manager
 
 Developers may also need to delete some data to preserve the integrity of data, to test a specific case, or for any other reason. In such cases, the Data Manager lets you delete items from Serverless Data. Please note that this operation is irreversible and should be used accordingly. 
 
