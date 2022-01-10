@@ -14,5 +14,8 @@
   "serverless": {
     "app": "images",
     "org": "serverless"
+  },
+  "dependencies": {
+    "jimp": "^0.16.1"
   }
 }
