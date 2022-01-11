@@ -13,5 +13,7 @@ Serverless Cloud Dashboard gives developers the ability to create/edit/delete/fo
 
 - [Managing Apps](/cloud/docs/dashboard/managing-apps)
 - [Managing App Instances](/cloud/docs/dashboard/managing-instances)
+- [Managing Data on Instances](/cloud/docs/dashboard/managing-instance-data)
+- [Interacting with Serverless Cloud APIs](/cloud/docs/dashboard/interacting-with-compute)
 - [Troubleshooting with Instance Metrics and Logs](/cloud/docs/dashboard/logs-metrics)
 - [Managing Organization Settings](/cloud/docs/dashboard/managing-org-settings)

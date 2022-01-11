@@ -16,6 +16,10 @@
     "org": "serverless"
   },
   "dependencies": {
+<<<<<<< HEAD
     "cors": "^2.8.5"
+=======
+    "jimp": "^0.16.1"
+>>>>>>> origin/main
   }
 }

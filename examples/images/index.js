@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { api, storage } from '@serverless/cloud';
 import cors from 'cors';
+=======
+import { api, storage } from "@serverless/cloud";
+import Jimp from "jimp";
+>>>>>>> origin/main
 
 const random = (length = 6) => Math.random().toString(20).substr(2, length);
 
@@ -30,8 +35,25 @@ api.upload('/', async (req, res) => {
 
 api.get('/:imageId', async (req, res) => {
   const imageId = req.params.imageId;
+  const width = parseInt(req.query.w);
+  const height = parseInt(req.query.h);
 
   try {
+    if (width && height) {
+      const resizedImageId = `${imageId}-${width}-${height}`;
+
+      if (!(await storage.exists(resizedImageId))) {
+        const imageBuffer = await storage.readBuffer(imageId);
+
+        const image = await Jimp.read(imageBuffer);
+        image.resize(width, height);
+        const resizedImageBuffer = await image.getBufferAsync(Jimp.AUTO);
+
+        await storage.write(resizedImageId, resizedImageBuffer);
+      }
+      return await res.sendFile(resizedImageId);
+    }
+
     return await res.sendFile(imageId);
   } catch (error) {
     console.error(error);
