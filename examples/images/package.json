@@ -9,10 +9,13 @@
     "test": "cloud test"
   },
   "devDependencies": {
-    "@serverless/cloud": "^2.0.0"
+    "@serverless/cloud": "^2.6.3"
   },
   "serverless": {
     "app": "images",
     "org": "serverless"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
   }
 }
