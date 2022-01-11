@@ -138,7 +138,7 @@ Serverless Data either returns a single item or an array of multiple items. Any 
     { key: "foo:bar", value: "item1" },
     { key: "foo:bat", value: { some: "value" } },
     { key: "foo:baz", value: 1234 },
-  ]
+  ];
 }
 ```
 
@@ -168,14 +168,13 @@ const nextResult = data.get('foo:*', { limit: 3, start: "foo:baz" });
 To paginate through all items using `next()`:
 
 ```javascript
-let result = data.get('foo:*', { limit: 3 });
+let result = data.get("foo:*", { limit: 3 });
 
-while(result) {
+while (result) {
   // do something with result.items
-  result = result.next ? result.next() : null
+  result = result.next ? result.next() : null;
 }
 ```
-
 
 ## Using conditionals to query items in a collection
 
@@ -356,8 +355,8 @@ It's possible to create an "event loop" where your event handler triggers itself
 By default, data events will timeout after 20 seconds. To change the default, you can specify an object as your second parameter with a `timeout` key. Timeouts are specified in milliseconds and must be a positive integer. Data events support a maximum timeout of 60 seconds.
 
 ```javascript
-data.on("created"], { timeout: 1000 } async (event) => {
+data.on("created", { timeout: 1000 }, async (event) => {
   // an item has been created
   // timeout after 1 second
-})
+});
 ```
