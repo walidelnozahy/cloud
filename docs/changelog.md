@@ -9,6 +9,15 @@ menuOrder: 9
 
 See what's new in Serverless Cloud as we build the most developer-friendly serverless app platform ever! 🚀
 
+## January 2022
+
+### Storage Manager (`beta`)
+
+We've released our new **Storage Manager** in the Serverless Cloud dashboard that lets you easily upload, organize, and manage your Serverless Storage files. The new Storage Manager supports multi-file uploads and downloads, plus the ability to move, copy, and delete files in bulk. You can also create folders, rename files, view private files via signed URLs, and access public files using your public url endpoint. The Storage Manager is available now to all your Serverless Cloud instances. 
+
+<img width="1280" alt="Serverless Cloud Storage Manager" src="https://user-images.githubusercontent.com/2053544/149234957-879d6d53-7ba5-4aed-9c1d-a130f195e035.png">
+
+
 ## December 2021
 
 ### Data Manager (`beta`)
@@ -16,8 +25,6 @@ See what's new in Serverless Cloud as we build the most developer-friendly serve
 We've released our new **Data Manager** in the Serverless Cloud dashboard that lets you easily explore and manager your Serverless Data. You can query and visualize collections, add and edit items, remove items in bulk, and export data. The Data Manager is available now to all your Serverless Cloud instances. 
 
 <img width="1280" alt="Serverless Cloud Data Manager" src="https://user-images.githubusercontent.com/2053544/146956197-58d83d06-1ae1-4e49-bc54-a8cd0bd34951.png">
-
-
 
 ### CDN Support
 
