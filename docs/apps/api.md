@@ -119,14 +119,14 @@ api.get('/user', { timeout: 2000 }, (req,res) => {
 
 ## Handling Uploads
 
-API has a built in function for uploading files. `upload` takes both a route and a standard request handler function. Files can be uploaded as either a binary body or multipart form data. The `upload` method creates both a POST and PUT route.
+API automatically handles files uploaded as either a binary body or in multipart form data on any POST or PUT route.
 
 ### Binary Body Uploads
 
 When uploading files as a binary body, information about the uploaded file will be available via the `req.files` array. This will include the `mimetype`, `size`, and `buffer`. The `buffer` can be passed directly to the `storage` interface to save the file.
 
 ```javascript
-api.upload("/upload", async (req, res) => {
+api.post("/upload", async (req, res) => {
   await storage.write("my-uploaded-file", req.files[0].buffer);
   return res.sendStatus(200);
 });
