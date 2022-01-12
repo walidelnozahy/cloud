@@ -125,6 +125,27 @@ const longDownloadUrl = await storage.getDownloadUrl(
 const uploadUrl = await storage.getUploadUrl("bin-copy/doesNotExistYet.ext");
 ```
 
+## Listeners
+
+You can listen for certain Storage events with `storage.on`. As of now, you can fire side-effects for `write` and `remove` events.
+The listener accepts any glob file patterns, and will react to all events with an asterisk `*`.
+
+Storage events contain both the path of the file, and the event name (`write` or `remove`).
+
+```javascript
+storage.on("write:user-uploads/*", async (event) => {
+  // event = { path: user-uploads/picture.jpeg, name: 'write' }
+});
+
+storage.on("*", async (event) => {
+  // reacts to all write/remove events
+});
+
+storage.on("write:*.txt", async (event) => {
+  // reacts to all .txt file writes
+});
+```
+
 ## Cloud Integrations with Storage
 
 Storage can be used in tandem with other Cloud services, such as the API.
