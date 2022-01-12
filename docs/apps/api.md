@@ -155,6 +155,10 @@ api.put("/upload", async (req, res) => {
 });
 ```
 
+This behavior is the same for `application/x-www-urlencoded` content types as well.
+
+For any form sent with a `text/plain` content type, the content will remain as plain text.
+
 ## Serving Serverless Storage files
 
 To send either locally stored files or files stored via Storage, use `res.sendFile`. `sendFile` will first check the local directory - if the supplied path exists here, the local file will be sent. Otherwise, `sendFile` will redirect to a download url for a given path, if it exists, from Storage.
