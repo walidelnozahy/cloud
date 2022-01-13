@@ -1,13 +1,20 @@
-import { api, storage } from "@serverless/cloud";
-import Jimp from "jimp";
+import { api, storage } from '@serverless/cloud';
+import Jimp from 'jimp';
+import cors from 'cors';
 
 const random = (length = 6) => Math.random().toString(20).substr(2, length);
 
-api.upload("/", async (req, res) => {
+api.use(
+  cors({
+    origin: 'http://localhost:3000',
+  }),
+);
+
+api.upload('/', async (req, res) => {
   const fileBuff = req.files[0].buffer;
 
   if (!fileBuff) {
-    return res.status(400).send("No file provided");
+    return res.status(400).send('No file provided');
   }
 
   try {
@@ -22,7 +29,7 @@ api.upload("/", async (req, res) => {
   }
 });
 
-api.get("/:imageId", async (req, res) => {
+api.get('/:imageId', async (req, res) => {
   const imageId = req.params.imageId;
   const width = parseInt(req.query.w);
   const height = parseInt(req.query.h);
@@ -47,7 +54,7 @@ api.get("/:imageId", async (req, res) => {
   } catch (error) {
     console.error(error);
 
-    let status = error.message === "NotFound" ? 400 : 500;
+    let status = error.message === 'NotFound' ? 400 : 500;
 
     return res.status(status).send(error.message);
   }
