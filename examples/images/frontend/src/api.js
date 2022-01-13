@@ -1,5 +1,5 @@
-// const baseURL = `${window.location.origin}`;
-export const baseURL = `https://old-band-qem16.cloud.serverless.com`;
+export const baseURL = `${window.location.origin}`;
+
 export const apiClient = async ({ url = '', body, method = 'GET' }) => {
   const res = await fetch(`${baseURL}/${url}`, {
     method,

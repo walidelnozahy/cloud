@@ -1,126 +1,23 @@
-import { useState, useMemo } from 'react';
-import { apiClient, baseURL } from './api';
-import { UploadButton } from './components/UploadButton';
+import { useState, useRef } from 'react';
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import Divider from '@mui/material/Divider';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import { useDropzone } from 'react-dropzone';
-import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import CircularProgress from '@mui/material/CircularProgress';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
+import CssBaseline from '@mui/material/CssBaseline';
+import { Button, Container, Grid, Snackbar, Typography } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import UploadIcon from '@mui/icons-material/UploadRounded';
+
+import { ImageBox } from './components/ImageBox';
+import { theme } from './components/Theme';
 import useLocalStorage from './hooks/useLocalStorage';
-import {
-  Alert,
-  ButtonGroup,
-  Container,
-  IconButton,
-  ImageListItemBar,
-  LinearProgress,
-  Snackbar,
-  Typography,
-} from '@mui/material';
-import { makeStyles } from '@mui/styles';
-import CopyIcon from '@mui/icons-material/ContentCopy';
-import DownloadIcon from '@mui/icons-material/DownloadRounded';
-import OpenIcon from '@mui/icons-material/OpenInNewRounded';
-import { useCopyToClipboard, useToggle, useUnmount } from 'react-use';
+import logo from './serverless-cloud-text.svg';
+import { apiClient } from './api';
 
-const Loading = () => (
-  <div style={{ alignSelf: 'center', justifyContent: 'center' }}>
-    <CircularProgress />
-  </div>
-);
-export const ProgressBar = ({ value, uploadStatus, ...props }) => (
-  <Box width='80%' textAlign='center'>
-    <Box display='flex' alignItems='center'>
-      <Box width='100%' mr={1} sx={{ color: '#FD5750' }}>
-        <LinearProgress value={value} color='inherit' {...props} />
-      </Box>
-      <Box minWidth={35}>
-        <Typography variant='body2' color='textSecondary'>{`${Math.round(
-          value,
-        )}%`}</Typography>
-      </Box>
-    </Box>
-    <Box display='flex' justifyContent='center' alignItems='center'>
-      <Typography variant='subtitle1' style={{ marginRight: 10 }}>
-        Uploading {uploadStatus?.currentName} ({uploadStatus?.done || 0}/
-        {uploadStatus?.total})
-      </Typography>
-    </Box>
-  </Box>
-);
-
-export const useStyles = makeStyles((theme) => ({
-  body: {
-    background: 'black',
-    minHeight: '100vh',
-    // padding: '10vh',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center',
-    '& h6': {
-      color: '#fff',
-    },
-  },
-  dropZone: {
-    position: 'relative',
-    border: '2px dashed #FD5750',
-    height: 500,
-    width: '100%',
-    borderRadius: 6,
-    transition: 'all .2s ease-in-out',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    cursor: 'pointer',
-    '&:hover': {
-      background: '#141414',
-    },
-  },
-  overlayBox: ({ isDragActive, uploadStatus }) => ({
-    display: isDragActive || uploadStatus ? 'flex' : 'none',
-    transition: 'all .2s ease-in-out',
-    width: '100%',
-    height: '100%',
-    background: 'rgba(0,0,0,0.8)',
-    // border: `2px dashed #FD5750`,
-    overflow: 'hidden',
-    borderRadius: 6,
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    zIndex: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    '& h6': {},
-  }),
-  snackbar: {
-    '& .MuiSnackbarContent-root': {
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 0,
-      background: '#4caf50',
-      color: '#fff',
-    },
-  },
-}));
-
-function App() {
+const MyImages = () => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
-  const [uploadStatus, setUploadStatus] = useState(null);
-  const [, copyToClipboard] = useCopyToClipboard();
+  const [uploading, setUploading] = useState(false);
   const [imagesIds, setImagesIds] = useLocalStorage('serverless-images', []);
+  const uploadInputRef = useRef();
 
-  const progressValue = useMemo(
-    () => (uploadStatus?.done * 100) / uploadStatus?.total || 0,
-    [uploadStatus],
-  );
   const file2Buffer = (file) =>
     new Promise((resolve) => {
       const reader = new FileReader();
@@ -131,137 +28,97 @@ function App() {
       reader.addEventListener('load', readFile);
       reader.readAsArrayBuffer(file);
     });
-  const uploadFile = async (file) => {
-    setUploadStatus((prev) => ({ ...prev, currentName: file?.name }));
-    const body = await file2Buffer(file);
-    const res = await apiClient({
-      body,
-      method: 'PUT',
-    });
-    setUploadStatus((prev) => ({ ...prev, done: prev.done + 1 || 1 }));
-    return res?.url.split('/').pop();
-  };
-  const onDrop = async (files) => {
+
+  const onUpload = async (file) => {
+    setUploading(true);
     try {
-      setUploadStatus((prev) => ({ ...prev, total: files.length }));
-      const newIds = await Promise.all(files.map((file) => uploadFile(file)));
+      const body = await file2Buffer(file);
+      const res = await apiClient({
+        body,
+        method: 'PUT',
+      });
 
-      setImagesIds([...(imagesIds || []), ...newIds]);
-
-      setUploadStatus(null);
-    } catch (err) {
-      console.log('err', err);
-    }
+      const newId = res?.url.split('/').pop();
+      console.log('newId', newId);
+      setImagesIds([newId, ...(imagesIds || [])]);
+    } catch (err) {}
+    setUploading(false);
   };
-
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop,
-    accept: 'image/jpeg, image/png',
-  });
-  console.log('imagesIds', imagesIds);
-  const classes = useStyles({ isDragActive, uploadStatus });
+  const removeImage = (imageId) => {
+    setImagesIds(imagesIds.filter((id) => id !== imageId));
+  };
   const closeSnackbar = () => setOpenSnackbar(false);
   return (
-    <Box className={classes.body}>
+    <Box>
       <Snackbar
         open={openSnackbar}
         autoHideDuration={1000}
-        className={classes.snackbar}
         onClose={closeSnackbar}
         message='Image URL copied'
-        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
       />
-      {/* <Alert
-          onClose={closeSnackbar}
-          severity='success'
-          sx={{ width: '100%' }}
+
+      <Box textAlign='center'>
+        <img src={logo} alt='serverless cloud' />
+        <Typography
+          variant='h3'
+          color='#fff'
+          fontWeight='bold'
+          textAlign='center'
+          mb={15}
         >
-          Image URL copied
-        </Alert> */}
+          Host and resize images
+        </Typography>
+      </Box>
       <Container>
-        <Box className={classes.dropZone} {...getRootProps()}>
-          <input {...getInputProps()} />
-          {isDragActive ? (
-            <Typography variant='h6'>
-              {!isDragActive
-                ? 'Drag and drop your files here'
-                : 'Drop files here'}
-            </Typography>
-          ) : null}
-
-          <Box className={classes.overlayBox}>
-            <ProgressBar
-              uploadStatus={uploadStatus}
-              value={progressValue}
-              valueBuffer={progressValue + 10}
-              variant='buffer'
-            />
-          </Box>
-          {imagesIds?.length ? (
-            <ImageList
-              sx={{ width: '100%', height: '100%' }}
-              cols={6}
-              gap={10}
-              rowHeight={100}
-              onClick={(e) => e.stopPropagation()}
+        <Box width={200} margin='auto' textAlign='center'>
+          <input
+            accept='image/*'
+            type='file'
+            style={{ display: 'none' }}
+            onChange={(e) => onUpload(e.target.files[0])}
+            ref={uploadInputRef}
+          />
+          {uploading ? (
+            <Box textAlign='center'>
+              <CircularProgress color='primary' />
+            </Box>
+          ) : (
+            <Button
+              variant='contained'
+              color='primary'
+              startIcon={<UploadIcon />}
+              onClick={() => uploadInputRef?.current?.click()}
+              size='large'
+              style={{ width: 200, height: 50 }}
             >
-              {imagesIds.map((id) => (
-                <ImageListItem key={id}>
-                  <img
-                    src={`${baseURL}/${id}`}
-                    alt='serverless cloud images'
-                    loading='lazy'
-                  />
-
-                  <ImageListItemBar
-                    position='top'
-                    actionIcon={
-                      <ButtonGroup
-                        variant='contained'
-                        aria-label='outlined primary button group'
-                      >
-                        <IconButton
-                          onClick={() => {
-                            setOpenSnackbar(true);
-                            copyToClipboard(`${baseURL}/${id}`);
-                          }}
-                          sx={{
-                            fontSize: 15,
-                            color: 'rgba(255, 255, 255, 0.54)',
-                          }}
-                          aria-label={`copy image ${id}`}
-                        >
-                          <CopyIcon fontSize='inherit' />
-                        </IconButton>
-                        <IconButton
-                          sx={{
-                            fontSize: 15,
-                            color: 'rgba(255, 255, 255, 0.54)',
-                          }}
-                          aria-label={`download image ${id}`}
-                        >
-                          <DownloadIcon fontSize='inherit' />
-                        </IconButton>
-                        <IconButton
-                          sx={{
-                            fontSize: 15,
-                            color: 'rgba(255, 255, 255, 0.54)',
-                          }}
-                          aria-label={`open image ${id}`}
-                        >
-                          <OpenIcon fontSize='inherit' />
-                        </IconButton>
-                      </ButtonGroup>
-                    }
-                  />
-                </ImageListItem>
+              Upload Image
+            </Button>
+          )}
+        </Box>
+        <Box mt={15}>
+          {imagesIds?.length ? (
+            <Grid container spacing={2}>
+              {imagesIds.map((imageId) => (
+                <ImageBox
+                  key={imageId}
+                  imageId={imageId}
+                  setOpenSnackbar={setOpenSnackbar}
+                  removeImage={removeImage}
+                />
               ))}
-            </ImageList>
+            </Grid>
           ) : null}
         </Box>
       </Container>
     </Box>
   );
-}
+};
 
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <MyImages />
+  </ThemeProvider>
+);
 export default App;

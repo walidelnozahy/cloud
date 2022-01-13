@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 import { api, storage } from '@serverless/cloud';
+import Jimp from 'jimp';
 import cors from 'cors';
-=======
-import { api, storage } from "@serverless/cloud";
-import Jimp from "jimp";
->>>>>>> origin/main
 
 const random = (length = 6) => Math.random().toString(20).substr(2, length);
 
