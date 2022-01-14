@@ -10,7 +10,7 @@ api.use(
   }),
 );
 
-api.upload('/', async (req, res) => {
+api.post('/', async (req, res) => {
   const fileBuff = req.files[0].buffer;
 
   if (!fileBuff) {
