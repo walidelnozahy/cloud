@@ -63,7 +63,7 @@ When working with a team, it's required to share your work with your colleagues 
 # Run your tests before you push it to a permanent stage.
 > cloud test
 
-# Share your work with your colleagues by creating a preview instance that has the same code and data with your personal instance
+# Share your work with your colleagues by creating a preview instance that has the same code and data as your developer sandbox
 > cloud share
 
 # Manual tests are okay so we can let CI run its tasks and push the app to prod.

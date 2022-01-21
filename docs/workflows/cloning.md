@@ -13,7 +13,7 @@ Developer Instances are just versatile working copies that can be used for devel
 Note that you should have access to `my-org-name`. You can also run clone command without specifying `org-name` and this will clone from your default org. 
 
 ```
-# An error is occuring at staging but you can't reproduce it on your personal instance.
+# An error is occuring in staging but you can't reproduce it in your developer instance.
 # Clone staging with both code and data.
 > cloud clone staging
 
@@ -21,7 +21,7 @@ Note that you should have access to `my-org-name`. You can also run clone comman
 > cd app-name
 
 
-# Start your personal instance replicating the exact environment with staging
+# Start your developer sandbox replicating the exact environment with staging
 > cloud
 
 # After fixing the issue, make your colleagues verify that it's solved on a preview instance

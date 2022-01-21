@@ -25,7 +25,7 @@ More information about Schedules can be found [here](https://serverless.com/clou
 ## Testing
 
 Serverless Cloud has built-in support for automated unit and integration testing. By convention, tests should be contained within your project's `tests` folder. You can write tests based on the [Jest testing framework](https://jestjs.io/){:target="\_blank"}.
-Just type `test` when you're in Cloud Shell to run tests directly on your personal instance, or type `cloud test` from your terminal to run the tests in an isolated test instance.
+Just type `test` when you're in Cloud Shell to run tests directly on your developer sandbox, or type `cloud test` from your terminal to run the tests in an isolated test instance.
 
 More information about testing can be found [here](https://www.serverless.com/cloud/docs/workflows/testing).
 

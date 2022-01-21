@@ -4,7 +4,7 @@ This is a scaffolding project for building a Vue.js project with an API on Serve
 
 Type `cloud` to enter the cloud shell and connect to your personal development instance. Just play with the code and watch changes sync and deploy in less than a second.
 
-To make changes to Vue, open a separate terminal, run `cd frontend` and then run `npm 1`. Once the dependencies are installed, run `npm run serve`. You can then make changes and view them locally. If you want to connect to your personal developer instance from your local Vue project, update the `axios.defaults.baseURL` in `src/main.js` to your URL. When you are ready to deploy your Vue changes to your personal instance, run `npm run build`.
+To make changes to Vue, open a separate terminal, run `cd frontend` and then run `npm 1`. Once the dependencies are installed, run `npm run serve`. You can then make changes and view them locally. If you want to connect to your personal developer instance from your local Vue project, update the `axios.defaults.baseURL` in `src/main.js` to your URL. When you are ready to deploy your Vue changes to your developer sandbox, run `npm run build`.
 
 ## APIs
 
@@ -29,7 +29,7 @@ More information about Schedules can be found [here](https://serverless.com/clou
 ## Testing
 
 Serverless Cloud has built-in support for automated unit and integration testing. By convention, tests should be contained within your project's `tests` folder. You can write tests based on the [Jest testing framework](https://jestjs.io/){:target="\_blank"}.
-Just type `test` when you're in Cloud Shell to run tests directly on your personal instance, or type `cloud test` from your terminal to run the tests in an isolated test instance.
+Just type `test` when you're in Cloud Shell to run tests directly on your developer sandbox, or type `cloud test` from your terminal to run the tests in an isolated test instance.
 
 More information about testing can be found [here](https://www.serverless.com/cloud/docs/workflows/testing).
 

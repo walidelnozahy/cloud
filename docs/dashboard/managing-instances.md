@@ -10,7 +10,7 @@ parent: Serverless Cloud Dashboard
 
 Serverless Cloud lets developers manage different types of instances of an app by editing or deleting the instance, promoting an instance to another instance, overriding inherited parameters, monitoring with logs and metrics, and [assigning custom domains](/cloud/docs/custom-domains) to stages.
 
-Developers can **create an instance** from the dashboard by clicking on the Create App button on the instances list. Note that you can only create a stage from the Serverless Cloud Dashboard. You can’t create a personal instance, a preview instance or a test instance using the dashboard.  
+Developers can **create an instance** from the dashboard by clicking on the Create App button on the instances list. Note that you can only create a stage from the Serverless Cloud Dashboard. You can’t create a developer sandbox, a preview instance or a test instance using the dashboard.  
 
 ![createInstances](https://user-images.githubusercontent.com/85096820/141469853-5550e9e3-c9b9-45cf-b5fd-c9e225653164.png)
 

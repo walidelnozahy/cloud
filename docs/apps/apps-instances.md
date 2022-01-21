@@ -8,32 +8,30 @@ parent: Building Applications
 
 # Apps and Instances
 
-Serverless Cloud lets developers build in rapid iterations and aims to reduce the feedback loop both while working as a solo-developer or collaborating with colleagues. Developing apps with several instances options accelerate the process towards production without sacrificing the processes around CI/CD and testing. 
+Serverless Cloud's isolation model lets developers rapidly iterate on code without needing to share resources or worry about collisions with others. Whether your a solo developer or a team collaborating with colleagues, Serverless Cloud reduces the development feedback loop and accelerates the path to production without sacrificing standard CI/CD and testing processes. 
 
 ## Apps
 
-Serverless Cloud allows you to build **APPS** within your team's **ORGANIZATION**. You can create as many apps as you want for different use cases or applications.
+Serverless Cloud allows you to build **APPS** within your **ORGANIZATION**. Apps can be entire fullstack applications, independent microservices, isolated backends, or a frontend backed by a global CDN. You can create as many apps as you want.
 
-## Using Instances
+## Instances
 
-Serverless Cloud provides the preview build of each app via instances. An app can have multiple instances and each **instance** is completely separate from all the other **instances** in an **app**, and even store their own copy of the data. The environments within **instances** are identical, so you can ensure that your application will behave exactly the same across all of them.
+The actual code and resources for an **app** run in **instances**. Each **instance** contains its own set of isolated resources including separate copies of data and blob storage. The environments within **instances** are identical, so you can ensure that your application will behave exactly the same across all of them.
 
-While **instance** enviroments are identical, Serverless Cloud lets you classify instances to complement your workflow.
+You can think of **instances** as "stages" or "environments" (e.g. prod, qa-test, dev), but Serverless Cloud's isolation model and rapid provisioning technology use instance "types" to enable incredibly powerful workflows. 
 
-### Personal Instances
+### Developer Sandboxes (Personal Instances)
 
-Every developer on your team gets a **Personal Instance** for every **APP** they work on. Each **Personal Instance** is your own "personal development workspace" that automatically syncs and deploys changes from your local as you code. To enable this interactive development mode, type `cloud` into the CLI within your project directory. This will spin up your own personal instance on Cloud with your own data store. You'll be able to see the URL of your personal instance and detect the impact of changes you make. The logs for developer instance will start streaming instantly into your terminal to help you iterate quickly. Every change you make to your application, every static asset that you'll add under `/static` folder will be synced to your own personal instance under a second depending on the size of the change.
-
-Note that the URL for personal instances won't be accessible after the personal development mode is ended. For this reason, it's encouraged to deploy your app to a stage.
+Every developer on your team gets their own personal **Developer Sandbox** for every **APP** they work on. Each **Developer Sandbox** is your own "personal development workspace" that automatically syncs and deploys changes from your local environment as you code (typically in under a second). To enable interactive development mode, type `cloud` into the CLI within your project directory. This will spin up your own personal sandbox with isolated data and blob storage. Your developer sandbox gets its own public URL that you can use to test your application. The logs from your sandbox will stream instantly into your terminal, giving you immediate feedback on any changes you make.
 
 ### Stages (Permanent Instances)
 
-When you're ready to show your work to the world, you can **deploy** your code to a **stage**. These are permanent instances like `prod`, `staging` and `dev`. If you want to publish your code to one of these instances, type `cloud deploy my-stage-name` into the CLI and your **CODE** will be published to `my-stage-name`.
+When you're ready to show your work to the world, you can **deploy** your code to a **stage**. These are permanent, long-running instances like `prod`, `qa-test` and `dev`. If you want to publish your code to one of these instances, simply type `deploy my-stage-name` and your **CODE** will be published to `my-stage-name`.
 
 ### Previews (Ephemeral Instances)
 
-If you want to get feedback on your application, but don't yet want to publish it to one of the permanent stages above, you can created **PREVIEWS** instead. Type `cloud share` into the CLI, and Serverless Cloud will create a **preview** that contains your **code AND data**. **Previews** are just like **stages**, except that previews will automatically expire when they are no longer being used.
+If you want to get feedback on your application, but aren't ready to publish it to one of the permanent stages above, you can created **PREVIEWS** instead. Type `cloud share` into the CLI, and Serverless Cloud will create a **preview** that contains your **code AND data**. **Previews** are just like **stages**, except that previews will automatically expire when they are no longer being used.
 
 ### Test instances
 
-When you run `cloud test`, Serverless Cloud spins up a new **Test Instance** to run your tests, then tears it down once your tests have finished. This lets you test your code without impacting other instances, and is used to run tests as part of your automated CI/CD process. 
+When you run `cloud test`, Serverless Cloud spins up a new **Test Instance** to run your automated tests, then tears it down once they have finished. This lets you test your code without impacting other instances, and is used to run tests as part of your automated CI/CD process. 
