@@ -8,16 +8,16 @@ parent: Worklows
 
 # Preview Instances
 
-Preview Instances are used to share your work with your colleagues and with some stakeholders. Preview Instances are different than **Stages** as it includes both code and data when spun up from your personal instance.
+Preview Instances are used to share your work with your colleagues and with some stakeholders. Preview Instances are different than **Stages** as it includes both code and data when spun up from your developer sandbox.
 
 ```
 # Share your project from Cloud Shell
 > cloud
 
 # Edit your code locally and watch the changes automatically
-# deploy into your own personal instance
+# deploy into your own developer sandbox
 
-# Share your work on personal instance with your colleagues
+# Share your work from your developer sandbox with your colleagues
 > share
 ```
 

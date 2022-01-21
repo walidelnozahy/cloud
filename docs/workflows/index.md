@@ -71,7 +71,7 @@ Serverless Cloud lets you deliver applications both when you are building alone 
 
 ### Learn more about the concepts around building applications:
 
-- [Personal Instances](/cloud/docs/workflows/personal-instances)
+- [Developer Sandboxes](/cloud/docs/workflows/personal-instances)
 - [Preview Instances](/cloud/docs/workflows/preview-instances)
 - [Stages](/cloud/docs/workflows/stages)
 - [Cloning Instances](/cloud/docs/workflows/cloning)

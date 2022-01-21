@@ -52,18 +52,18 @@ npm i
 You can run the frontend on localhost and talk to the Cloud API.
 
 1. Run `npm start` in the `cloud-chat` root folder
-1. Note the URL of your personal instances
-1. Change `NEXT_PUBLIC_API_URL` in `frontend/.env.development` to your personal instance URL
+1. Note the URL of your developer sandbox
+1. Change `NEXT_PUBLIC_API_URL` in `frontend/.env.development` to your developer sandbox URL
 1. Run `npm start` in the frontend folder
 1. Visit the app at [http://localhost:3001](http://localhost:3001)
 
-## Personal instance
+## Developer sandbox
 
-To deploy the frontend to your personal instance:
+To deploy the frontend to your developer sandbox:
 
 1. Run `npm start` in the `cloud-chat` root folder
-1. Run `npm run build` in the frontend folder. The build output will be synced to your personal instance.
-1. Visit the app using your personal instance URL
+1. Run `npm run build` in the frontend folder. The build output will be synced to your developer sandbox.
+1. Visit the app using your developer sandbox URL
 
 ## Deploy to production
 

@@ -12,13 +12,13 @@ Serverless Cloud introduces a new way to develop applications against Cloud by c
 
 ## Apps and Instances
 
-Serverless Cloud allows you to build **APPS** within your team's **ORGANIZATION**. You can create as many apps as you want for different use cases or applications. Serverless Cloud provides the preview build of each app via instances. An app can have multiple instances and each **instance** is completely separate from all the other **instances** in an **app**, and even store their own copy of the data. The first instance that you start to use immediately is your **personal instance** that syncs your changes to cloud as you code. There are also different type of instances like preview instances, test instances and stages. See [here](/cloud/docs/apps/apps-instances) for more information.
+Serverless Cloud allows you to build **APPS** within your team's **ORGANIZATION**. You can create as many apps as you want for different use cases or applications. An app can have multiple instances and each **instance** is completely separate from all the other **instances** in an **app**, and even store their own copy of your data and blob storage. The first instance that you start to use immediately is your **developer sandbox** that syncs your changes to cloud as you code. There are also different type of instances like preview instances, test instances and stages. See [here](/cloud/docs/apps/apps-instances) for more information.
 
 ## Cloud CLI
 
 The Serverless Cloud CLI is a command-line interface (CLI) that provides a simple, unified interface to Serverless Cloud. Note that our CLI requires Node.js v14 and higher. Check your node version by running `node -v` from your terminal. The Serverless Cloud CLI has several modes to optimize experience in different situations:
 
-- **Interactive Mode** (a.k.a Cloud Shell) allows developers to connect to their Personal Instance from their local IDE, auto sync code changes, stream logs, and run common commands to manager their development workflow. This mode is opened when you type `cloud` from your terminal.
+- **Interactive Mode** (a.k.a. Cloud Shell) allows developers to connect to their Developer Sandbox from their local IDE, auto sync code changes, stream logs, and run common commands to manage their development workflow. This mode is enabled when you type `cloud` from your terminal.
 - **Standard Mode** allows developers to run specific commands to manage apps and workflows on Serverless Cloud. You should be logged in to CLI by running `cloud login` to use standard mode.
 - **Headless Mode** is used to manage the CI/CD operations on Serverless Cloud with an Access Token received from Cloud Dashboard.
 
@@ -34,7 +34,7 @@ See [here](/cloud/docs/apps/api) for more information.
 
 Serverless Data is a powerful, scaleable datastore that's built-in to Serverless Cloud. Every instance on Serverless Cloud has its isolated, completely independent copy of application data powered by Serverless Data. In order to use Serverless Data programmatically, `data` interface with `get`, `set`, and `remove` commands is used. You can use these comamnds to interact with application data in single-digit-ms response times.
 
-You can also seed data to your **personal instance** from a seed file (data.json by default), export and import data from your personal instance. See [here](/cloud/docs/apps/data) for more information.
+You can also seed data to your **developer sandbox** from a seed file (data.json by default) as well as export and import data. See [here](/cloud/docs/apps/data) for more information.
 
 ## Serverless Cloud Params/Secrets
 

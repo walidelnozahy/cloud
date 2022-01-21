@@ -95,13 +95,13 @@ To run your tests in the Cloud shell, enter `test` at the prompt:
 
 ✔ Connected to your instance of "smoke-todo-cjs".
 ✔ Enabled automatic file syncing and log streaming.
-✔ Copied personal instance url to your clipboard.
+✔ Copied your sandbox url to your clipboard.
 → https://<instance-url>
 
 › test
 ```
 
-This will run your tests in your personal instance, and display the results when they finish.
+This will run your tests in your developer sandbox, and display the results when they finish.
 
 Alternatively, you can run your tests directly from the command line using `cloud test`:
 
@@ -109,7 +109,7 @@ Alternatively, you can run your tests directly from the command line using `clou
 % cloud test
 ```
 
-This will create a new test instance, run your tests, and then delete the instance. Using a test instance lets you test your code without impacting your personal instance data, and can be used in your automated CI/CD process. It's recommended to run `cloud test` command from terminal for the development workflows. Test command in Cloud Shell is useful when you're developing your tests.
+This will create a new test instance, run your tests, and then delete the instance. Using a test instance lets you test your code without impacting your developer sandbox data, and can be used in your automated CI/CD process. It's recommended to run `cloud test` command from terminal for the development workflows. Test command in Cloud Shell is useful when you're developing your tests.
 
 In our To-Do example, when all tests pass the output will be:
 
@@ -234,4 +234,4 @@ beforeAll(async () => {
 
 In the context of Serverless Cloud, a unit test is one where the code under test doesn't access any external services such as Serverless Data. An example is a test for a self-contained utility function, or a test that replaces all external dependencies with mocks.
 
-Unit tests could in theory run in your local development environment instead of in your personal instance, but we recommend that you run all unit and integration tests using the `cloud test` command instead, to simplify your project.
+Unit tests could in theory run in your local development environment instead of in your developer sandbox, but we recommend that you run all unit and integration tests using the `cloud test` command instead, to simplify your project.

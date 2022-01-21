@@ -12,8 +12,9 @@ has_toc: false
 
 It literally takes seconds to have your first application running on Serverless Cloud. After signup to Serverless Cloud from [here](https://cloud.serverless.com/?view=register), you'll see two options to get started. 
 
-- [Start with the CLI and template applications](#start-with-the-cli)
-- [Fork one of the ready apps](#fork-an-app)
+- [Quick Start](#quick-start)
+  - [Start with the CLI](#start-with-the-cli)
+  - [Fork an App](#fork-an-app)
 
 ## Start with the CLI
 
@@ -33,7 +34,7 @@ npm init cloud
 
 You need to be logged in to proceed to the next step and select one of the app templates that lets you build with Javascript or Typescript integrated with React or Vue. Give a name to your app and start developing. 
 
-Next, you'll be in Cloud Shell where you can visit the url, see live logs, make changes, and watch them quickly deploy to your own **personal instance**. Cloud Shell helps you write commands and go back in command history. Make code changes in your application and see how fast it's synced into your application running on Cloud. 
+Next, you'll be in Cloud Shell where you can visit the url, see live logs, make changes, and watch them quickly deploy to your own **developer sandbox**. Cloud Shell helps you write commands and go back in command history. Make code changes in your application and see how fast it's synced into your application running on Cloud. 
 
 ## Fork an App
 
@@ -68,7 +69,7 @@ Note that this operation may fail with "npm install exited with code 1" error. I
 - Run `npm i` to install dependencies yourself
 - Type `cloud` to start working on your project. 
 
-When you type `cloud`, you'll enter the interactive Cloud Shell where you can see your personal instance URL, and see the logs that the application prints. 
+When you type `cloud`, you'll enter the interactive Cloud Shell where you can see your developer sandbox URL, and see the logs that the application prints. 
 Make code changes in your application and see how fast it's synced into a your application running on Cloud. 
 
 

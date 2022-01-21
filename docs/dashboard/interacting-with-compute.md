@@ -8,7 +8,7 @@ parent: Serverless Cloud Dashboard
 
 # Interacting with Serverless Cloud APIs
 
-Developers can create endpoints on Serverless Cloud that respond to any HTTP actions like `GET`, `POST`, `DELETE`, and `PUT` as explained [here](https://www.serverless.com/cloud/docs/apps/api). Serverless Cloud provides a built-in interact functionality that lets you call the endpoints on the instances. It's available both for personal instances and stages.
+Developers can create endpoints on Serverless Cloud that respond to any HTTP actions like `GET`, `POST`, `DELETE`, and `PUT` as explained [here](https://www.serverless.com/cloud/docs/apps/api). Serverless Cloud provides a built-in interact functionality that lets you call the endpoints on the instances. It's available both for developer sandboxes and stages.
 
 Note that the Interact feature is now in beta and should be used accordingly. 
 

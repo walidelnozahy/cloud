@@ -32,6 +32,6 @@ To make an app public or profile, you can visit the app settings page for an app
 
 ![MakeForkable](https://user-images.githubusercontent.com/85096820/141510119-c0ab1f83-e240-4214-8192-7bf2f9a1034e.png)
 
-Note that you need to deploy to the stage named `production` before making your app public or forkable. Otherwise, it won’t be possible for your app to be visited or successfully forked from your public profile. You can create a permanent stage with the name `production` by  running `cloud deploy production` command on your terminal, or `deploy production` on Cloud Shell. This will deploy the code in your personal instance to the `production` stage.
+Note that you need to deploy to the stage named `production` before making your app public or forkable. Otherwise, it won’t be possible for your app to be visited or successfully forked from your public profile. You can create a permanent stage with the name `production` by  running `cloud deploy production` command on your terminal, or `deploy production` on Cloud Shell. This will deploy the code in your developer sandbox to the `production` stage.
 
 **Next:** [Forking Apps Into Your Account](cloud/docs/public-apps/forking-apps)

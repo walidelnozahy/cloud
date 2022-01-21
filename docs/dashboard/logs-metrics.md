@@ -21,7 +21,7 @@ This view is presented as a tab in the Instance details view to let developers s
 
 Here you can check out the logs to understand the issues. You can select different time intervals and see a filtered view of the logs.
 
-As a side note, Serverless Cloud allows developers to see the logs of their personal instances when Cloud Shell is active but this view is the only way to see logs of preview instances and stages.
+As a side note, Serverless Cloud allows developers to see the logs from their developer sandbox when Cloud Shell is active but this view is the only way to see logs of preview instances and stages.
 
 ![logsView](https://user-images.githubusercontent.com/85096820/141484383-03ce4b54-57c2-41bf-a81c-adb2e53783bc.png)
 

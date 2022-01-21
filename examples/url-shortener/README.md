@@ -48,4 +48,4 @@ cloud start
 
 Finally, you'll need to set the `ADMIN_PASSWORD` param in the [Serverless Cloud Dashboard](https://cloud.serverless.com) to any strong value of your choice. This will be the password you'll use to access the admin page.
 
-After activation in the CLI, you should see a url to your personal instance of the url shortner. Open this url in the browser and enter the pasword you've chosen to access the admin page where you can shorten new urls and manage existing ones.
+After activation in the CLI, you should see a url to your developer sandbox of the url shortner. Open this url in the browser and enter the pasword you've chosen to access the admin page where you can shorten new urls and manage existing ones.

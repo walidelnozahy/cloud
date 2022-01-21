@@ -9,7 +9,7 @@ menuOrder: 7
 
 The Serverless Cloud CLI is an auto-updating command-line interface (CLI) that provides a simple, unified interface to Serverless Cloud. The CLI has multiple modes to optimize the experience for different contexts:
 
-- **Cloud Shell**: The interactive Cloud Shell allows developers to connect to their Personal Instance from their local IDE, auto sync code changes, stream logs, and run common commands to manager their development workflow.
+- **Cloud Shell**: The interactive Cloud Shell allows developers to connect to their developer sandbox from their local IDE, auto sync code changes, stream logs, and run common commands to manager their development workflow.
 - **Standard Mode**: Standard mode allows developers to run commands from your terminal without having to open an interactive session. Login is still required.
 - **Headless Mode**: Headless mode allows developers to run commands from [CI/CD](/cloud/docs/workflows/cicd) systems using an Access Token.
 
@@ -21,7 +21,7 @@ The CLI automatically updates to the latest version to ensure that users have ac
 
 ## Cloud Shell
 
-The interactive Cloud Shell allows developers to connect to their **Personal Instance** from their local IDE, auto sync code changes, stream logs, and run common commands to manager their development workflow.
+The interactive Cloud Shell allows developers to connect to their **developer sandbox** from their local IDE, auto sync code changes, stream logs, and run common commands to manager their development workflow.
 
 To enter the interactive Cloud Shell, run the `cloud` command from your terminal. If you do not have the `@serverless/cloud` NPM package installed globally, you can also run `npx @serverless/cloud`.
 
@@ -39,13 +39,13 @@ To exit the interactive Cloud Shell, type `exit`.
 
 ### `share [NAME]`
 
-Deploys the **code AND data** from your **personal instance** to a **preview instance** named `NAME`. If no `NAME` is provided, a randomly generated name will be created for you.
+Deploys the **code AND data** from your **pdeveloper sandbox** to a **preview instance** named `NAME`. If no `NAME` is provided, a randomly generated name will be created for you.
 
-A **preview instance** is an ephermeral instance that you can use to easily share your work with others. Preview instances allow you to create a stable snapshots of your current **personal instance** so that you can get feedback while continuing to make changes to your own version.
+A **preview instance** is an ephermeral instance that you can use to easily share your work with others. Preview instances allow you to create a stable snapshots of your **developer sandbox** so that you can get feedback while continuing to make changes to your own version.
 
 ### `deploy [STAGE]`
 
-Deploys the **code** from your **personal instance** to the provided `STAGE`. If no `STAGE` is provided, it will prompt you to enter a `STAGE`.
+Deploys the **code** from your **developer sandbox** to the provided `STAGE`. If no `STAGE` is provided, it will prompt you to enter a `STAGE`.
 
 A `STAGE` is a long-lived instance/environment that hosts your app. Common names for `STAGE`s are `prod`, `staging`, `qa`, and `dev`.
 
@@ -59,23 +59,23 @@ Deploys code from one stage to another stage. If `from` and `to` are not provide
 
 ### `import [FILENAME] [--overwrite] `
 
-Seeds data from the `FILENAME` in your local directory to your **personal instance**. If no `FILENAME` is provided, it will default to `data.json`. By default, the data will be merged with existing data. If you specify the `--overwrite` flag, all data will be cleared and reseeded.
+Seeds data from the `FILENAME` in your local directory to your **developer sandbox**. If no `FILENAME` is provided, it will default to `data.json`. By default, the data will be merged with existing data. If you specify the `--overwrite` flag, all data will be cleared and reseeded.
 
 ### `export [FILENAME] [--overwrite] `
 
-Exports data from your **personal instance** to a JSON file named `FILENAME` in your current working directoy. If no `FILENAME` is provided, it will default to `data.json`. If the `FILENAME` already exists, you can specify the `--overwrite` flag to overwrite the existing file.
+Exports data from your **developer sandbox** to a JSON file named `FILENAME` in your current working directoy. If no `FILENAME` is provided, it will default to `data.json`. If the `FILENAME` already exists, you can specify the `--overwrite` flag to overwrite the existing file.
 
 ### `test`
 
-Runs defined tests against your connected Personal Instance. Please note that this will use and (depending on your tests) potentially modify data in your Personal Instance. To run these tests on an isolated instance, exit the shell and run `cloud test`.
+Runs defined tests against your connected developer sandbox. Please note that this will use and (depending on your tests) potentially modify data in your developer sandbox. To run these tests on an isolated instance, exit the shell and run `cloud test`.
 
 ### `install [PACKAGENAME]`
 
-Installs the specified npm package into your application, and syncs your personal instance once it's done. If you did not provide a package name, it'll simply install all your app's dependencies listed in `package.json`.
+Installs the specified npm package into your application, and syncs your developer sandbox once it's done. If you did not provide a package name, it'll simply install all your app's dependencies listed in `package.json`.
 
 ### `uninstall [PACKAGENAME]`
 
-Uninstalls the specified npm package from your application, and syncs your personal instance once it's done.
+Uninstalls the specified npm package from your application, and syncs your developer sandbox once it's done.
 
 ### `version`
 
@@ -83,7 +83,7 @@ Displays the current running version of the CLI.
 
 ### `url`
 
-Displays the current URL of your **Personal Instance**.
+Displays the current URL of your **developer sandbox**.
 
 ### `open`
 
@@ -95,7 +95,7 @@ Opens the Serverless Cloud documentation in your default browser.
 
 ### `quit` / `exit` or _Ctrl/Cmd+C_
 
-Terminates the interactive cloud shell and disconnects from your **personal instance**.
+Terminates the interactive cloud shell and disconnects from your **developer sandbox**.
 
 ### `clear`
 
@@ -123,9 +123,9 @@ Deploys code from the current directory and run tests in an isolated instance. A
 
 ### `cloud share [NAME]`
 
-Deploys the **code AND data** from your **personal instance** to a **preview instance** named `NAME`. If no `NAME` is provided, a randomly generated name will be created for you.
+Deploys the **code AND data** from your **developer sandbox** to a **preview instance** named `NAME`. If no `NAME` is provided, a randomly generated name will be created for you.
 
-A **preview instance** is an ephermeral instance that you can use to easily share your work with others. Preview instances allow you to create a stable snapshots of your current **personal instance** so that you can get feedback while continuing to make changes to your own version.
+A **preview instance** is an ephermeral instance that you can use to easily share your work with others. Preview instances allow you to create a stable snapshots of your **developer sandbox** so that you can get feedback while continuing to make changes to your own version.
 
 ### `cloud deploy [STAGE]`
 
@@ -147,7 +147,7 @@ Uninstalls the specified npm package from your application.
 
 ### `cloud clone [@ORG_NAME/APP_NAME/INSTANCE_NAME] [--overwrite]`
 
-Copies **code** AND **data** from `INSTANCE_NAME` of service `APP_NAME` of org `ORG_NAME` to your local directory and your **personal instance**. If `ORG_NAME` is not specified it will clone from the logged in organization. Note that you should have access to the given org name otherwise the operation fails. `INSTANCE_NAME` can specify either a stage (like `prod` or `dev`), or a preview instance. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag. If no `APP_NAME` is specified, it will default to the app in your current directory. If not `INSTANCE_NAME` is specified, it will display a list of available instance to choose from.
+Copies **code** AND **data** from `INSTANCE_NAME` of service `APP_NAME` of org `ORG_NAME` to your local directory and your **developer sandbox**. If `ORG_NAME` is not specified it will clone from the logged in organization. Note that you should have access to the given org name otherwise the operation fails. `INSTANCE_NAME` can specify either a stage (like `prod` or `dev`), or a preview instance. If your current directory is not empty, you can use the optional `--overwrite` (or `-o`) flag. If no `APP_NAME` is specified, it will default to the app in your current directory. If not `INSTANCE_NAME` is specified, it will display a list of available instance to choose from.
 
 ### `cloud promote [from] [to]`
 
@@ -155,11 +155,11 @@ Deploys code from one stage to another stage. If `from` and `to` are not provide
 
 ### `cloud import [FILENAME] [--overwrite] `
 
-Seeds data from the `FILENAME` in your local directory to your **personal instance**. If no `FILENAME` is provided, it will default to `data.json`. By default, the data will be merged with existing data. If you specify the `--overwrite` flag, all data will be cleared and reseeded.
+Seeds data from the `FILENAME` in your local directory to your **developer sandbox**. If no `FILENAME` is provided, it will default to `data.json`. By default, the data will be merged with existing data. If you specify the `--overwrite` flag, all data will be cleared and reseeded.
 
 ### `cloud export [FILENAME] [--overwrite] `
 
-Exports data from your **personal instance** to a JSON file named `FILENAME` in your current working directoy. If no `FILENAME` is provided, it will default to `data.json`. If the `FILENAME` already exists, you can specify the `--overwrite` flag to overwrite the existing file.
+Exports data from your **developer sandbox** to a JSON file named `FILENAME` in your current working directoy. If no `FILENAME` is provided, it will default to `data.json`. If the `FILENAME` already exists, you can specify the `--overwrite` flag to overwrite the existing file.
 
 ### `cloud version`
 
@@ -167,7 +167,7 @@ Displays the running version of the CLI.
 
 ### `cloud url`
 
-Displays the current URL of your **Personal Instance**.
+Displays the current URL of your **developer sandbox**.
 
 ### `cloud open`
 

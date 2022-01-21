@@ -1,17 +1,17 @@
 ---
-title: Personal Development Instances
-menuText: Personal Instances
-description: Learn about Personal Development Instances and how to use them.
+title: Developer Sandboxes (Personal Instances)
+menuText: Developer Sandboxes
+description: Learn about Developer Sandboxes and how to use them.
 menuOrder: 1
 parent: Worklows
 ---
 
-# Personal Instances
+# Developer Sandboxes
 
-Personal instances are the place that you start working on your Cloud application. When you type cloud from your terminal, Serverless Cloud CLI instantiate a personal instance of the app in that folder. If the folder is empty and doesn't include a project, you'll be prompted to select an app or start a new app from templates.
+Developer sandboxes are the place that you start working on your Cloud application. When you type `cloud` from your terminal, Serverless Cloud CLI connects to your developer sandbox of the app associated with that folder. If the folder is empty and doesn't include a project, you'll be prompted to select an app or start a new app from one of our templates.
 
-Personal instances are temporary and will be teared down when you exit from Cloud Shell either by typing `quit`, `exit` or pressing `ctrl+c`. The personal instance URL that you see on Cloud Shell becomes inaccessible when you quit from Cloud Shell.
+Developer sandboxes are your own personal workspaces that let you interate on and test code without worrying about affecting production workloads or interfering with other developers.
 
-### Why Personal Instances Matter
+### Why Developer Sandboxes Matter
 
-The biggest problem of cloud development was the productivity loss while working on local due to mocking cloud resources or assuming their behaviours. The feedback loop generally contains "develop -> deploy -> test issues -> see error" steps that are repeated numerously. With Serverless Cloud, it's possible to develop against Cloud. The changes you make are synced to Cloud instantly (less than a second depending on the change). In this way, you can be sure that your code will behave same on production as it behaves in your personal instance.
+One of the biggest problems with cloud development is the productivity lost while trying to replicate, emulate, or mock cloud resources locally. Without local emulation, the feedback loop generally consists of "develop -> deploy -> test -> see error", all of which can take a painfully long time. With Serverless Cloud, it's possible to develop in Cloud while still using your local development tools. The changes you make locally are automatically synced and deployed to your developer sandbox instantly (typically less than a second depending on the size of the change). This gives you a rapid development feedback loop that will ensure your code will behave in production as it behaves in your developer sandbox.

@@ -134,7 +134,7 @@ For any customer facing application, it’s crucial to see the performance of yo
 
 ### Testing for Serverless Cloud Applications
 
-We are excited to announce new built-in testing capabilities for Serverless Cloud. You’ll be able to write unit and integration tests by using a Jest-compatible testing framework. Serverless Cloud creates an isolated test instance when you type `cloud test`, seeds it with data you provide, runs your tests and tears down the test instance. You can now run your tests against real cloud environments with a single command. You can also run your tests against your personal instance by typing `test` command from Cloud Shell. Visit our [documentation](https://www.serverless.com/cloud/docs/workflows/testing) for more information.
+We are excited to announce new built-in testing capabilities for Serverless Cloud. You’ll be able to write unit and integration tests by using a Jest-compatible testing framework. Serverless Cloud creates an isolated test instance when you type `cloud test`, seeds it with data you provide, runs your tests and tears down the test instance. You can now run your tests against real cloud environments with a single command. You can also run your tests against your developer sandbox by typing `test` command from Cloud Shell. Visit our [documentation](https://www.serverless.com/cloud/docs/workflows/testing) for more information.
 
 ### Set Timeouts for APIs and Schedules
 
