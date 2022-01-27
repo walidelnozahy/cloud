@@ -1,4 +1,4 @@
-import { api, data, schedule, params } from "@serverless/cloud";
+import { api, data } from "@serverless/cloud";
 
 // Create GET route and return users
 api.get("/users", async (req, res) => {
