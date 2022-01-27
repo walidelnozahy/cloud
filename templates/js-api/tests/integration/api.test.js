@@ -1,8 +1,6 @@
 import { api } from "@serverless/cloud";
 
-test("should return users", async () => {
-  const { body } = await api.get("/users").invoke();
-
-  expect(body).toHaveProperty("users");
-  expect(body.users.length).toBeGreaterThan(0);
+test("should return Hello Serverless Cloud!", async () => {
+  const { body } = await api.get("/").invoke();
+  expect(body).toBe("<h1>Hello Serverless Cloud!</h1>");
 });
