@@ -2,7 +2,7 @@
 title: Troubleshooting via Metrics and Logs 
 menuText: Troubleshooting via Metrics and Logs
 description: Learn how you troubleshoot the issues on the applications for Serverless Cloud. 
-menuOrder: 5
+menuOrder: 6
 parent: Serverless Cloud Dashboard
 ---
 
