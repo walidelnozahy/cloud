@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@events/*": ["events/*"],
+      "@icons/*": ["icons/*"],
+      "@layout/*": ["layout/*"],
+      "@state/*": ["state/*"],
+      "@styles/*": ["styles/*"],
+      "@views/*": ["views/*"]
+    }
+  },
+  "exclude": ["node_modules", ".next", ".vercel", "out"]
+}
