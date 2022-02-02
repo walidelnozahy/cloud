@@ -1,4 +1,4 @@
----
+<!--
 title: Get Started
 menuText: Get Started
 firstChildMenuText: Quick Start
@@ -6,7 +6,7 @@ description: Here's the guide to get started with Serveless Cloud in seconds
 menuOrder: 2
 has_children: true
 has_toc: false
----
+-->
 
 # Quick Start
 
@@ -16,7 +16,7 @@ It literally takes seconds to have your first application running on Serverless 
   - [Start with the CLI](#start-with-the-cli)
   - [Fork an App](#fork-an-app)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0lGNFFQt5No" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/0lGNFFQt5No" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ## Start with the CLI
 
