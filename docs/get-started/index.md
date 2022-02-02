@@ -16,6 +16,8 @@ It literally takes seconds to have your first application running on Serverless 
   - [Start with the CLI](#start-with-the-cli)
   - [Fork an App](#fork-an-app)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0lGNFFQt5No" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Start with the CLI
 
 If you want to start with our templates and build your own application from scratch, this option is for you. Note that you should have npm installed in order to run Cloud on your workspace. You can download it from [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm). There are only two other steps required.
