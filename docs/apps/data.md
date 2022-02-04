@@ -149,7 +149,7 @@ Any non-exact match request will return items in the array format. This includes
 The total number of items returned by a single `data.get()` call is limited to the value specified by the `limit` parameter (default 100). If additional items are available, a `lastKey` will be returned. This value can be passed into a subsequent call to `data.get()` as the `start` parameter. A `.next()` convenience function will also be returned which can be called directly instead of constructing the additional call.
 
 ```javascript
-const result = data.get('foo:*', { limit: 3 });
+const result = await data.get('foo:*', { limit: 3 });
 
 // result:
 {
@@ -162,17 +162,17 @@ const result = data.get('foo:*', { limit: 3 });
   next: [Function: next]
 }
 
-const nextResult = data.get('foo:*', { limit: 3, start: "foo:baz" });
+const nextResult = await data.get('foo:*', { limit: 3, start: "foo:baz" });
 ```
 
 To paginate through all items using `next()`:
 
 ```javascript
-let result = data.get("foo:*", { limit: 3 });
+let result = await data.get("foo:*", { limit: 3 });
 
 while (result) {
   // do something with result.items
-  result = result.next ? result.next() : null;
+  result = result.next ? await result.next() : null;
 }
 ```
 
