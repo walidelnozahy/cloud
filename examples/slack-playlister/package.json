@@ -11,10 +11,6 @@
   "devDependencies": {
     "@types/jest": "^26.0.24"
   },
-  "serverless": {
-    "app": "slack-playlister",
-    "org": "benminer2"
-  },
   "dependencies": {
     "axios": "^0.25.0",
     "spotify-web-api-node": "^5.0.2"
