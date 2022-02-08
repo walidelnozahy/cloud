@@ -30,7 +30,8 @@ api.post("/signup", async (req, res) => {
       username,
       profile,
     },
-    params.JWT_SECRET
+    params.JWT_SECRET,
+    { expiresIn: "24h" }
   );
 
   res.json({
@@ -67,7 +68,8 @@ api.post("/login", async (req, res) => {
       username,
       profile: user.profile,
     },
-    params.JWT_SECRET
+    params.JWT_SECRET,
+    { expiresIn: "24h" }
   );
 
   res.json({
