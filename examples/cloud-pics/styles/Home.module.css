@@ -1,0 +1,19 @@
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 75%;
+}
+
+.grid :global a {
+  margin: 0.5rem;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
