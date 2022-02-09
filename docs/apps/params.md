@@ -2,7 +2,7 @@
 title: Parameters
 menuText: Parameters
 description: Create and use parameters to store secrets for your Serverless Cloud application.
-menuOrder: 6
+menuOrder: 8
 parent: Building Applications
 ---
 
