@@ -16,7 +16,7 @@ For example, instead of sending a welcome email to a new user immediately in an 
 
 One advantage of event-driven applications is that they are much easier to extend. For example if you decide that you want to add billing to your application, you can write another handler that adds the user to the billing system.
 
-## Publishing events with `events.publish()`
+## Publishing events with `events.publish()`
 
 To publish an event you use the `events.publish()` method, and provide a name and a "body" that contains application-specific data to send in the event.
 
