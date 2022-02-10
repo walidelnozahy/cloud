@@ -9,6 +9,12 @@ menuOrder: 9
 
 See what's new in Serverless Cloud as we build the most developer-friendly serverless app platform ever! 🚀
 
+## February 2022
+
+### Serverless Cloud Events
+
+We've released Serverless Cloud Events, a new feature that lets developers easily build event-driven serverless applications. With Serverless Cloud Events, developers can publish and schedule custom events and process them asynchronously with automatic throttling and retries. Events let you do work "in the background" and allow you to decouple your application to make it more scalable and resilient to errors. Events can also be scheduled for up to 1 year "in the future" if you need to do the work at a later time. Visit our [documentation](https://www.serverless.com/cloud/docs/apps/events) to learn more.
+
 ## January 2022
 
 ### Storage Manager (`beta`)
