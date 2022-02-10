@@ -2,7 +2,7 @@
 title: Static Websites & Assets
 menuText: Static Websites & Assets
 description: Serve static assets like images, CSS, and JavaScript, and host front-end apps and websites.
-menuOrder: 5
+menuOrder: 7
 parent: Building Applications
 ---
 
