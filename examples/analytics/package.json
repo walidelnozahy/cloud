@@ -1,0 +1,17 @@
+{
+  "name": "analytics",
+  "version": "1.0.0",
+  "description": "Serverless Cloud analytics example",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "cloud"
+  },
+  "devDependencies": {
+    "@serverless/cloud": "^2.0.0",
+    "@types/jest": "^26.0.24"
+  },
+  "serverless": {
+    "app": "analytics"
+  }
+}
