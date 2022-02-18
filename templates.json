@@ -1,10 +1,5 @@
 [
   {
-    "name": "todo",
-    "title": "Sample App",
-    "description": "A sample TODO app"
-  },
-  {
     "name": "js-api",
     "title": "JavaScript API",
     "description": "API starter template in JS"
