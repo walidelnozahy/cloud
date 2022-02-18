@@ -9,18 +9,18 @@
     "name": "ts-api",
     "title": "TypeScript API",
     "description": "API starter template in TS",
-        "image": "https://s3.us-east-2.amazonaws.com/assets.public.serverless/cloud/typescript-icon.svg"
+    "image": "https://s3.us-east-2.amazonaws.com/assets.public.serverless/cloud/typescript-icon.svg"
   },
   {
     "name": "vue-js",
     "title": "Vue.js with API",
     "description": "Simple Vue.js starter service",
-        "image": "https://s3.us-east-2.amazonaws.com/assets.public.serverless/cloud/vue.svg"
+    "image": "https://s3.us-east-2.amazonaws.com/assets.public.serverless/cloud/vue.svg"
   },
   {
     "name": "react-js",
     "title": "React with API",
     "description": "Simple React starter service",
-            "image": "https://s3.us-east-2.amazonaws.com/assets.public.serverless/cloud/react.svg"
+    "image": "https://s3.us-east-2.amazonaws.com/assets.public.serverless/cloud/react.svg"
   }
 ]
